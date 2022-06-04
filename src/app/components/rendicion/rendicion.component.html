@@ -1,32 +1,32 @@
-<h1 class="container bg-dark text-white text-center my-4 py-4">Rendición</h1>
+<h1 class="container bg-dark text-white text-center my-4 py-4 ">Rendición</h1>
 <div class="container">
 <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Código Municipio</th>
+        <th scope="col">Municipio</th>
+        <th scope="col">2019</th>
+        <th scope="col">2020</th>
+        <th scope="col">2021</th>
+        <th scope="col">2022</th>
+        <th scope="col">Total</th>
+        <th scope="col">Ultimo Expediente</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr  *ngFor="let rendicion of rendicionList; index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{rendicion.cod_mun}}</td>
+        <td>{{rendicion.municipio}}</td>
+        <td >{{rendicion.anio_2019|currency:'$ '}}</td>
+        <td>{{rendicion.anio_2020|currency:'$ '}}</td>
+        <td>{{rendicion.anio_2021|currency:'$ '}}</td>
+        <td>{{rendicion.anio_2022|currency:'$ '}}</td> 
+        <td>{{rendicion.acumulado|currency:'$ '}}</td>
+        <td>{{rendicion.fech_ult_expte }}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+     
     </tbody>
   </table>
 </div>
