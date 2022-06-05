@@ -1,8 +1,16 @@
 <h1 class="container bg-dark text-white text-center my-4 py-4 ">Rendición</h1>
-<div class="container">
-<table class="table">
+<div class="container text-right">
+    <div class="row">
+        <div class="col-3">
+            <div class="form group">
+                <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
+                 [(ngModel)]="filterPost">
+            </div>
+        </div>
+    </div>
+<table id="Mytable" class="table table-striped table-hover">
     <thead>
-      <tr>
+      <tr >
         <th scope="col">#</th>
         <th scope="col">Código Municipio</th>
         <th scope="col">Municipio</th>
@@ -15,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let rendicion of rendicionList; index as i">
+      <tr  *ngFor="let rendicion of rendicionList | filter:filterPost; index as i ">
         <th scope="row">{{i+1}}</th>
         <td>{{rendicion.cod_mun}}</td>
         <td>{{rendicion.municipio}}</td>
@@ -30,3 +38,4 @@
     </tbody>
   </table>
 </div>
+

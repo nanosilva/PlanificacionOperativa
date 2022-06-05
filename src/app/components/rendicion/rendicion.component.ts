@@ -9,6 +9,7 @@ import { Rendicion } from '../interfaces/planificacio.interfaces';
 })
 export class RendicionComponent implements OnInit {
 
+  filterPost=""
   rendicionList!: Rendicion[];
   rendicion: Rendicion = {
     id: 0,
@@ -40,6 +41,7 @@ export class RendicionComponent implements OnInit {
       console.log(data);
       this.rendicionList=data;
     })
-  }
+  };
 
+ 
 }
