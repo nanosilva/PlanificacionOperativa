@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Rendicion } from '../interfaces/planificacio.interfaces';
+import * as XLSX from 'xlsx'
 
 @Component({
   selector: 'app-rendicion',
@@ -8,7 +9,8 @@ import { Rendicion } from '../interfaces/planificacio.interfaces';
   styleUrls: ['./rendicion.component.css']
 })
 export class RendicionComponent implements OnInit {
-
+  name = 'ExcelSheet.xlsx';
+  total!:number
   filterPost=""
   rendicionList!: Rendicion[];
   rendicion: Rendicion = {
@@ -36,12 +38,29 @@ export class RendicionComponent implements OnInit {
   constructor(public datosPlanificacion: PlanificacionService) { }
 
   ngOnInit(): void {
+    
 
     this.datosPlanificacion.obtenerRendicion().subscribe(data=>{
       console.log(data);
       this.rendicionList=data;
     })
-  };
+  
+};
+  
+exportToExcel(): void {
+  let element = document.getElementById('rend-tabla');
+  const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
- 
+  const book: XLSX.WorkBook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+  XLSX.writeFile(book, this.name);
+};
+
+sumaColumna(){
+  let sumacol = this.rendicionList.map(item => item.anio_2022).reduce((prev, curr) => prev + curr, 0);
+  console.log(sumacol);
+  this.total=sumacol;
+
+};
 }
