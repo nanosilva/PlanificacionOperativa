@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Rendicion } from '../interfaces/planificacio.interfaces';
 import * as XLSX from 'xlsx'
@@ -9,6 +9,7 @@ import * as XLSX from 'xlsx'
   styleUrls: ['./rendicion.component.css']
 })
 export class RendicionComponent implements OnInit {
+  
   name = 'ExcelSheet.xlsx';
   total!:number
   filterPost=""
@@ -58,9 +59,11 @@ exportToExcel(): void {
 };
 
 sumaColumna(){
-  let sumacol = this.rendicionList.map(item => item.anio_2022).reduce((prev, curr) => prev + curr, 0);
-  console.log(sumacol);
-  this.total=sumacol;
+  this.total = this.rendicionList.map(item => item.anio_2022).reduce((prev, curr) => prev + curr, 0);
+  console.log(this.total);
+  
 
 };
 }
+
+

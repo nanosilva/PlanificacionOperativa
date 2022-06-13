@@ -11,7 +11,7 @@
   
         <div class="col-7 container bg-secondary text-white text-center pt-1" >Años</div>
           
-        <div class="col">
+        <div class="col-2">
           <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">Exporta a Excel</button>
         </div>
       </div>  
@@ -31,15 +31,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let rendicion of rendicionList | filter:filterPost; index as i ">
+      <tr *ngFor="let rendicion of rendicionList | filter:filterPost; index as i ">
         <th scope="row">{{i+1}}</th>
         <td>{{rendicion.cod_mun}}</td>
         <td>{{rendicion.municipio}}</td>
-        <td>{{rendicion.anio_2019|currency:'$ '}}</td>
-        <td>{{rendicion.anio_2020|currency:'$ '}}</td>
-        <td>{{rendicion.anio_2021|currency:'$ '}}</td>
-        <td>{{rendicion.anio_2022|currency:'$ '}}</td> 
-        <td>{{rendicion.acumulado|currency:'$ '}}</td>
+        <td>{{rendicion.anio_2019|currency:'$ ':'symbol':'1.0-0'}}</td>
+        <td>{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
+        <td>{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
+        <td>{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td> 
+        <td>{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
         <td>{{rendicion.fech_ult_expte }}</td>
       </tr>
       <hr>
@@ -49,13 +49,12 @@
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
         <td>
-        <div class="container">Total:{{total|currency}}</div>
-        <td>
-          
-        </td>
+        <div class="container">Total:{{total|currency:'$ ':'symbol':'1.0-0'}}</div>
+        <td></td>
+        <td></td>
       </tr>
-     
     </tbody>
   </table>
 </div>
