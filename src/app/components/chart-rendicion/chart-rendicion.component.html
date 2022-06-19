@@ -102,6 +102,7 @@
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard</h1>
+                    {{municipio.municipio}}
                     <form>
                         <div class="form-row">
                             <div class= col-md>
@@ -113,10 +114,10 @@
 
                                         </div>
                                     </div>
-                                    <select class="form-control">
-                                        <option>adolfo alsina</option>
-                                        <option>la plata</option>
-                                        <option>chascomus</option>
+                                    <select class="form-control" name ="municipio" [(ngModel)]="municipio">
+                                        <option [ngValue]="null" selected >Elige un municipio</option>
+                                        <option *ngFor="let municipio of municipios" [ngValue]="municipio">{{municipio.municipio}}</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -125,7 +126,16 @@
                     </form>
                 </div>
 
-                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+                <div class="container">
+                    <canvas baseChart width="1000" height="400"
+                      [type]="'line'"
+                      [data]="lineChartData"
+                      [options]="lineChartOptions"
+                      [legend]="lineChartLegend"
+                      >
+                    </canvas>
+                  </div>
+                  
 
 
             </main>

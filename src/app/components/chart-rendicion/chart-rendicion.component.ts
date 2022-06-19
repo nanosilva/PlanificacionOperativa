@@ -1,72 +1,118 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsService } from 'src/app/servicios/charts.service';
-import { Chart } from 'chart.js';
+import { ChartConfiguration, ChartDataset, ChartOptions, Color, } from 'chart.js';
+import { Rendicion } from '../interfaces/planificacio.interfaces';
+import { getNumberOfCurrencyDigits } from '@angular/common';
+import { data } from 'autoprefixer';
+import { subscribeOn } from 'rxjs';
+
+
 @Component({
   selector: 'app-chart-rendicion',
   templateUrl: './chart-rendicion.component.html',
   styleUrls: ['./chart-rendicion.component.css']
 })
 export class ChartRendicionComponent implements OnInit {
+  title = 'ng2-charts-demo';
+  total!: any[];
+  rendicionList!: Rendicion[];
+  municipios!: Rendicion[];
+  municipio: Rendicion = {
+    id: 0,
+    cod_mun: "",
+    municipio: "",
+    anio_2008: 0,
+    anio_2009: 0,
+    anio_2010: 0,
+    anio_2011: 0,
+    anio_2012: 0,
+    anio_2013: 0,
+    anio_2014: 0,
+    anio_2015: 0,
+    anio_2016: 0,
+    anio_2017: 0,
+    anio_2018: 0,
+    anio_2019: 0,
+    anio_2020: 0,
+    anio_2021: 0,
+    anio_2022: 0,
+    acumulado: 0,
+    fech_ult_expte: ""
+  }
 
-  chart!:{}
 
-  constructor(private datarend: ChartsService ) { }
+
+  public lineChartData: ChartConfiguration<'line'>['data'] = {
+    labels: [
+      '2008',
+      '2009',
+      '2010',
+      '2011',
+      '2012',
+      '2013',
+      '2014',
+      '2015',
+      '2016',
+      '2017',
+      '2018',
+      '2019',
+      '2020',
+      '2021',
+      '2022',
+    ],
+    datasets: [
+      {
+        data: [120, 125, 150, 0, 0, 0, 285],
+
+        label: 'Rendido',
+        fill: true,
+        tension: 0.5,
+        borderColor: 'black',
+        backgroundColor: 'rgba(255,0,0,0.3)'
+      }
+    ]
+  };
+  public lineChartOptions: ChartOptions<'line'> = {
+    responsive: false
+  };
+  public lineChartLegend = true;
+
+  constructor(private chartService: ChartsService) {
+
+  }
+
 
   ngOnInit(): void {
-    this.datarend.dataRendicion().subscribe(data=>{
-      let monto_2008 = data.map(data=>data.anio_2008);
-     
-      const monto_2009 = data.map(data =>data.anio_2009)
-      const monto_2010 = data.map((data: { anio_2010: any; })=>data.anio_2010)
-      const monto_2011 = data.map((data: { anio_2011: any; })=>data.anio_2011)
-      const monto_2012 = data.map((data: { anio_2012: any; })=>data.anio_2012)
-      const monto_2013 = data.map((data: { anio_2013: any; })=>data.anio_2013)
-      const monto_2014 = data.map((data: { anio_2014: any; })=>data.anio_2014)
-      const monto_2015 = data.map((data: { anio_2015: any; })=>data.anio_2015)
-      const monto_2016 = data.map((data: { anio_2016: any; })=>data.anio_2016)
-      const monto_2017 = data.map((data: { anio_2017: any; })=>data.anio_2017)
-      const monto_2018 = data.map((data: { anio_2018: any; })=>data.anio_2018)
-      const monto_2019 = data.map((data: { anio_2019: any; })=>data.anio_2019)
-      const monto_2020 = data.map((data: { anio_2020: any; })=>data.anio_2020)
-      const monto_2021 = data.map((data: { anio_2021: any; })=>data.anio_2021)
-      const monto_2022 = data.map((data: { anio_2022: any; })=>data.anio_2022)
-      const municipio = data.map((data: {muicipio: any;})=>data.muicipio)
-    });
-    
-     this.chart= new Chart('canvas', {
-      type: 'bar',
-      data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
-              ],
-              borderWidth: 1
-          }]
-      },
-      options: {
-          scales: {
-              y: {
-                  beginAtZero: true
-              }
-          }
+    this.chartService.getRendicion().subscribe(data => {
+
+      this.municipios = data;
+
+
+     /*   this.chartService.fromMunicipio('').subscribe(data => {
+        console.log(data)
       }
-  });
-  }
+      )*/
+
+      this.getMuni()
+    });
+  };
+  getMuni(): void {
+    this.chartService.getRendicion().subscribe(
+      res => {
+        const muni = res.map(res => res.municipio);
+        
+        const anio_2008 = res.map(res => res.anio_2008);
+       
+        console.log(anio_2008);
+        this.total=muni
+        console.log(this.total);
+
+     }
+    )
+   
+
+
+
+};
 
 }

@@ -1,4 +1,5 @@
 export interface Rendicion{
+   
     id: number;
     cod_mun: string;
     municipio: string;

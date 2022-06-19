@@ -36,7 +36,7 @@ export class RendicionComponent implements OnInit {
     acumulado:0,
     fech_ult_expte:""
   }
-  constructor(public datosPlanificacion: PlanificacionService) { }
+  constructor(private datosPlanificacion: PlanificacionService) { }
 
   ngOnInit(): void {
     
@@ -58,7 +58,7 @@ exportToExcel(): void {
   XLSX.writeFile(book, this.name);
 };
 
-sumaColumna(){
+sumaColumna(): void{
   this.total = this.rendicionList.map(item => item.anio_2022).reduce((prev, curr) => prev + curr, 0);
   console.log(this.total);
   
