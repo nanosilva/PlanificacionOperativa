@@ -114,7 +114,7 @@
 
                                         </div>
                                     </div>
-                                    <select class="form-control" name ="municipio" [(ngModel)]="municipio">
+                                    <select class="form-control" name ="municipio" [(ngModel)]="municipio" (change)="loadData($event)">
                                         <option [ngValue]="null" selected >Elige un municipio</option>
                                         <option *ngFor="let municipio of municipios" [ngValue]="municipio">{{municipio.municipio}}</option>
 
@@ -129,9 +129,10 @@
                 <div class="container">
                     <canvas baseChart width="1000" height="400"
                       [type]="'line'"
-                      [data]="lineChartData"
-                      [options]="lineChartOptions"
-                      [legend]="lineChartLegend"
+                      [datasets]="chartData"
+                      [options]="options"
+                      [labels]="label"
+                      
                       >
                     </canvas>
                   </div>

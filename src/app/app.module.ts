@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartRendicionComponent } from './components/chart-rendicion/chart-rendicion.component';
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
+import { UsodefondosComponent } from './components/usodefondos/usodefondos.component';
 @NgModule({
   declarations: [
     AppComponent,
     RendicionComponent,
     FilterPipe,
     ChartRendicionComponent,
+    UsodefondosComponent,
     
   ],
   imports: [
