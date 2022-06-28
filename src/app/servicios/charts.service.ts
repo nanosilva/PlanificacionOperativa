@@ -24,19 +24,17 @@ export class ChartsService {
     return this.getRendicion().pipe(map(data=> data.filter(m=> m.municipio===municipio)));
         /*  data.map(res => res.municipio))) */
         
-      }
+      };
+  public getTransferencias(): Observable<any[]>{
+    return this.http.get<any[]>(`${this.apiUrl}/transferencias`);
     };
 
+    public fromMunicipioT(municipio: any) :Observable<any[]> {
+      return this.getTransferencias().pipe(map(data=> data.filter(m=> m.municipio===municipio)));
+          /*  data.map(res => res.municipio))) */
+          
+        };
 
 
 
-
-
-  
-
-
-
-
-
-
-
+  }
