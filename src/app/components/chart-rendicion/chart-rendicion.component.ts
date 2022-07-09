@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartsService } from 'src/app/servicios/charts.service';
 import { ChartConfiguration, ChartData, ChartDataset, ChartDatasetProperties, ChartOptions, ChartType } from 'chart.js';
 import { Rendicion } from '../interfaces/planificacio.interfaces';
-import { forkJoin, map, Subscription, tap } from 'rxjs';
+import { forkJoin, map, Subscription, concatMap, concat } from 'rxjs';
 import { data } from 'autoprefixer';
 import { BaseChartDirective } from 'ng2-charts';
+import { valentine } from 'ngx-bootstrap-icons';
 
 
 @Component({
@@ -45,7 +46,10 @@ export class ChartRendicionComponent implements OnInit {
   }
 
   anio_19!: any[];
-
+  rendido!: any[];
+  porcentaje!:number;
+  rendidoAcum!: number;
+  transfAcum!: number;
   public chartData: ChartDataset[] = [
     {
       data: [], label: 'Rendición',      
@@ -63,7 +67,7 @@ export class ChartRendicionComponent implements OnInit {
     },
     
   ];
-  public label: string[] = ['2019'];
+  public label: string[] = ['2019', '2020', '2021', '2022'];
   public options: ChartOptions = {
     scales: {
       y: {
@@ -129,14 +133,55 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2021))),
         this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2022))),
         this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.acumulado))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2007))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2008))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2009))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2010))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2011))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2012))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2013))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2014))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2015))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2016))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2017))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2018))),
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2019))),
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2020))),
-        
-      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6] ) => {
-        var rendido= data0.concat(data1).concat(data2).concat(data3).concat(data4);
-        this.anio_19= rendido
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2021))),
+        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2022))),
+      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13,
+      data14, data15, data16, data17, data18, data19, data20] ) => {
 
-        this.chartData[0].data  ={data0, data1, data2, data3, data4} as any
+        let rend0=+data0;
+        let rend1=+data1;
+        let rend2=+data2;
+        let rend3=+data3;
+        let rend4=+data4;
+        let transf5=+data5;
+        let transf6=+data6;
+        let transf7=+data7;
+        let transf8=+data8;
+        let transf9=+data9;
+        let transf10=+data10;
+        let transf11=+data11;
+        let transf12=+data12;
+        let transf13=+data13;
+        let transf14=+data14;
+        let transf15=+data15;
+        let transf16=+data16;
+        let transf17=+data17;
+        let transf18=+data18;
+        let transf19=+data19;
+        let transf20=+data20;
+
+        let sumarend=rend4;
+        let sumatr= transf5+transf6+transf7+transf8+transf9+transf10+transf11+transf12+transf13+transf14+transf15+transf16+transf17+transf18+transf19+transf20
+        this.porcentaje= Math.round((sumarend/sumatr)*100)
+        this.rendidoAcum= sumarend;
+        this.transfAcum= sumatr
+
+        this.chartData[0].data  =[rend0 , rend1, rend2, rend3];
+        this.chartData[1].data =[transf17, transf18, transf19, transf20]
         this.chart.update();
 
       });
