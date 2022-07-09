@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Rendicion } from '../components/interfaces/planificacio.interfaces';
+import { Prestacion, Rendicion } from '../components/interfaces/planificacio.interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,16 +16,20 @@ const httpOptions = {
 })
 export class PlanificacionService {
 
-  private apiUrl= 'http://localhost:5001';
+  private apiUrl = 'http://localhost:5001';
 
 
   constructor(private http: HttpClient) { }
 
 
-  obtenerRendicion():Observable<Rendicion[]>{
+  obtenerRendicion(): Observable<Rendicion[]> {
     return this.http.get<Rendicion[]>(`${this.apiUrl}/rendicion`);
 
   };
 
-  
+  obtenerPrestaciones(): Observable<Prestacion[]>{
+    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones`);
+  }
+
+
 }

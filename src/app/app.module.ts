@@ -9,6 +9,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { ChartRendicionComponent } from './components/chart-rendicion/chart-rendicion.component';
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 import { UsodefondosComponent } from './components/usodefondos/usodefondos.component';
+import { PrestEvolComponent } from './components/prest-evol/prest-evol.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { UsodefondosComponent } from './components/usodefondos/usodefondos.compo
     FilterPipe,
     ChartRendicionComponent,
     UsodefondosComponent,
+    PrestEvolComponent,
     
   ],
   imports: [

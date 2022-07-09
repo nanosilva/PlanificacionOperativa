@@ -34,7 +34,6 @@ export class RendicionComponent implements OnInit {
     anio_2021: 0,
     anio_2022: 0,
     acumulado:0,
-    
     fech_ult_expte:""
   }
   constructor(private datosPlanificacion: PlanificacionService) { }

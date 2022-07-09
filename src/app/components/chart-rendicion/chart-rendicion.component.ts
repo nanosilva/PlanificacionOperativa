@@ -50,6 +50,7 @@ export class ChartRendicionComponent implements OnInit {
   porcentaje!:number;
   rendidoAcum!: number;
   transfAcum!: number;
+  ultimoExte!: string;
   public chartData: ChartDataset[] = [
     {
       data: [], label: 'Rendición',      
@@ -133,6 +134,7 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2021))),
         this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2022))),
         this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.acumulado))),
+        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.fech_ult_expte))),
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2007))),
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2008))),
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2009))),
@@ -150,35 +152,36 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2021))),
         this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2022))),
       ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13,
-      data14, data15, data16, data17, data18, data19, data20] ) => {
+      data14, data15, data16, data17, data18, data19, data20, data21] ) => {
 
         let rend0=+data0;
         let rend1=+data1;
         let rend2=+data2;
         let rend3=+data3;
         let rend4=+data4;
-        let transf5=+data5;
-        let transf6=+data6;
-        let transf7=+data7;
-        let transf8=+data8;
-        let transf9=+data9;
-        let transf10=+data10;
-        let transf11=+data11;
-        let transf12=+data12;
-        let transf13=+data13;
-        let transf14=+data14;
-        let transf15=+data15;
-        let transf16=+data16;
-        let transf17=+data17;
-        let transf18=+data18;
-        let transf19=+data19;
-        let transf20=+data20;
+        let transf5=+data6;
+        let transf6=+data7;
+        let transf7=+data8;
+        let transf8=+data9;
+        let transf9=+data10;
+        let transf10=+data11;
+        let transf11=+data12;
+        let transf12=+data13;
+        let transf13=+data14;
+        let transf14=+data15;
+        let transf15=+data16;
+        let transf16=+data17;
+        let transf17=+data18;
+        let transf18=+data19;
+        let transf19=+data20;
+        let transf20=+data21;
 
         let sumarend=rend4;
         let sumatr= transf5+transf6+transf7+transf8+transf9+transf10+transf11+transf12+transf13+transf14+transf15+transf16+transf17+transf18+transf19+transf20
         this.porcentaje= Math.round((sumarend/sumatr)*100)
         this.rendidoAcum= sumarend;
-        this.transfAcum= sumatr
+        this.transfAcum= sumatr;
+        this.ultimoExte=data5 as any;
 
         this.chartData[0].data  =[rend0 , rend1, rend2, rend3];
         this.chartData[1].data =[transf17, transf18, transf19, transf20]
