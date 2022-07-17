@@ -10,6 +10,10 @@ import { ChartRendicionComponent } from './components/chart-rendicion/chart-rend
 import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 import { UsodefondosComponent } from './components/usodefondos/usodefondos.component';
 import { PrestEvolComponent } from './components/prest-evol/prest-evol.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { ChartPrestacionComponent } from './components/chart-prestacion/chart-prestacion.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +22,8 @@ import { PrestEvolComponent } from './components/prest-evol/prest-evol.component
     ChartRendicionComponent,
     UsodefondosComponent,
     PrestEvolComponent,
+    HomeComponent,
+    ChartPrestacionComponent,
     
   ],
   imports: [
@@ -26,6 +32,7 @@ import { PrestEvolComponent } from './components/prest-evol/prest-evol.component
     FormsModule,
     NgChartsModule,
     NgxBootstrapIconsModule.pick(allIcons),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

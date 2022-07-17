@@ -1,6 +1,6 @@
 <body>
-
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+<!-- 
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">Planificación - Sumar</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -14,8 +14,10 @@
                 <a class="nav-link px-3" href="#">Sign out</a>
             </div>
         </div>
-    </header>
-
+    </header>// --> -->
+    <br>
+    <br>
+    <br>
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -24,32 +26,32 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">
                                 <i-bs name="house-door-fill" style="color:black"></i-bs>
-                                Dashboard
+                                Home
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <i-bs name="file-earmark"></i-bs>
-                                Orders
+                                <i-bs name="cash-stack"></i-bs>
+                                Rendición
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <i-bs name="cart"></i-bs>
-                                Products
+                                <i-bs name="cash-coin"></i-bs>
+                                Transferencias
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i-bs name="person-dash">
+                            <a class="nav-link" routerLink="/grafico/prestaciones">
+                                <i-bs name="file-bar-graph">
                                 </i-bs>
-                                Customers
+                                Prestaciones
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <i-bs name="bar-chart"></i-bs>
-                                Reports
+                                <i-bs name="person"></i-bs>
+                               Inscriptos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -99,8 +101,7 @@
             </nav>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">{{municipio.municipio}}</h1>
                     <p>Rendición: {{porcentaje}} %<p>
                     <form>

@@ -3,9 +3,7 @@ import { ChartsService } from 'src/app/servicios/charts.service';
 import { ChartConfiguration, ChartData, ChartDataset, ChartDatasetProperties, ChartOptions, ChartType } from 'chart.js';
 import { Rendicion } from '../interfaces/planificacio.interfaces';
 import { forkJoin, map, Subscription, concatMap, concat } from 'rxjs';
-import { data } from 'autoprefixer';
 import { BaseChartDirective } from 'ng2-charts';
-import { valentine } from 'ngx-bootstrap-icons';
 
 
 @Component({

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Prestacion } from '../interfaces/planificacio.interfaces';
 import * as XLSX from 'xlsx'
-import { filter } from 'rxjs';
-import { FilterPipe } from 'src/app/filter.pipe';
 @Component({
   selector: 'app-prest-evol',
   templateUrl: './prest-evol.component.html',
