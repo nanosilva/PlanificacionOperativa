@@ -5,6 +5,7 @@ import { ChartRendicionComponent} from './components/chart-rendicion/chart-rendi
 import { HomeComponent } from './components/home/home.component';
 import { PrestEvolComponent } from './components/prest-evol/prest-evol.component';
 import { ChartPrestacionComponent } from './components/chart-prestacion/chart-prestacion.component';
+import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'grafico/rendicion', component: ChartRendicionComponent },
   { path: 'prestaciones', component: PrestEvolComponent },
   { path: 'grafico/prestaciones', component: ChartPrestacionComponent},
+  {path: 'grafico/prest-ge-cant', component: ChartPrestGeComponent},
   
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

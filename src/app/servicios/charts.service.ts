@@ -35,9 +35,15 @@ export class ChartsService {
   };
 
   public fromMunicipioP(municipio: any): Observable<any[]> {
-    return this.getPrestaciones().pipe(map(data => data.filter(m => m.municipio === municipio)));  
+    return this.getPrestaciones().pipe(map(data => data.filter(m => m.municipio === municipio))); 
+  }
+  public getPrestacionesgp(): Observable<any[]> {
+      return this.http.get<any[]>(`${this.apiUrl}/prestaciones_gp_2022q`);
+    };
+  
+    public fromMunicipioGp(municipio: any): Observable<any[]>{
+      return this.getPrestacionesgp().pipe(map(data => data.filter(m =>m.municipio ===municipio)));
+    }
 
 
-
-
-}}
+}

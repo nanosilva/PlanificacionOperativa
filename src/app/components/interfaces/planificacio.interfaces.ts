@@ -37,5 +37,16 @@ export interface Prestacion{
     anio_2021: number;
     anio_2022: number;
     total_ac: number;
-}
+};
+
+export interface Prestacion2022{
+    id: number;
+    cod_mun: string;
+    municipio: string;
+    ninos_05: number;
+    ninos_69: number;
+    adolescentes: number;
+    adultos: number;
+    emb:number;
+};
    

@@ -13,6 +13,7 @@ import { PrestEvolComponent } from './components/prest-evol/prest-evol.component
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ChartPrestacionComponent } from './components/chart-prestacion/chart-prestacion.component';
+import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ChartPrestacionComponent } from './components/chart-prestacion/chart-pr
     PrestEvolComponent,
     HomeComponent,
     ChartPrestacionComponent,
+    ChartPrestGeComponent,
     
   ],
   imports: [

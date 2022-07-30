@@ -7601,5 +7601,1232 @@
       "total_ac": ""
     }  
 
+  ],
+  "prestaciones_gp_2022q":[
+    {
+      "cod_mun": "R01-01",
+      "municipio": "Adolfo Alsina",
+      "ninos_05": 184,
+      "ninos_69": 46,
+      "adolescentes": 108,
+      "adultos": 623,
+      "emb": 3
+    },
+    {
+      "cod_mun": "R01-02",
+      "municipio": "Adolfo Gonzales Chaves",
+      "ninos_05": 111,
+      "ninos_69": 43,
+      "adolescentes": 173,
+      "adultos": 1168,
+      "emb": 174
+    },
+    {
+      "cod_mun": "R01-03",
+      "municipio": "Bahia Blanca",
+      "ninos_05": 4842,
+      "ninos_69": 1643,
+      "adolescentes": 4089,
+      "adultos": 27482,
+      "emb": 1893
+    },
+    {
+      "cod_mun": "R01-04",
+      "municipio": "Coronel Dorrego",
+      "ninos_05": 693,
+      "ninos_69": 140,
+      "adolescentes": 515,
+      "adultos": 3711,
+      "emb": 84
+    },
+    {
+      "cod_mun": "R01-05",
+      "municipio": "Coronel Pringles",
+      "ninos_05": 878,
+      "ninos_69": 674,
+      "adolescentes": 514,
+      "adultos": 2140,
+      "emb": 202
+    },
+    {
+      "cod_mun": "R01-06",
+      "municipio": "Coronel Rosales",
+      "ninos_05": 576,
+      "ninos_69": 161,
+      "adolescentes": 555,
+      "adultos": 3862,
+      "emb": 38
+    },
+    {
+      "cod_mun": "R01-07",
+      "municipio": "Coronel Suarez",
+      "ninos_05": 381,
+      "ninos_69": 129,
+      "adolescentes": 578,
+      "adultos": 2972,
+      "emb": 129
+    },
+    {
+      "cod_mun": "R01-08",
+      "municipio": "Guamini",
+      "ninos_05": 219,
+      "ninos_69": 137,
+      "adolescentes": 361,
+      "adultos": 1669,
+      "emb": 60
+    },
+    {
+      "cod_mun": "R01-09",
+      "municipio": "Monte Hermoso",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R01-10",
+      "municipio": "Patagones",
+      "ninos_05": 4824,
+      "ninos_69": 2362,
+      "adolescentes": 5134,
+      "adultos": 36033,
+      "emb": 1096
+    },
+    {
+      "cod_mun": "R01-11",
+      "municipio": "Puan",
+      "ninos_05": 59,
+      "ninos_69": 10,
+      "adolescentes": 32,
+      "adultos": 365,
+      "emb": 4
+    },
+    {
+      "cod_mun": "R01-12",
+      "municipio": "Saavedra",
+      "ninos_05": 127,
+      "ninos_69": 42,
+      "adolescentes": 271,
+      "adultos": 1432,
+      "emb": 6
+    },
+    {
+      "cod_mun": "R01-13",
+      "municipio": "Tornquist",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R01-14",
+      "municipio": "Tres Arroyos",
+      "ninos_05": 2112,
+      "ninos_69": 568,
+      "adolescentes": 860,
+      "adultos": 3195,
+      "emb": 203
+    },
+    {
+      "cod_mun": "R01-15",
+      "municipio": "Villarino",
+      "ninos_05": 569,
+      "ninos_69": 190,
+      "adolescentes": 413,
+      "adultos": 1600,
+      "emb": 98
+    },
+    {
+      "cod_mun": "R02-01",
+      "municipio": "Carlos Casares",
+      "ninos_05": 748,
+      "ninos_69": 501,
+      "adolescentes": 1902,
+      "adultos": 12702,
+      "emb": 39
+    },
+    {
+      "cod_mun": "R02-02",
+      "municipio": "Carlos Tejedor",
+      "ninos_05": 235,
+      "ninos_69": 41,
+      "adolescentes": 131,
+      "adultos": 602,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R02-03",
+      "municipio": "Daireaux",
+      "ninos_05": 248,
+      "ninos_69": 72,
+      "adolescentes": 510,
+      "adultos": 3181,
+      "emb": 54
+    },
+    {
+      "cod_mun": "R02-04",
+      "municipio": "General Villegas",
+      "ninos_05": 1103,
+      "ninos_69": 446,
+      "adolescentes": 1694,
+      "adultos": 9801,
+      "emb": 335
+    },
+    {
+      "cod_mun": "R02-05",
+      "municipio": "Hipolito Yrigoyen",
+      "ninos_05": 192,
+      "ninos_69": 60,
+      "adolescentes": 584,
+      "adultos": 2941,
+      "emb": 15
+    },
+    {
+      "cod_mun": "R02-06",
+      "municipio": "Nueve de Julio",
+      "ninos_05": 532,
+      "ninos_69": 147,
+      "adolescentes": 277,
+      "adultos": 590,
+      "emb": 132
+    },
+    {
+      "cod_mun": "R02-07",
+      "municipio": "Pehuajo",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R02-08",
+      "municipio": "Pellegrini",
+      "ninos_05": 192,
+      "ninos_69": 60,
+      "adolescentes": 150,
+      "adultos": 951,
+      "emb": 59
+    },
+    {
+      "cod_mun": "R02-09",
+      "municipio": "Rivadavia",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R02-10",
+      "municipio": "Salliquelo",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R02-11",
+      "municipio": "Trenque Lauquen",
+      "ninos_05": 1709,
+      "ninos_69": 594,
+      "adolescentes": 1769,
+      "adultos": 9352,
+      "emb": 573
+    },
+    {
+      "cod_mun": "R02-12",
+      "municipio": "Tres Lomas",
+      "ninos_05": 222,
+      "ninos_69": 54,
+      "adolescentes": 67,
+      "adultos": 821,
+      "emb": 38
+    },
+    {
+      "cod_mun": "R03-01",
+      "municipio": "Chacabuco",
+      "ninos_05": 295,
+      "ninos_69": 82,
+      "adolescentes": 291,
+      "adultos": 1198,
+      "emb": 145
+    },
+    {
+      "cod_mun": "R03-02",
+      "municipio": "Florentino Ameghino",
+      "ninos_05": 70,
+      "ninos_69": 16,
+      "adolescentes": 136,
+      "adultos": 574,
+      "emb": 6
+    },
+    {
+      "cod_mun": "R03-03",
+      "municipio": "General Arenales",
+      "ninos_05": 21,
+      "ninos_69": 25,
+      "adolescentes": 59,
+      "adultos": 476,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R03-04",
+      "municipio": "General Pinto",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R03-05",
+      "municipio": "General Viamonte",
+      "ninos_05": 170,
+      "ninos_69": 67,
+      "adolescentes": 76,
+      "adultos": 352,
+      "emb": 7
+    },
+    {
+      "cod_mun": "R03-06",
+      "municipio": "Junin",
+      "ninos_05": 1179,
+      "ninos_69": 165,
+      "adolescentes": 328,
+      "adultos": 1723,
+      "emb": 270
+    },
+    {
+      "cod_mun": "R03-07",
+      "municipio": "Leandro N. Alem",
+      "ninos_05": 571,
+      "ninos_69": 117,
+      "adolescentes": 637,
+      "adultos": 4474,
+      "emb": 257
+    },
+    {
+      "cod_mun": "R03-08",
+      "municipio": "Lincoln",
+      "ninos_05": 1201,
+      "ninos_69": 365,
+      "adolescentes": 1057,
+      "adultos": 7086,
+      "emb": 277
+    },
+    {
+      "cod_mun": "R04-01",
+      "municipio": "Arrecifes",
+      "ninos_05": 731,
+      "ninos_69": 80,
+      "adolescentes": 375,
+      "adultos": 2114,
+      "emb": 139
+    },
+    {
+      "cod_mun": "R04-02",
+      "municipio": "Baradero",
+      "ninos_05": 506,
+      "ninos_69": 98,
+      "adolescentes": 971,
+      "adultos": 3981,
+      "emb": 125
+    },
+    {
+      "cod_mun": "R04-03",
+      "municipio": "Capitan Sarmiento",
+      "ninos_05": 65,
+      "ninos_69": 19,
+      "adolescentes": 52,
+      "adultos": 437,
+      "emb": 5
+    },
+    {
+      "cod_mun": "R04-04",
+      "municipio": "Carmen de Areco",
+      "ninos_05": 260,
+      "ninos_69": 51,
+      "adolescentes": 151,
+      "adultos": 895,
+      "emb": 373
+    },
+    {
+      "cod_mun": "R04-05",
+      "municipio": "Colon",
+      "ninos_05": 414,
+      "ninos_69": 91,
+      "adolescentes": 98,
+      "adultos": 701,
+      "emb": 81
+    },
+    {
+      "cod_mun": "R04-06",
+      "municipio": "Pergamino",
+      "ninos_05": 6160,
+      "ninos_69": 1545,
+      "adolescentes": 3078,
+      "adultos": 17994,
+      "emb": 823
+    },
+    {
+      "cod_mun": "R04-07",
+      "municipio": "Ramallo",
+      "ninos_05": 1527,
+      "ninos_69": 316,
+      "adolescentes": 1068,
+      "adultos": 5437,
+      "emb": 97
+    },
+    {
+      "cod_mun": "R04-08",
+      "municipio": "Rojas",
+      "ninos_05": 614,
+      "ninos_69": 114,
+      "adolescentes": 456,
+      "adultos": 3154,
+      "emb": 60
+    },
+    {
+      "cod_mun": "R04-09",
+      "municipio": "Salto",
+      "ninos_05": 396,
+      "ninos_69": 85,
+      "adolescentes": 369,
+      "adultos": 2345,
+      "emb": 164
+    },
+    {
+      "cod_mun": "R04-10",
+      "municipio": "San Andres de Giles",
+      "ninos_05": 2606,
+      "ninos_69": 760,
+      "adolescentes": 1622,
+      "adultos": 4043,
+      "emb": 337
+    },
+    {
+      "cod_mun": "R04-11",
+      "municipio": "San Antonio de Areco",
+      "ninos_05": 947,
+      "ninos_69": 231,
+      "adolescentes": 2160,
+      "adultos": 28448,
+      "emb": 63
+    },
+    {
+      "cod_mun": "R04-12",
+      "municipio": "San Nicolas",
+      "ninos_05": 2280,
+      "ninos_69": 381,
+      "adolescentes": 1015,
+      "adultos": 6236,
+      "emb": 212
+    },
+    {
+      "cod_mun": "R04-13",
+      "municipio": "San Pedro",
+      "ninos_05": 6849,
+      "ninos_69": 1434,
+      "adolescentes": 5884,
+      "adultos": 48329,
+      "emb": 1007
+    },
+    {
+      "cod_mun": "R05-01",
+      "municipio": "Campana",
+      "ninos_05": 1837,
+      "ninos_69": 340,
+      "adolescentes": 1151,
+      "adultos": 7185,
+      "emb": 379
+    },
+    {
+      "cod_mun": "R05-02",
+      "municipio": "Escobar",
+      "ninos_05": 6925,
+      "ninos_69": 1619,
+      "adolescentes": 7242,
+      "adultos": 48246,
+      "emb": 1090
+    },
+    {
+      "cod_mun": "R05-03",
+      "municipio": "Exaltacion de la Cruz",
+      "ninos_05": 575,
+      "ninos_69": 154,
+      "adolescentes": 926,
+      "adultos": 6401,
+      "emb": 395
+    },
+    {
+      "cod_mun": "R05-04",
+      "municipio": "General San Martin",
+      "ninos_05": 3641,
+      "ninos_69": 1189,
+      "adolescentes": 3706,
+      "adultos": 26281,
+      "emb": 1501
+    },
+    {
+      "cod_mun": "R05-05",
+      "municipio": "Jose C. Paz",
+      "ninos_05": 5817,
+      "ninos_69": 1207,
+      "adolescentes": 5015,
+      "adultos": 47587,
+      "emb": 5668
+    },
+    {
+      "cod_mun": "R05-06",
+      "municipio": "Malvinas Argentinas",
+      "ninos_05": 4397,
+      "ninos_69": 1985,
+      "adolescentes": 3793,
+      "adultos": 14033,
+      "emb": 783
+    },
+    {
+      "cod_mun": "R05-07",
+      "municipio": "Pilar",
+      "ninos_05": 4408,
+      "ninos_69": 1841,
+      "adolescentes": 10573,
+      "adultos": 74223,
+      "emb": 864
+    },
+    {
+      "cod_mun": "R05-08",
+      "municipio": "San Fernando",
+      "ninos_05": 1440,
+      "ninos_69": 990,
+      "adolescentes": 2226,
+      "adultos": 19469,
+      "emb": 174
+    },
+    {
+      "cod_mun": "R05-09",
+      "municipio": "San Isidro",
+      "ninos_05": 1876,
+      "ninos_69": 640,
+      "adolescentes": 1390,
+      "adultos": 3985,
+      "emb": 369
+    },
+    {
+      "cod_mun": "R05-10",
+      "municipio": "San Miguel",
+      "ninos_05": 24806,
+      "ninos_69": 7714,
+      "adolescentes": 15563,
+      "adultos": 84864,
+      "emb": 5344
+    },
+    {
+      "cod_mun": "R05-11",
+      "municipio": "Tigre",
+      "ninos_05": 17177,
+      "ninos_69": 3960,
+      "adolescentes": 8546,
+      "adultos": 43026,
+      "emb": 4037
+    },
+    {
+      "cod_mun": "R05-12",
+      "municipio": "Vicente Lopez",
+      "ninos_05": 3260,
+      "ninos_69": 1341,
+      "adolescentes": 2493,
+      "adultos": 20495,
+      "emb": 1350
+    },
+    {
+      "cod_mun": "R05-13",
+      "municipio": "Zarate",
+      "ninos_05": 3572,
+      "ninos_69": 904,
+      "adolescentes": 1866,
+      "adultos": 10548,
+      "emb": 1191
+    },
+    {
+      "cod_mun": "R06-01",
+      "municipio": "Almirante Brown",
+      "ninos_05": 3289,
+      "ninos_69": 467,
+      "adolescentes": 2762,
+      "adultos": 19044,
+      "emb": 576
+    },
+    {
+      "cod_mun": "R06-02",
+      "municipio": "Avellaneda",
+      "ninos_05": 2174,
+      "ninos_69": 539,
+      "adolescentes": 1058,
+      "adultos": 5261,
+      "emb": 237
+    },
+    {
+      "cod_mun": "R06-03",
+      "municipio": "Berazategui",
+      "ninos_05": 10030,
+      "ninos_69": 2981,
+      "adolescentes": 7124,
+      "adultos": 66083,
+      "emb": 2355
+    },
+    {
+      "cod_mun": "R06-04",
+      "municipio": "Esteban Echeverria",
+      "ninos_05": 1285,
+      "ninos_69": 387,
+      "adolescentes": 2839,
+      "adultos": 20371,
+      "emb": 1751
+    },
+    {
+      "cod_mun": "R06-05",
+      "municipio": "Ezeiza",
+      "ninos_05": 3754,
+      "ninos_69": 736,
+      "adolescentes": 1390,
+      "adultos": 5831,
+      "emb": 1130
+    },
+    {
+      "cod_mun": "R06-06",
+      "municipio": "Florencio Varela",
+      "ninos_05": 5261,
+      "ninos_69": 447,
+      "adolescentes": 1242,
+      "adultos": 7024,
+      "emb": 1901
+    },
+    {
+      "cod_mun": "R06-07",
+      "municipio": "Lanus",
+      "ninos_05": 2388,
+      "ninos_69": 333,
+      "adolescentes": 957,
+      "adultos": 3829,
+      "emb": 510
+    },
+    {
+      "cod_mun": "R06-08",
+      "municipio": "Lomas de Zamora",
+      "ninos_05": 6152,
+      "ninos_69": 1992,
+      "adolescentes": 4216,
+      "adultos": 23173,
+      "emb": 1686
+    },
+    {
+      "cod_mun": "R06-09",
+      "municipio": "Quilmes",
+      "ninos_05": 6709,
+      "ninos_69": 1603,
+      "adolescentes": 4481,
+      "adultos": 25156,
+      "emb": 2871
+    },
+    {
+      "cod_mun": "R07-01",
+      "municipio": "General Las Heras",
+      "ninos_05": 630,
+      "ninos_69": 253,
+      "adolescentes": 593,
+      "adultos": 4431,
+      "emb": 201
+    },
+    {
+      "cod_mun": "R07-02",
+      "municipio": "General Rodriguez",
+      "ninos_05": 1679,
+      "ninos_69": 477,
+      "adolescentes": 1511,
+      "adultos": 9111,
+      "emb": 701
+    },
+    {
+      "cod_mun": "R07-03",
+      "municipio": "Hurlingham",
+      "ninos_05": 1279,
+      "ninos_69": 612,
+      "adolescentes": 2149,
+      "adultos": 16771,
+      "emb": 145
+    },
+    {
+      "cod_mun": "R07-04",
+      "municipio": "Ituzaingo",
+      "ninos_05": 1251,
+      "ninos_69": 437,
+      "adolescentes": 769,
+      "adultos": 5900,
+      "emb": 121
+    },
+    {
+      "cod_mun": "R07-05",
+      "municipio": "Lujan",
+      "ninos_05": 355,
+      "ninos_69": 161,
+      "adolescentes": 553,
+      "adultos": 4632,
+      "emb": 796
+    },
+    {
+      "cod_mun": "R07-06",
+      "municipio": "Marcos Paz",
+      "ninos_05": 897,
+      "ninos_69": 175,
+      "adolescentes": 750,
+      "adultos": 5920,
+      "emb": 319
+    },
+    {
+      "cod_mun": "R07-07",
+      "municipio": "Merlo",
+      "ninos_05": 7770,
+      "ninos_69": 1463,
+      "adolescentes": 5684,
+      "adultos": 31250,
+      "emb": 4647
+    },
+    {
+      "cod_mun": "R07-08",
+      "municipio": "Moreno",
+      "ninos_05": 3233,
+      "ninos_69": 698,
+      "adolescentes": 2953,
+      "adultos": 19010,
+      "emb": 2626
+    },
+    {
+      "cod_mun": "R07-09",
+      "municipio": "Moron",
+      "ninos_05": 1721,
+      "ninos_69": 415,
+      "adolescentes": 1319,
+      "adultos": 8147,
+      "emb": 602
+    },
+    {
+      "cod_mun": "R07-10",
+      "municipio": "Tres de Febrero",
+      "ninos_05": 6720,
+      "ninos_69": 2144,
+      "adolescentes": 5250,
+      "adultos": 24923,
+      "emb": 862
+    },
+    {
+      "cod_mun": "R08-01",
+      "municipio": "Ayacucho",
+      "ninos_05": 364,
+      "ninos_69": 175,
+      "adolescentes": 577,
+      "adultos": 2546,
+      "emb": 372
+    },
+    {
+      "cod_mun": "R08-02",
+      "municipio": "Balcarce",
+      "ninos_05": 1468,
+      "ninos_69": 323,
+      "adolescentes": 1045,
+      "adultos": 7853,
+      "emb": 216
+    },
+    {
+      "cod_mun": "R08-03",
+      "municipio": "General Alvarado",
+      "ninos_05": 542,
+      "ninos_69": 132,
+      "adolescentes": 686,
+      "adultos": 4698,
+      "emb": 65
+    },
+    {
+      "cod_mun": "R08-04",
+      "municipio": "General Guido",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R08-05",
+      "municipio": "General Lavalle",
+      "ninos_05": 11,
+      "ninos_69": 2,
+      "adolescentes": 0,
+      "adultos": 3,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R08-06",
+      "municipio": "General Madariaga",
+      "ninos_05": 923,
+      "ninos_69": 463,
+      "adolescentes": 975,
+      "adultos": 6049,
+      "emb": 225
+    },
+    {
+      "cod_mun": "R08-07",
+      "municipio": "General Pueyrredon",
+      "ninos_05": 5904,
+      "ninos_69": 1242,
+      "adolescentes": 4949,
+      "adultos": 23197,
+      "emb": 1445
+    },
+    {
+      "cod_mun": "R08-08",
+      "municipio": "La Costa",
+      "ninos_05": 885,
+      "ninos_69": 512,
+      "adolescentes": 1048,
+      "adultos": 7435,
+      "emb": 191
+    },
+    {
+      "cod_mun": "R08-09",
+      "municipio": "Loberia",
+      "ninos_05": 191,
+      "ninos_69": 61,
+      "adolescentes": 215,
+      "adultos": 5136,
+      "emb": 8
+    },
+    {
+      "cod_mun": "R08-10",
+      "municipio": "Maipu",
+      "ninos_05": 938,
+      "ninos_69": 511,
+      "adolescentes": 1161,
+      "adultos": 11302,
+      "emb": 873
+    },
+    {
+      "cod_mun": "R08-11",
+      "municipio": "Mar Chiquita",
+      "ninos_05": 119,
+      "ninos_69": 45,
+      "adolescentes": 145,
+      "adultos": 771,
+      "emb": 3
+    },
+    {
+      "cod_mun": "R08-12",
+      "municipio": "Necochea",
+      "ninos_05": 2079,
+      "ninos_69": 475,
+      "adolescentes": 1364,
+      "adultos": 7129,
+      "emb": 1328
+    },
+    {
+      "cod_mun": "R08-13",
+      "municipio": "Pinamar",
+      "ninos_05": 768,
+      "ninos_69": 149,
+      "adolescentes": 349,
+      "adultos": 1392,
+      "emb": 307
+    },
+    {
+      "cod_mun": "R08-14",
+      "municipio": "San Cayetano",
+      "ninos_05": 1765,
+      "ninos_69": 773,
+      "adolescentes": 1546,
+      "adultos": 7207,
+      "emb": 62
+    },
+    {
+      "cod_mun": "R08-15",
+      "municipio": "Tandil",
+      "ninos_05": 2792,
+      "ninos_69": 839,
+      "adolescentes": 2026,
+      "adultos": 13809,
+      "emb": 384
+    },
+    {
+      "cod_mun": "R08-16",
+      "municipio": "Villa Gesell",
+      "ninos_05": 1769,
+      "ninos_69": 715,
+      "adolescentes": 2104,
+      "adultos": 15088,
+      "emb": 828
+    },
+    {
+      "cod_mun": "R09-01",
+      "municipio": "Azul",
+      "ninos_05": 216,
+      "ninos_69": 64,
+      "adolescentes": 228,
+      "adultos": 2048,
+      "emb": 130
+    },
+    {
+      "cod_mun": "R09-02",
+      "municipio": "Benito Juarez",
+      "ninos_05": 261,
+      "ninos_69": 117,
+      "adolescentes": 454,
+      "adultos": 2518,
+      "emb": 277
+    },
+    {
+      "cod_mun": "R09-03",
+      "municipio": "Bolivar",
+      "ninos_05": 410,
+      "ninos_69": 97,
+      "adolescentes": 475,
+      "adultos": 3321,
+      "emb": 134
+    },
+    {
+      "cod_mun": "R09-04",
+      "municipio": "General Alvear",
+      "ninos_05": 97,
+      "ninos_69": 37,
+      "adolescentes": 253,
+      "adultos": 1486,
+      "emb": 3
+    },
+    {
+      "cod_mun": "R09-05",
+      "municipio": "General La Madrid",
+      "ninos_05": 155,
+      "ninos_69": 15,
+      "adolescentes": 32,
+      "adultos": 426,
+      "emb": 42
+    },
+    {
+      "cod_mun": "R09-06",
+      "municipio": "Laprida",
+      "ninos_05": 334,
+      "ninos_69": 150,
+      "adolescentes": 292,
+      "adultos": 1814,
+      "emb": 196
+    },
+    {
+      "cod_mun": "R09-07",
+      "municipio": "Las Flores",
+      "ninos_05": 190,
+      "ninos_69": 102,
+      "adolescentes": 272,
+      "adultos": 2016,
+      "emb": 166
+    },
+    {
+      "cod_mun": "R09-08",
+      "municipio": "Olavarria",
+      "ninos_05": 3189,
+      "ninos_69": 1085,
+      "adolescentes": 3858,
+      "adultos": 27159,
+      "emb": 883
+    },
+    {
+      "cod_mun": "R09-09",
+      "municipio": "Rauch",
+      "ninos_05": 172,
+      "ninos_69": 58,
+      "adolescentes": 211,
+      "adultos": 1405,
+      "emb": 26
+    },
+    {
+      "cod_mun": "R09-10",
+      "municipio": "Tapalque",
+      "ninos_05": 267,
+      "ninos_69": 77,
+      "adolescentes": 366,
+      "adultos": 2203,
+      "emb": 79
+    },
+    {
+      "cod_mun": "R10-01",
+      "municipio": "Alberti",
+      "ninos_05": 83,
+      "ninos_69": 30,
+      "adolescentes": 80,
+      "adultos": 519,
+      "emb": 91
+    },
+    {
+      "cod_mun": "R10-02",
+      "municipio": "Bragado",
+      "ninos_05": 639,
+      "ninos_69": 175,
+      "adolescentes": 703,
+      "adultos": 4734,
+      "emb": 355
+    },
+    {
+      "cod_mun": "R10-03",
+      "municipio": "Chivilcoy",
+      "ninos_05": 1043,
+      "ninos_69": 467,
+      "adolescentes": 1019,
+      "adultos": 6445,
+      "emb": 267
+    },
+    {
+      "cod_mun": "R10-04",
+      "municipio": "Lobos",
+      "ninos_05": 687,
+      "ninos_69": 339,
+      "adolescentes": 695,
+      "adultos": 9955,
+      "emb": 198
+    },
+    {
+      "cod_mun": "R10-05",
+      "municipio": "Mercedes",
+      "ninos_05": 679,
+      "ninos_69": 103,
+      "adolescentes": 278,
+      "adultos": 1516,
+      "emb": 193
+    },
+    {
+      "cod_mun": "R10-06",
+      "municipio": "Navarro",
+      "ninos_05": 205,
+      "ninos_69": 58,
+      "adolescentes": 239,
+      "adultos": 1634,
+      "emb": 43
+    },
+    {
+      "cod_mun": "R10-07",
+      "municipio": "Roque Perez",
+      "ninos_05": 104,
+      "ninos_69": 64,
+      "adolescentes": 167,
+      "adultos": 1010,
+      "emb": 9
+    },
+    {
+      "cod_mun": "R10-08",
+      "municipio": "Saladillo",
+      "ninos_05": 166,
+      "ninos_69": 42,
+      "adolescentes": 116,
+      "adultos": 1141,
+      "emb": 86
+    },
+    {
+      "cod_mun": "R10-09",
+      "municipio": "Suipacha",
+      "ninos_05": 131,
+      "ninos_69": 20,
+      "adolescentes": 110,
+      "adultos": 660,
+      "emb": 3
+    },
+    {
+      "cod_mun": "R10-10",
+      "municipio": "Veinticinco de Mayo",
+      "ninos_05": 350,
+      "ninos_69": 55,
+      "adolescentes": 285,
+      "adultos": 2328,
+      "emb": 123
+    },
+    {
+      "cod_mun": "R11-01",
+      "municipio": "Berisso",
+      "ninos_05": 768,
+      "ninos_69": 383,
+      "adolescentes": 718,
+      "adultos": 4333,
+      "emb": 186
+    },
+    {
+      "cod_mun": "R11-02",
+      "municipio": "Brandsen",
+      "ninos_05": 3166,
+      "ninos_69": 860,
+      "adolescentes": 887,
+      "adultos": 2758,
+      "emb": 96
+    },
+    {
+      "cod_mun": "R11-03",
+      "municipio": "Canuelas",
+      "ninos_05": 949,
+      "ninos_69": 411,
+      "adolescentes": 1262,
+      "adultos": 5996,
+      "emb": 145
+    },
+    {
+      "cod_mun": "R11-04",
+      "municipio": "Castelli",
+      "ninos_05": 110,
+      "ninos_69": 17,
+      "adolescentes": 129,
+      "adultos": 1384,
+      "emb": 11
+    },
+    {
+      "cod_mun": "R11-05",
+      "municipio": "Chascomus",
+      "ninos_05": 288,
+      "ninos_69": 106,
+      "adolescentes": 231,
+      "adultos": 1332,
+      "emb": 72
+    },
+    {
+      "cod_mun": "R11-06",
+      "municipio": "Dolores",
+      "ninos_05": 155,
+      "ninos_69": 25,
+      "adolescentes": 154,
+      "adultos": 1256,
+      "emb": 57
+    },
+    {
+      "cod_mun": "R11-07",
+      "municipio": "Ensenada",
+      "ninos_05": 147,
+      "ninos_69": 33,
+      "adolescentes": 38,
+      "adultos": 308,
+      "emb": 42
+    },
+    {
+      "cod_mun": "R11-08",
+      "municipio": "General Belgrano",
+      "ninos_05": 44,
+      "ninos_69": 38,
+      "adolescentes": 230,
+      "adultos": 1894,
+      "emb": 19
+    },
+    {
+      "cod_mun": "R11-09",
+      "municipio": "General Paz",
+      "ninos_05": 702,
+      "ninos_69": 316,
+      "adolescentes": 764,
+      "adultos": 3517,
+      "emb": 150
+    },
+    {
+      "cod_mun": "R11-10",
+      "municipio": "La Plata",
+      "ninos_05": 8976,
+      "ninos_69": 1234,
+      "adolescentes": 4494,
+      "adultos": 19663,
+      "emb": 2538
+    },
+    {
+      "cod_mun": "R11-11",
+      "municipio": "Lezama",
+      "ninos_05": 53,
+      "ninos_69": 10,
+      "adolescentes": 40,
+      "adultos": 230,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R11-12",
+      "municipio": "Magdalena",
+      "ninos_05": 99,
+      "ninos_69": 28,
+      "adolescentes": 140,
+      "adultos": 1041,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R11-13",
+      "municipio": "Monte",
+      "ninos_05": 65,
+      "ninos_69": 27,
+      "adolescentes": 267,
+      "adultos": 1502,
+      "emb": 80
+    },
+    {
+      "cod_mun": "R11-14",
+      "municipio": "Pila",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R11-15",
+      "municipio": "Presidente Peron",
+      "ninos_05": 1663,
+      "ninos_69": 133,
+      "adolescentes": 304,
+      "adultos": 1220,
+      "emb": 343
+    },
+    {
+      "cod_mun": "R11-16",
+      "municipio": "Punta Indio",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R11-17",
+      "municipio": "San Vicente",
+      "ninos_05": 2162,
+      "ninos_69": 340,
+      "adolescentes": 1542,
+      "adultos": 10766,
+      "emb": 936
+    },
+    {
+      "cod_mun": "R11-18",
+      "municipio": "Tordillo",
+      "ninos_05": 0,
+      "ninos_69": 0,
+      "adolescentes": 0,
+      "adultos": 0,
+      "emb": 0
+    },
+    {
+      "cod_mun": "R12-01",
+      "municipio": "La Matanza",
+      "ninos_05": 8955,
+      "ninos_69": 1125,
+      "adolescentes": 4171,
+      "adultos": 19478,
+      "emb": 1504
+    },
+    {
+      "cod_mun": "total",
+      "municipio": "",
+      "ninos_05": 252124,
+      "ninos_69": 69024,
+      "adolescentes": 196354,
+      "adultos": 1244031,
+      "emb": 72655
+    }
+  
   ]
 }
