@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild ,Input} from '@angular/core';
 import { ChartConfiguration, ChartData, ChartDataset, ChartOptions, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { forkJoin, map, Subscription } from 'rxjs';
@@ -12,6 +12,8 @@ import { Prestacion, Prestacion2022 } from '../interfaces/planificacio.interface
 })
 export class ChartPrestGeComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
+  @Input()
+  municipio!: string
   private sub!: Subscription;
 
 
@@ -59,7 +61,7 @@ export class ChartPrestGeComponent implements OnInit {
  public pieChartOptions: ChartOptions<'pie'> = {
   responsive: false,
 };
-public pieChartLabels =  [ [ '0-5 años'], [ '0-9 años'], ['Adolescentes'],['Adultos'],['Embarazadas'] ];
+public pieChartLabels =  [  '0-5 años', [ '0-9 años'], ['Adolescentes'],['Adultos'],['Embarazadas'] ];
 public pieChartDatasets :any= [ {
   data: [],
 } ];
@@ -107,6 +109,7 @@ public pieChartLegend = true;
 
     };
   }
+ 
 }
 
 

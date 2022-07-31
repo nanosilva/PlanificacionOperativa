@@ -46,15 +46,11 @@
                                 </i-bs>
                                 Prestaciones
                                 <a class="nav-link" routerLink="/grafico/prest-ge-cant">
-                                    <i-bs name="file-bar-graph">
+                                    <i-bs name="caret-right">
                                     </i-bs>
-                                    Cantidad x Grupo Etario
+                                    Grupo Etario
                                 </a>
-                                <a class="nav-link" routerLink="/grafico/prestaciones">
-                                    <i-bs name="file-bar-graph">
-                                    </i-bs>
-                                    Monto x Grupo Etario
-                                </a>
+
                             </a>
                         </li>
                         <li class="nav-item">
@@ -142,11 +138,8 @@
                     </div>
 
                     <div class="container">
-                        <canvas baseChart width="1000" height="400" 
-                        [type]="'line'" 
-                        [datasets]="chartData"
-                        [options]="options" 
-                        [labels]="label">
+                        <canvas baseChart width="1000" height="400" [type]="'line'" [datasets]="chartData"
+                            [options]="options" [labels]="label">
                         </canvas>
                     </div>
                     <div class="container mt-4">

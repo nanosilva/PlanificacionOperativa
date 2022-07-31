@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output } from '@angular/core';
 import { ChartDataset, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { forkJoin, map, Subscription } from 'rxjs';
@@ -13,6 +13,7 @@ import { Prestacion, Rendicion } from '../interfaces/planificacio.interfaces';
 export class ChartPrestacionComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
   private sub!: Subscription;
+  
 
 
   title = 'ng2-charts-demo';
