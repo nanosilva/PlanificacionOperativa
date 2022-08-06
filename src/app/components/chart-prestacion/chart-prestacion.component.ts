@@ -15,7 +15,7 @@ export class ChartPrestacionComponent implements OnInit {
   private sub!: Subscription;
   
 
-
+  selectedmunicipio$= this.chartService.selectedmunicipio$;
   title = 'ng2-charts-demo';
   muni_n!: any[];
   prestacionList!: Prestacion[];
@@ -36,13 +36,13 @@ export class ChartPrestacionComponent implements OnInit {
     total_ac: 0,
 
   }
-
- 
   
   porcentaje!: number;
   prestAcum!: number;
   transfAcum!: number;
   ultimoExte!: string;
+  selectedMunicipio$= this.chartService.selectedmunicipio$;
+  
   public chartData: ChartDataset[] = [
     {
       data: [], label: 'Prestaciones',
@@ -66,14 +66,16 @@ export class ChartPrestacionComponent implements OnInit {
   }
 
 
-  constructor(private chartService: ChartsService) { }
+  constructor(public chartService: ChartsService) { }
 
   ngOnInit(): void {
     this.chartService.getPrestaciones().subscribe(data => {
       this.prestacionList = data;
-      console.log(data)
+      console.log( data)
+     
+      
     })
-
+   
 
   };
   
@@ -103,5 +105,11 @@ export class ChartPrestacionComponent implements OnInit {
       });
 
     };
+    
+    
+
   }
+  
+ 
+  
 }

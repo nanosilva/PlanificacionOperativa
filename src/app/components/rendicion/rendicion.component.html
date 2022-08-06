@@ -1,69 +1,71 @@
-<div class="container">
-  <h2 class="container bg-ligth text-black text-center my-3 py-5 ">Rendición de fondos</h2>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="container">
+    <h3 class="text-center text-white bg-dark py-2 ">Rendición de Fondos </h3>
   </div>
-<div class="container">
-  <div class="row">
-    <div class="col-3">
-      <div class="form group">
-        <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
-          [(ngModel)]="filterPost">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="form group">
+          <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
+            [(ngModel)]="filterPost">
+        </div>
+      </div>
+
+      <div class="col-7 container bg-secondary text-white text-center pt-1">Años</div>
+
+      <div class="col-2">
+        <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
+          <i-bs name="download"></i-bs> Excel
+        </button>
+
       </div>
     </div>
-
-    <div class="col-7 container bg-secondary text-white text-center pt-1">Años</div>
-
-    <div class="col-2">
-      <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
-        <i-bs name="download"></i-bs>  Excel
-      </button>
-
+    <div class="table responsive-md">
+      <table class="table table-striped table-hover" id="rend-tabla">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Código Municipio</th>
+            <th scope="col">Municipio</th>
+            <th scope="col">2019</th>
+            <th scope="col">2020</th>
+            <th scope="col">2021</th>
+            <th scope="col">2022</th>
+            <th scope="col">Total 2008-2022</th>
+            <th scope="col">Ultimo Expediente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rendicion of rendicionList | filter:filterPost; index as i ">
+            <th scope="row">{{i+1}}</th>
+            <td>{{rendicion.cod_mun}}</td>
+            <td>{{rendicion.municipio}}</td>
+            <td>{{rendicion.anio_2019|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.fech_ult_expte }}</td>
+          </tr>
+          <hr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <div class="container">Total:{{total|currency:'$ ':'symbol':'1.0-0'}}</div>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <div class="table responsive-md">
-    <table class="table table-striped table-hover" id="rend-tabla">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Código Municipio</th>
-          <th scope="col">Municipio</th>
-          <th scope="col">2019</th>
-          <th scope="col">2020</th>
-          <th scope="col">2021</th>
-          <th scope="col">2022</th>
-          <th scope="col">Total 2008-2022</th>
-          <th scope="col">Ultimo Expediente</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let rendicion of rendicionList | filter:filterPost; index as i ">
-          <th scope="row">{{i+1}}</th>
-          <td>{{rendicion.cod_mun}}</td>
-          <td>{{rendicion.municipio}}</td>
-          <td>{{rendicion.anio_2019|currency:'$ ':'symbol':'1.0-0'}}</td>
-          <td>{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
-          <td>{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
-          <td>{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
-          <td>{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
-          <td>{{rendicion.fech_ult_expte }}</td>
-        </tr>
-        <hr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <div class="container">Total:{{total|currency:'$ ':'symbol':'1.0-0'}}</div>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="container">
-  <button class="btn btn-primary" (click)="sumaColumna()">Total</button>
+  <div class="container">
+    <button class="btn btn-primary" (click)="sumaColumna()">Total</button>
 
-</div>
+  </div>
+</main>

@@ -49,4 +49,9 @@ export interface Prestacion2022{
     adultos: number;
     emb:number;
 };
+export interface municipio{
+    id: number;
+    cod_mun: string;
+    nombre: string;
+}
    

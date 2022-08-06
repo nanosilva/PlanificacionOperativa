@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartsService } from 'src/app/servicios/charts.service';
 import { ChartConfiguration, ChartData, ChartDataset, ChartDatasetProperties, ChartOptions, ChartType } from 'chart.js';
-import { Rendicion } from '../interfaces/planificacio.interfaces';
+import { municipio, Rendicion } from '../interfaces/planificacio.interfaces';
 import { forkJoin, map, Subscription, concatMap, concat } from 'rxjs';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -49,6 +49,8 @@ export class ChartRendicionComponent implements OnInit {
   rendidoAcum!: number;
   transfAcum!: number;
   ultimoExte!: string;
+  selectedMunicipio!: string;
+
   public chartData: ChartDataset[] = [
     {
       data: [], label: 'Rendición',      
@@ -83,22 +85,23 @@ export class ChartRendicionComponent implements OnInit {
   ngOnInit(): void {
     this.chartService.getRendicion().subscribe(data => {
       this.municipios = data;
-
+      console.log(this.municipios, this.selectedMunicipio);
+    this.chartService.selectedmunicipio$.subscribe(data1=>{
+      this.selectedMunicipio= data1
+    })  
       //this.chartService.fromMunicipio(this.municipio.municipio).subscribe(res => {
       //res.filter(m => m.municipio === this.municipio.municipio)
       // console.log(res)
       // }
       // )
-
       this.getMuni();
       this.getRendido();
-
       this.chartService.getTransferencias().subscribe(data =>{
         this.municipios = data;
         console.log(this.municipios)
       })
 
-    });
+    })
   };
 
   getRendido(): void {
@@ -199,5 +202,6 @@ export class ChartRendicionComponent implements OnInit {
 
       console.log(this.chartData[0], this.chartData[1]);
     }
+    
   }
 };

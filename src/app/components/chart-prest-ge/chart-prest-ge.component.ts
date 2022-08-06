@@ -12,11 +12,10 @@ import { Prestacion, Prestacion2022 } from '../interfaces/planificacio.interface
 })
 export class ChartPrestGeComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
-  @Input()
-  municipio!: string
   private sub!: Subscription;
 
-
+  selectedmunicipio$= this.chartService.selectedmunicipio$;
+  
   title = 'ng2-charts-demo';
   
   prestacionList!: Prestacion2022[];
@@ -30,12 +29,13 @@ export class ChartPrestGeComponent implements OnInit {
     adultos: 0,
     emb: 0,
 
-  }
+  };
+
   porcentaje!: number;
   prestAcum!: number;
   transfAcum!: number;
   ultimoExte!: string;
-
+  
   //Pie
   //public chartData: ChartDataset[] = [
    // {
@@ -69,7 +69,7 @@ public pieChartLegend = true;
 
 
 
-  constructor(private chartService: ChartsService) { }
+  constructor(public chartService: ChartsService) { }
 
   ngOnInit(): void {
     this.chartService.getPrestacionesgp().subscribe(data => {
@@ -88,7 +88,7 @@ public pieChartLegend = true;
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.adolescentes))),
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.adultos))),
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.emb))),
-
+        
 
       ]).subscribe(([data0, data1, data2, data3, data4]) => {
 

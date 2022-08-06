@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ChartPrestacionComponent } from './components/chart-prestacion/chart-prestacion.component';
 import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-g
     HomeComponent,
     ChartPrestacionComponent,
     ChartPrestGeComponent,
+    SidebarComponent,
     
   ],
   imports: [
