@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" [routerLink]="['/rendicion']" routerLinkActive="router-link-active" >
                     <i-bs name="cash-stack"></i-bs>
                     Rendición
                 </a>
@@ -19,12 +19,17 @@
                     Transferencias
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/grafico/prestaciones">
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     <i-bs name="file-bar-graph">
                     </i-bs>
                     Prestaciones
                 </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" routerLink="prestaciones">Total por Municipio</a>
+                    <a class="dropdown-item" routerLink="prestaciones/grafico">Gráfico</a>
+                    <a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo Etario</a>
+                  </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -35,7 +40,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i-bs name="layers"></i-bs>
-                    Integrations
+                    Uso de Fondos
                 </a>
             </li>
         </ul>

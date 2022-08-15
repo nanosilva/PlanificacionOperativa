@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ChartPrestacionComponent } from './components/chart-prestacion/chart-prestacion.component';
 import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { OrderPipe } from './order.pipe';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ChartPrestacionComponent,
     ChartPrestGeComponent,
     SidebarComponent,
+    OrderPipe,
+    
+  
     
   ],
   imports: [
@@ -37,6 +41,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     NgChartsModule,
     NgxBootstrapIconsModule.pick(allIcons),
     AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

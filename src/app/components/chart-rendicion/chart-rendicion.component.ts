@@ -50,6 +50,7 @@ export class ChartRendicionComponent implements OnInit {
   transfAcum!: number;
   ultimoExte!: string;
   selectedMunicipio!: string;
+  order!: string;
 
   public chartData: ChartDataset[] = [
     {

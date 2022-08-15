@@ -10,10 +10,10 @@ import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-g
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'rendicion', component:RendicionComponent },
-  { path: 'grafico/rendicion', component: ChartRendicionComponent },
+  { path: 'rendicion/grafico', component: ChartRendicionComponent },
   { path: 'prestaciones', component: PrestEvolComponent },
-  { path: 'grafico/prestaciones', component: ChartPrestacionComponent},
-  {path: 'grafico/prest-ge-cant', component: ChartPrestGeComponent},
+  { path: 'prestaciones/grafico', component: ChartPrestacionComponent},
+  {path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent},
   
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
