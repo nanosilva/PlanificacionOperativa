@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, pipe } from 'rxjs';
-import { municipio, Prestacion, Rendicion } from '../components/interfaces/planificacio.interfaces';
+import { municipio, Prestacion, Rendicion, usodefondos } from '../components/interfaces/planificacio.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +58,15 @@ export class ChartsService {
 
   public fromMunicipioGp(municipio: any): Observable<any[]> {
     return this.getPrestacionesgp().pipe(map(data => data.filter(m => m.municipio === municipio)));
-  }
+  };
+
+  public getUsodefondos(): Observable<usodefondos[]>{
+    return this.http.get<usodefondos[]>(`${this.apiUrl}/uso_de_fondos`)
+  };
+   public fromMunicipioUsof(municipio: any): Observable<any[]>{
+    return this.getUsodefondos().pipe(map(data=>data.filter(m=>m.municipio===municipio)))
+   }
+
 
 
 }

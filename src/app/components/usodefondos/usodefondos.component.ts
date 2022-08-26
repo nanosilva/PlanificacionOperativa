@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart, registerables } from 'chart.js';
-import { map } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChartOptions } from 'chart.js';
+import { forkJoin, map } from 'rxjs';
 import { ChartsService } from 'src/app/servicios/charts.service';
-import { Rendicion } from '../interfaces/planificacio.interfaces';
-
+import { usodefondos } from '../interfaces/planificacio.interfaces';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-usodefondos',
@@ -11,83 +11,113 @@ import { Rendicion } from '../interfaces/planificacio.interfaces';
   styleUrls: ['./usodefondos.component.css']
 })
 export class UsodefondosComponent implements OnInit {
+  @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
-  muni_n!: any[];
-  rendicionList!: Rendicion[];
-  municipios: Rendicion[] = []
-  municipio: Rendicion = {
+  usodefondosList!: usodefondos[];
+  usodefondos: usodefondos={
     id: 0,
     cod_mun: "",
     municipio: "",
-    anio_2008: 0,
-    anio_2009: 0,
-    anio_2010: 0,
-    anio_2011: 0,
-    anio_2012: 0,
-    anio_2013: 0,
-    anio_2014: 0,
-    anio_2015: 0,
-    anio_2016: 0,
-    anio_2017: 0,
-    anio_2018: 0,
-    anio_2019: 0,
-    anio_2020: 0,
-    anio_2021: 0,
-    anio_2022: 0,
-    acumulado: 0,
-    fech_ult_expte: ""
-  }
-  chart: any = [];
-  constructor(private chartservice: ChartsService) {
-    Chart.register(...registerables)
-   }
-
-  ngOnInit(): void {
-    this.chartservice.getRendicion().subscribe(data => {
-      this.municipios = data;
-      console.log(this.municipios);
-
-      let anio_2019: any = this.chartservice.fromMunicipio(this.municipio.municipio)
-        .pipe(map(data => data.map(val => val.anio_2019))).subscribe((res => {
-          anio_2019 = res;
-          this.municipio.anio_2019 = anio_2019
-
-          console.log(this.municipio.anio_2019)
-        }));
-
-      let anio_2020: any = this.chartservice.fromMunicipio(this.municipio.municipio)
-        .pipe(map(data => data.map(val => val.anio_2020))).subscribe((res => {
-          anio_2020 = res;
-          this.municipio.anio_2020 = anio_2020
-
-          console.log(this.municipio.anio_2020);
-
-          //show grafico
-          this.chart = new Chart('canvas', {
-            type: 'line',
-            data: {
-              labels: ['2019', '2020'],
-              datasets: [
-                {
-                label: 'rendicion',
-                data: [this.municipio.anio_2019, this.municipio.anio_2020],
-                backgroundColor: 'rgba(93, 175, 89, 0.1)',
-                borderColor: '#3e95cd',
-                borderWidth: 1
-              }]
-            },
-           
-
-          })
-
-        }));
-
-    }
-
-    )
-
+    item_6: 0,
+    item_7: 0,
+    item_8: 0,
+    item_11: 0,
+    item_12: 0,
+    item_13: 0,
+    item_21: 0,
+    item_22: 0,
+    item_23: 0,
+    item_31: 0,
+    item_32: 0,
+    item_41: 0,
+    item_42: 0,
+    item_43: 0,
+    item_51: 0,
+    item_52: 0,
+    item_53: 0,
+    total: 0,
 
   };
-}
+  total!: number;
+  // Pie
+ public pieChartOptions: ChartOptions<'pie'> = {
+  responsive: false,
+  
+  
+};
+public pieChartLabels =  [  'otros', [ 'incentivos'], ['locación'],['insumos'],['inversiones'], ['mantenimiento'] ];
+public pieChartDatasets :any= [ {
+  data: [],
+} ];
+public pieChartLegend = true;
+
+
+
+  constructor(public chartService:ChartsService) { }
+
+  ngOnInit(): void {
+    this.chartService.getUsodefondos().subscribe(data=>{
+      this.usodefondosList= data;
+      console.log(data)
+
+      })
+   };
+
+   loadData(event: any){
+    if (this.usodefondos.municipio){
+      forkJoin([
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_6))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_7))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_8))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_11))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_12))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_13))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_21))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_22))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_23))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_31))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_32))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_41))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_42))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_43))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_51))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_52))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.item_53))),
+        this.chartService.fromMunicipioUsof(this.usodefondos.municipio).pipe(map(data=>data.map(val=>val.total))),
+
+      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, 
+        data13, data14, data15, data16, data17])=>{
+          let item6= +data0;
+          let item7= +data1;
+          let item8= +data2;
+          let item11=+data3;
+          let item12= +data4;
+          let item13= +data5;
+          let item21= +data6;
+          let item22= +data7;
+          let item23= +data8;
+          let item31= +data9;
+          let item32=+data10;
+          let item41=+data11;
+          let item42=+data12;
+          let item43=+data13;
+          let item51=+data14;
+          let item52= +data15;
+          let item53=+data16;
+          let totaluf=+data17;
+           let otros= item6+item7+item8;
+           let incentivos= item11+item12+item13;
+           let locacion= item21+item22+item23;
+           let insumos= item31+item32;
+           let inversiones= item41+item42+item43;
+           let mantenimiento=item51+item52+item53;
+           this.total=totaluf
+        this.pieChartDatasets[0].data= [otros, incentivos, locacion,insumos, inversiones, mantenimiento];
+        this.chart.update();
+      })
+    }
+   }
+
+};
 
 

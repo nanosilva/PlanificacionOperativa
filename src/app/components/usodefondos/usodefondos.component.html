@@ -1,3 +1,56 @@
-<div width="400" height="400">
-<canvas id="canvas" >{{chart}}</canvas>
-</div>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="container">
+        <h3 class="text-center text-white bg-dark py-2 ">Uso de fondos </h3>
+    </div>
+
+    <div class="row">
+        <div class="container">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">{{usodefondos.municipio}}</h1>
+                    <form>
+                        <div class="form-row">
+                            <div class=col-md>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i-bs name="filter-square"></i-bs>
+
+
+                                        </div>
+                                    </div>
+                                    <select class="form-control" name="prestacion" [(ngModel)]="usodefondos"
+                                        (change)="loadData($event)">
+                                        <option [ngValue]="usodefondos" selected>Elige un municipio</option>
+                                        <option *ngFor="let usodefondos of usodefondosList " [ngValue]="usodefondos">
+                                            {{usodefondos.municipio}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="container">
+                    <canvas baseChart width="1000" height="400" 
+                    [type]="'pie'" 
+                    [datasets]="pieChartDatasets"
+                    [labels]="pieChartLabels" 
+                    [options]="pieChartOptions" 
+                    [legend]="pieChartLegend">
+
+                        >
+                    </canvas>
+                </div>
+                <div class="container mt-4">
+                    <div>Total Rendido Acumulado: <span style="font-weight:bold">{{total|currency:'$ ':'symbol':'1.0-0'}} </span>
+                    </div>
+
+                </div>
+          
+        </div>
+    </div>
+
+</main>

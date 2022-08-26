@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild ,Input} from '@angular/core';
-import { ChartConfiguration, ChartData, ChartDataset, ChartOptions, ChartType } from 'chart.js';
+import { ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { forkJoin, map, Subscription } from 'rxjs';
 import { ChartsService } from 'src/app/servicios/charts.service';
@@ -60,6 +60,8 @@ export class ChartPrestGeComponent implements OnInit {
  // Pie
  public pieChartOptions: ChartOptions<'pie'> = {
   responsive: false,
+  
+  
 };
 public pieChartLabels =  [  '0-5 años', [ '0-9 años'], ['Adolescentes'],['Adultos'],['Embarazadas'] ];
 public pieChartDatasets :any= [ {
