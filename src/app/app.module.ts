@@ -16,6 +16,7 @@ import { ChartPrestacionComponent } from './components/chart-prestacion/chart-pr
 import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { OrderPipe } from './order.pipe';
+import { TransferenciasComponent } from './components/transferencias/transferencias.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { OrderPipe } from './order.pipe';
     ChartPrestGeComponent,
     SidebarComponent,
     OrderPipe,
+    TransferenciasComponent,
     
   
     

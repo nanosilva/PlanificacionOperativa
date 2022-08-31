@@ -7,29 +7,50 @@
                     Home
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/rendicion']" routerLinkActive="router-link-active" >
+            <li class="dropwdown">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                    aria-haspopup="true" aria-expanded="false">
                     <i-bs name="cash-stack"></i-bs>
                     Rendición
                 </a>
+                <div class="collapse" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a class="dropdown-item" routerLink="rendicion">Total por Municipio</a></li>
+                        <li><a class="dropdown-item" routerLink="rendicion/grafico">Gráfico</a></li>
+                       
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="dropdown">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                aria-haspopup="true" aria-expanded="false">
                     <i-bs name="cash-coin"></i-bs>
                     Transferencias
                 </a>
+                <div class="collapse" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a class="dropdown-item" routerLink="transferencias">Total por Municipio</a></li>
+                        <li><a class="dropdown-item" routerLink="transferencias/grafico">Gráfico</a></li>
+                       
+                    </ul>
+                </div>
+
             </li>
             <li class="dropdown">
-                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                    aria-haspopup="true" aria-expanded="false">
+
                     <i-bs name="file-bar-graph">
                     </i-bs>
                     Prestaciones
                 </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" routerLink="prestaciones">Total por Municipio</a>
-                    <a class="dropdown-item" routerLink="prestaciones/grafico">Gráfico</a>
-                    <a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo Etario</a>
-                  </div>
+                <div class="collapse" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a class="dropdown-item" routerLink="prestaciones">Total por Municipio</a></li>
+                        <li><a class="dropdown-item" routerLink="prestaciones/grafico">Gráfico</a></li>
+                        <li><a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo Etario</a></li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">

@@ -23,7 +23,7 @@
                                     <select class="form-control" name="municipio" [(ngModel)]="municipio"
                                         (change)="loadData($event)">
                                         <option [ngValue]="municipio" selected>Elige un municipio</option>
-                                        <option *ngFor="let municipio of municipios "  [ngValue]="municipio">
+                                        <option *ngFor="let municipio of municipios |order:'municipio'"  [ngValue]="municipio">
                                             {{municipio.municipio}}</option>
 
                                     </select>

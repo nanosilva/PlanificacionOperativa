@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartsService } from 'src/app/servicios/charts.service';
 import { ChartConfiguration, ChartData, ChartDataset, ChartDatasetProperties, ChartOptions, ChartType } from 'chart.js';
-import { municipio, Rendicion } from '../interfaces/planificacio.interfaces';
+import { municipio, Rendicion, Transferencias } from '../interfaces/planificacio.interfaces';
 import { forkJoin, map, Subscription, concatMap, concat } from 'rxjs';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -19,7 +19,8 @@ export class ChartRendicionComponent implements OnInit {
   title = 'ng2-charts-demo';
   muni_n!: any[];
   rendicionList!: Rendicion[];
-  municipios: Rendicion[] = []
+  municipios: Rendicion[] = [];
+  municipiost: Transferencias[]=[];
   municipio: Rendicion = {
     id: 0,
     cod_mun: "",
@@ -98,7 +99,7 @@ export class ChartRendicionComponent implements OnInit {
       this.getMuni();
       this.getRendido();
       this.chartService.getTransferencias().subscribe(data =>{
-        this.municipios = data;
+        this.municipiost = data;
         console.log(this.municipios)
       })
 

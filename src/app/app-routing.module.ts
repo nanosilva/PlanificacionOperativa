@@ -7,11 +7,14 @@ import { PrestEvolComponent } from './components/prest-evol/prest-evol.component
 import { ChartPrestacionComponent } from './components/chart-prestacion/chart-prestacion.component';
 import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
 import { UsodefondosComponent } from './components/usodefondos/usodefondos.component';
+import { TransferenciasComponent } from './components/transferencias/transferencias.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'rendicion', component: RendicionComponent },
   { path: 'rendicion/grafico', component: ChartRendicionComponent },
+  { path: 'transferencias', component: TransferenciasComponent},
+  { path: 'transferencias/grafico', component: TransferenciasComponent},
   { path: 'usodefondos/grafico', component: UsodefondosComponent },
   { path: 'prestaciones', component: PrestEvolComponent },
   { path: 'prestaciones/grafico', component: ChartPrestacionComponent },

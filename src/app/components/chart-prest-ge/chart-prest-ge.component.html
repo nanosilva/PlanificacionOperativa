@@ -5,52 +5,67 @@
 
     <div class="row">
         <div class="container">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">{{prestacion.municipio}}</h1>
-                    <form>
-                        <div class="form-row">
-                            <div class=col-md>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i-bs name="filter-square"></i-bs>
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">{{prestacion.municipio}}</h1>
+                <form>
+                    <div class="form-row">
+                        <div class=col-md>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i-bs name="filter-square"></i-bs>
 
 
-                                        </div>
                                     </div>
-                                    <select class="form-control" name="prestacion" [(ngModel)]="prestacion"
-                                        (change)="loadData($event)">
-                                        <option [ngValue]="prestacion" selected>Elige un municipio</option>
-                                        <option *ngFor="let prestacion of prestacionList " [ngValue]="prestacion">
-                                            {{prestacion.municipio}}</option>
-
-                                    </select>
                                 </div>
+                                <select class="form-control" name="prestacion" [(ngModel)]="prestacion"
+                                    (change)="loadData($event)">
+                                    <option [ngValue]="prestacion" selected>Elige un municipio</option>
+                                    <option *ngFor="let prestacion of prestacionList |order:'municipio'"
+                                        [ngValue]="prestacion">
+                                        {{prestacion.municipio}}</option>
+
+                                </select>
                             </div>
                         </div>
+                    </div>
 
-                    </form>
-                </div>
+                </form>
+            </div>
 
-                <div class="container">
-                    <canvas baseChart width="1000" height="400" 
-                    [type]="'pie'" 
-                    [datasets]="pieChartDatasets"
-                    [labels]="pieChartLabels" 
-                    [options]="pieChartOptions" 
-                    [legend]="pieChartLegend">
+            <div class="container">
+                <canvas baseChart width="1000" height="400" [type]="'pie'" [datasets]="pieChartDatasets"
+                    [labels]="pieChartLabels" [options]="pieChartOptions" [legend]="pieChartLegend">
 
-                        >
-                    </canvas>
-                </div>
-                <div class="container mt-4">
-                    <div>Total 2022: <span style="font-weight:bold">{{prestAcum|currency:' ':'symbol':'1.0-0'}} </span>
+                    >
+                </canvas>
+            </div>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-2">
+                        <p class="small bg-danger ">0-5 años: <span style="font-weight:bold">{{ninos_05_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-info">6-9 años: <span style="font-weight:bold">{{ninos_69_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-warning">Adolescentes: <span style="font-weight:bold">{{adolesc_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-light">Adultos: <span style="font-weight:bold">{{adultos_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-success">Embarazadas: <span style="font-weight:bold">{{emb_pct}} % </span></p>
+                    </div>
+                    <div class="bg-light"> Total 2022: <span style="font-weight:bold">{{prestAcum|currency:' ':'symbol':'1.0-0'}} </span>
                     </div>
 
                 </div>
-          
+
+            </div>
         </div>
     </div>
+
 
 </main>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild ,Input} from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { forkJoin, map, Subscription } from 'rxjs';
@@ -14,10 +14,10 @@ export class ChartPrestGeComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
   private sub!: Subscription;
 
-  selectedmunicipio$= this.chartService.selectedmunicipio$;
-  
+  selectedmunicipio$ = this.chartService.selectedmunicipio$;
+
   title = 'ng2-charts-demo';
-  
+
   prestacionList!: Prestacion2022[];
   prestacion: Prestacion2022 = {
     id: 0,
@@ -33,41 +33,45 @@ export class ChartPrestGeComponent implements OnInit {
 
   porcentaje!: number;
   prestAcum!: number;
-  transfAcum!: number;
-  ultimoExte!: string;
-  
+  ninos_05_pct!: number;
+  ninos_69_pct!: number;
+  adolesc_pct!: number;
+  adultos_pct!: number;
+  emb_pct!: number;
+
+
   //Pie
   //public chartData: ChartDataset[] = [
-   // {
-   //   data: [], label: 'Prestaciones Grupo Etario',
-   //   fill: true,
-   //   tension: 0.2,
-      //borderColor: 'black',
-    //},
+  // {
+  //   data: [], label: 'Prestaciones Grupo Etario',
+  //   fill: true,
+  //   tension: 0.2,
+  //borderColor: 'black',
+  //},
 
 
- // ];
- // public label: string[] = ['2019', '2020', '2021', '2022'];
- /// public options: ChartOptions = {
+  // ];
+  // public label: string[] = ['2019', '2020', '2021', '2022'];
+  /// public options: ChartOptions = {
   //  scales: {
   //    y: {
   //      beginAtZero: true,
 
-   //   },
+  //   },
 
-   // }
- // }
- // Pie
- public pieChartOptions: ChartOptions<'pie'> = {
-  responsive: false,
-  
-  
-};
-public pieChartLabels =  [  '0-5 años', [ '0-9 años'], ['Adolescentes'],['Adultos'],['Embarazadas'] ];
-public pieChartDatasets :any= [ {
-  data: [],
-} ];
-public pieChartLegend = true;
+  // }
+  // }
+  // Pie
+  public pieChartOptions: ChartOptions<'pie'> = {
+    responsive: false,
+
+
+  };
+  public pieChartLabels = ['0-5 años', ['6-9 años'], ['Adolescentes'], ['Adultos'], ['Embarazadas']];
+  public pieChartDatasets: any = [{
+    data: [],
+  }];
+  public pieChartLegend = true;
 
 
 
@@ -90,7 +94,7 @@ public pieChartLegend = true;
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.adolescentes))),
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.adultos))),
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.emb))),
-        
+
 
       ]).subscribe(([data0, data1, data2, data3, data4]) => {
 
@@ -99,10 +103,16 @@ public pieChartLegend = true;
         let prest2 = +data2;
         let prest3 = +data3;
         let prest4 = +data4;
-        let total_2022= prest0+prest1+prest2+prest3+prest4
+        let total_2022 = prest0 + prest1 + prest2 + prest3 + prest4;
 
-        this.prestAcum =total_2022
-        this.pieChartDatasets[0].data= [data0, data1, data2,data3, data4];
+        this.prestAcum = total_2022;
+        this.ninos_05_pct = Math.round((prest0/total_2022)*100);
+        this.ninos_69_pct = Math.round((prest1/total_2022)*100);
+        this.adolesc_pct = Math.round((prest2/total_2022)*100);
+        this.adultos_pct = Math.round((prest3/total_2022)*100);
+        this.emb_pct = Math.round((prest4/total_2022)*100);
+
+        this.pieChartDatasets[0].data = [data0, data1, data2, data3, data4];
 
         this.chart.update();
         console.log(prest0, prest1, prest2, prest3, prest4)
@@ -111,7 +121,7 @@ public pieChartLegend = true;
 
     };
   }
- 
+
 }
 
 

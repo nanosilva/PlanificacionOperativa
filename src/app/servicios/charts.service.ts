@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, pipe } from 'rxjs';
-import { municipio, Prestacion, Rendicion, usodefondos } from '../components/interfaces/planificacio.interfaces';
+import { municipio, Prestacion, Rendicion, Transferencias, usodefondos } from '../components/interfaces/planificacio.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +36,8 @@ export class ChartsService {
     /*  data.map(res => res.municipio))) */
 
   };
-  public getTransferencias(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/transferencias`);
+  public getTransferencias(): Observable<Transferencias[]> {
+    return this.http.get<Transferencias[]>(`${this.apiUrl}/transferencias`);
   };
 
   public fromMunicipioT(municipio: any): Observable<any[]> {
