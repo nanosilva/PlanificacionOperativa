@@ -42,7 +42,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let rendicion of rendicionList | filter:filterPost; index as i ">
+          <tr *ngFor="let rendicion of rendicionList | filter2:filterPost2 |filter: filterPost; index as i ">
             <th scope="row">{{i+1}}</th>
             <td>{{rendicion.cod_mun}}</td>
             <td>{{rendicion.municipio}}</td>

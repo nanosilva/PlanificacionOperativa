@@ -11,6 +11,7 @@ import { TransferenciasComponent } from './components/transferencias/transferenc
 import { InscriptosComponent } from './components/inscriptos/inscriptos.component';
 import { InscriptosCebComponent } from './components/inscriptos-ceb/inscriptos-ceb.component';
 import { ChartInscriptosComponent } from './components/chart-inscriptos/chart-inscriptos.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'inscriptos/total', component: InscriptosComponent },
   { path: 'inscriptos/inscriptos_ceb', component: InscriptosCebComponent },
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
+  
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

@@ -18,7 +18,7 @@ export class ChartInscriptosComponent implements OnInit {
   porcentaje!: number;
   var_inscriptos!:number;
   var_ceb!: number;
-  inscriptosList!: Inscriptos[];
+  inscriptosList: Inscriptos[]=[]
   inscriptos: Inscriptos={
     id: 0,
     cod_mun: "",
@@ -61,8 +61,9 @@ export class ChartInscriptosComponent implements OnInit {
       data: [], label: 'Inscriptos CEB',      
       fill: true,
       tension: 0.2,
+      pointBorderColor: 'black'
       //borderColor: 'black',
-      // backgroundColor: 'rgba(255,0,0,0.3)' 
+      //backgroundColor: 'rgba(0,255,0,0.3)' 
     },
     
   ];

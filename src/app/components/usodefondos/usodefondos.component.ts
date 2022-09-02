@@ -13,7 +13,7 @@ import { BaseChartDirective } from 'ng2-charts';
 export class UsodefondosComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
-  usodefondosList!: usodefondos[];
+  usodefondosList: usodefondos[]=[];
   usodefondos: usodefondos = {
     id: 0,
     cod_mun: "",

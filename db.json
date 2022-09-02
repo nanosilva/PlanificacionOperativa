@@ -2480,7 +2480,7 @@
     },
     {
       "cod_mun": "R11-03",
-      "municipio": "Ca�uelas",
+      "municipio": "Canuelas",
       "anio_2008": 0,
       "anio_2009": 0,
       "anio_2010": 117582,
@@ -7722,7 +7722,7 @@
     },
     {
       "cod_mun": "Total general",
-      "municipio": "",
+      "municipio": "total",
       "anio_2013": 1767766,
       "anio_2014": 3062976,
       "anio_2015": 4840219,
@@ -7733,7 +7733,8 @@
       "anio_2020": 8938062,
       "anio_2021": 15239980,
       "anio_2022": 1834188,
-      "total_ac": ""
+      "total_ac": 68752192
+
     }  
 
   ],

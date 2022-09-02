@@ -24,8 +24,7 @@
                                     <select class="form-control" name="municipio" [(ngModel)]="inscriptos"
                                         (change)="loadData($event)">
                                         <option [ngValue]="inscriptos" selected>Elige un municipio</option>
-                                        <option *ngFor="let inscriptos of inscriptosList |order:'municipio'"
-                                            [ngValue]="inscriptos">
+                                        <option *ngFor="let inscriptos of inscriptosList | order:'municipio'"[ngValue]="inscriptos">
                                             {{inscriptos.municipio}}</option>
 
                                     </select>
@@ -43,8 +42,8 @@
                 </div>
                 <div class="container mt-4">
                     <div class="container">
-                        <p style="font-weight:bold">Incriptos, Var.Anual: {{var_inscriptos|percent: '2.1-1'}}</p>
-                        <p style="font-weight:bold">CEB, Var.Anual: {{var_ceb|percent: '2.1-1'}}</p>
+                        <p>Incriptos, Var.Anual: <span style="font-weight:bold">{{var_inscriptos|percent: '2.1-1'}}</span></p>
+                        <p>CEB, Var.Anual: <span style="font-weight:bold"> {{var_ceb|percent: '2.1-1'}}</span></p>
                     </div>
 
                 </div>

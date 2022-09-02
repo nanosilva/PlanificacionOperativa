@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Inscriptos } from '../interfaces/planificacio.interfaces';
 import * as XLSX from 'xlsx'
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-inscriptos-ceb',
@@ -12,6 +13,7 @@ export class InscriptosCebComponent implements OnInit {
   filterPost = "";
   name = 'ExcelSheet.xlsx';
   total! : number;
+  municipio!: string;
   inscriptoscebList!: Inscriptos[];
   inscriptosceb: Inscriptos = {
     id: 0,
@@ -64,6 +66,8 @@ export class InscriptosCebComponent implements OnInit {
 
     XLSX.writeFile(book, this.name);
   };
-}
+ 
+   }
+
 
 

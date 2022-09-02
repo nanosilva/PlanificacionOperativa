@@ -18,7 +18,7 @@ export class ChartPrestacionComponent implements OnInit {
   selectedmunicipio$= this.chartService.selectedmunicipio$;
   title = 'ng2-charts-demo';
   muni_n!: any[];
-  prestacionList!: Prestacion[];
+  prestacionList: Prestacion[]=[]
   prestacion: Prestacion = {
     id: 0,
     cod_mun: "",

@@ -36,7 +36,6 @@
                         <th scope="col">dic-21</th>
                         <th scope="col">ene-22</th>
                         <th scope="col">feb-22</th> 
-                        <th scope="col">Variac anual</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,28 +54,14 @@
                         <td>{{inscriptosceb.dic_21|currency:' ':'symbol':'1.0-0'}}</td>
                         <td>{{inscriptosceb.ene_22|currency:' ':'symbol':'1.0-0'}}</td>
                         <td>{{inscriptosceb.feb_22|currency:' ':'symbol':'1.0-0'}}</td>
-                        
-                       
                     </tr>
                     <hr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="container">total:{{total|currency:'$ ':'symbol':'1.0-0'}}</div>
-                        <td></td>
-                        <td></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="container">
-        <button class="btn btn-primary" routerLink="/grafico/rendicion">Ver Gráfico</button>
+        <button class="btn btn-primary" routerLink="../grafico">Ver Gráfico</button>
 
     </div>
 </main>

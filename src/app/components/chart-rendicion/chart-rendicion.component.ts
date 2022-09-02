@@ -18,9 +18,8 @@ export class ChartRendicionComponent implements OnInit {
 
   title = 'ng2-charts-demo';
   muni_n!: any[];
-  rendicionList!: Rendicion[];
-  municipios: Rendicion[] = [];
-  municipiost: Transferencias[]=[];
+  rendicionList: Rendicion[]=[];
+  transferencia!: Transferencias[];
   rendicion: Rendicion = {
     id: 0,
     cod_mun: "",
@@ -87,7 +86,7 @@ export class ChartRendicionComponent implements OnInit {
   ngOnInit(): void {
     this.chartService.getRendicion().subscribe(data => {
       this.rendicionList = data;
-      console.log(this.municipios, this.selectedMunicipio);
+      console.log( this.selectedMunicipio);
     this.chartService.selectedmunicipio$.subscribe(data1=>{
       this.selectedMunicipio= data1
     })  
@@ -99,8 +98,8 @@ export class ChartRendicionComponent implements OnInit {
       this.getMuni();
       this.getRendido();
       this.chartService.getTransferencias().subscribe(data =>{
-        this.municipiost = data;
-        console.log(this.municipios)
+        this.transferencia = data;
+        console.log(this.transferencia)
       })
 
     })
