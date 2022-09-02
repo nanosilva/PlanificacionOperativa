@@ -17,6 +17,10 @@ import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-g
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { OrderPipe } from './order.pipe';
 import { TransferenciasComponent } from './components/transferencias/transferencias.component';
+import { Filter2Pipe } from './filter2.pipe';
+import { InscriptosComponent } from './components/inscriptos/inscriptos.component';
+import { InscriptosCebComponent } from './components/inscriptos-ceb/inscriptos-ceb.component';
+import { ChartInscriptosComponent } from './components/chart-inscriptos/chart-inscriptos.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,10 @@ import { TransferenciasComponent } from './components/transferencias/transferenc
     SidebarComponent,
     OrderPipe,
     TransferenciasComponent,
+    Filter2Pipe,
+    InscriptosComponent,
+    InscriptosCebComponent,
+    ChartInscriptosComponent,
     
   
     

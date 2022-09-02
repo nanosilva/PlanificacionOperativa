@@ -8,17 +8,23 @@ import { ChartPrestacionComponent } from './components/chart-prestacion/chart-pr
 import { ChartPrestGeComponent } from './components/chart-prest-ge/chart-prest-ge.component';
 import { UsodefondosComponent } from './components/usodefondos/usodefondos.component';
 import { TransferenciasComponent } from './components/transferencias/transferencias.component';
+import { InscriptosComponent } from './components/inscriptos/inscriptos.component';
+import { InscriptosCebComponent } from './components/inscriptos-ceb/inscriptos-ceb.component';
+import { ChartInscriptosComponent } from './components/chart-inscriptos/chart-inscriptos.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'rendicion', component: RendicionComponent },
   { path: 'rendicion/grafico', component: ChartRendicionComponent },
-  { path: 'transferencias', component: TransferenciasComponent},
-  { path: 'transferencias/grafico', component: TransferenciasComponent},
+  { path: 'transferencias', component: TransferenciasComponent },
+  { path: 'transferencias/grafico', component: TransferenciasComponent },
   { path: 'usodefondos/grafico', component: UsodefondosComponent },
   { path: 'prestaciones', component: PrestEvolComponent },
   { path: 'prestaciones/grafico', component: ChartPrestacionComponent },
   { path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent },
+  { path: 'inscriptos/total', component: InscriptosComponent },
+  { path: 'inscriptos/inscriptos_ceb', component: InscriptosCebComponent },
+  { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

@@ -1,0 +1,82 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="container">
+        <h3 class="text-center text-white bg-dark py-2 fixed ">Inscriptos CEB</h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="form group">
+                    <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
+                        [(ngModel)]="filterPost">
+                </div>
+            </div>
+            <div class="col-7 container bg-light text-black text-center pt-1">mes</div>
+            <div class="col-2">
+                <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
+                    <i-bs name="download"></i-bs> Excel
+                </button>
+
+            </div>
+        </div>
+        <div class="table responsive-md">
+            <table class="table table-striped table-hover" id="rend-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Código Municipio</th>
+                        <th scope="col">Municipio</th>
+                        <th scope="col">mar-21</th>
+                        <th scope="col">abr-21</th>
+                        <th scope="col">may-21</th>
+                        <th scope="col">jun-21</th>
+                        <th scope="col">jul-21</th>
+                        <th scope="col">ago-21</th>
+                        <th scope="col">sep-21</th>
+                        <th scope="col">oct-21</th>
+                        <th scope="col">nov-21</th>
+                        <th scope="col">dic-21</th>
+                        <th scope="col">ene-22</th>
+                        <th scope="col">feb-22</th> 
+                        <th scope="col">Variac anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let inscriptosceb of inscriptoscebList | filter:filterPost; index as i ">
+                        <td>{{inscriptosceb.cod_mun}}</td>
+                        <td>{{inscriptosceb.municipio}}</td>
+                        <td>{{inscriptosceb.mar_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.abr_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.may_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.jun_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.jul_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.ago_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.sep_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.oct_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.nov_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.dic_21|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.ene_22|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td>{{inscriptosceb.feb_22|currency:' ':'symbol':'1.0-0'}}</td>
+                        
+                       
+                    </tr>
+                    <hr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div class="container">total:{{total|currency:'$ ':'symbol':'1.0-0'}}</div>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn btn-primary" routerLink="/grafico/rendicion">Ver Gráfico</button>
+
+    </div>
+</main>

@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, pipe } from 'rxjs';
-import { municipio, Prestacion, Rendicion, Transferencias, usodefondos } from '../components/interfaces/planificacio.interfaces';
+import { Inscriptos, municipio, Prestacion, Rendicion, Transferencias, usodefondos } from '../components/interfaces/planificacio.interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ChartsService {
-    muni_ini!: String ;
+  muni_ini!: String;
 
 
-  private municipio$= new BehaviorSubject<any>(this.muni_ini);
+  private municipio$ = new BehaviorSubject<any>(this.muni_ini);
 
   private apiUrl = 'http://localhost:5001';
 
-  constructor(private http: HttpClient ) {}
+  constructor(private http: HttpClient) { }
 
 
   get selectedmunicipio$(): Observable<any> {
@@ -60,12 +60,26 @@ export class ChartsService {
     return this.getPrestacionesgp().pipe(map(data => data.filter(m => m.municipio === municipio)));
   };
 
-  public getUsodefondos(): Observable<usodefondos[]>{
+  public getUsodefondos(): Observable<usodefondos[]> {
     return this.http.get<usodefondos[]>(`${this.apiUrl}/uso_de_fondos`)
   };
-   public fromMunicipioUsof(municipio: any): Observable<any[]>{
-    return this.getUsodefondos().pipe(map(data=>data.filter(m=>m.municipio===municipio)))
-   }
+  public fromMunicipioUsof(municipio: any): Observable<any[]> {
+    return this.getUsodefondos().pipe(map(data => data.filter(m => m.municipio === municipio)))
+  };
+
+  getInscriptos(): Observable<Inscriptos[]> {
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos`);
+  };
+  public fromMunicipioInsc(municipio: any): Observable<any[]> {
+    return this.getInscriptos().pipe(map(data => data.filter(m => m.municipio === municipio)))
+  };
+  getInscriptosCeb(): Observable<Inscriptos[]> {
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb`);
+  
+  };
+  public fromMunicipioIceb(municipio: any): Observable<any[]> {
+    return this.getInscriptosCeb().pipe(map(data => data.filter(m => m.municipio === municipio)))
+  };
 
 
 

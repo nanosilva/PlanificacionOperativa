@@ -8,12 +8,12 @@
                 </a>
             </li>
             <li class="dropwdown">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#rendicion-collapse"
                     aria-haspopup="true" aria-expanded="false">
                     <i-bs name="cash-stack"></i-bs>
                     Rendición
                 </a>
-                <div class="collapse" id="dashboard-collapse">
+                <div class="collapse" id="rendicion-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="rendicion">Total por Municipio</a></li>
                         <li><a class="dropdown-item" routerLink="rendicion/grafico">Gráfico</a></li>
@@ -22,12 +22,12 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#transferencias-collapse"
                 aria-haspopup="true" aria-expanded="false">
                     <i-bs name="cash-coin"></i-bs>
                     Transferencias
                 </a>
-                <div class="collapse" id="dashboard-collapse">
+                <div class="collapse" id="transferencias-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="transferencias">Total por Municipio</a></li>
                         <li><a class="dropdown-item" routerLink="transferencias/grafico">Gráfico</a></li>
@@ -37,26 +37,36 @@
 
             </li>
             <li class="dropdown">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#prestaciones-collapse"
                     aria-haspopup="true" aria-expanded="false">
 
                     <i-bs name="file-bar-graph">
                     </i-bs>
                     Prestaciones
                 </a>
-                <div class="collapse" id="dashboard-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <div class="collapse" id="prestaciones-collapse">
+                    <ul class="btn-toggle-nav fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="prestaciones">Total por Municipio</a></li>
                         <li><a class="dropdown-item" routerLink="prestaciones/grafico">Gráfico</a></li>
                         <li><a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo Etario</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="dropdown">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inscriptos-collapse"
+                    aria-haspopup="true" aria-expanded="false">
+                
                     <i-bs name="person"></i-bs>
                     Inscriptos
                 </a>
+                <div class="collapse" id="inscriptos-collapse">
+                    <ul class="btn-toggle-nav fw-normal pb-1 small">
+                        <li><a class="dropdown-item" routerLink="inscriptos/total">Inscriptos total</a></li>
+                        <li><a class="dropdown-item" routerLink="inscriptos/inscriptos_ceb">Inscriptos Ceb</a></li>
+                        <li><a class="dropdown-item" routerLink="inscriptos/inscriptos_ge">Por Grupo Etario</a></li>
+                        <li><a class="dropdown-item" routerLink="inscriptos/grafico">Gráfico</a></li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="usodefondos/grafico">

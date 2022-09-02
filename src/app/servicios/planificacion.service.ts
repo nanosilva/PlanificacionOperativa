@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Prestacion, Rendicion } from '../components/interfaces/planificacio.interfaces';
+import { Inscriptos, Prestacion, Rendicion } from '../components/interfaces/planificacio.interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +15,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PlanificacionService {
-
+ 
   private apiUrl = 'http://localhost:5001';
 
 
@@ -30,6 +30,12 @@ export class PlanificacionService {
   obtenerPrestaciones(): Observable<Prestacion[]>{
     return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones`);
   }
-
+  
+  getInscriptos(): Observable<Inscriptos[]>{
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos`);
+  };
+  getInscriptosCeb(): Observable<Inscriptos[]>{
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb`);
+  }
 
 }

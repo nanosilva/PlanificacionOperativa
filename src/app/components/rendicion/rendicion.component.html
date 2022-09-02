@@ -11,9 +11,15 @@
         </div>
       </div>
 
-      <div class="col-7 container bg-secondary text-white text-center pt-1">Años</div>
-
+      <div class="col-7 container bg-light text-black text-center pt-1">Años</div>
       <div class="col-2">
+        <div class="form group">
+          <input type="text" class="form-control" name="filterPost2" placeholder="Buscar fecha expte..."
+            [(ngModel)]="filterPost2">
+        </div>
+      </div>
+
+      <div class="col-12">
         <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
           <i-bs name="download"></i-bs> Excel
         </button>

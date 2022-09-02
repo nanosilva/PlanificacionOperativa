@@ -21,7 +21,7 @@ export class ChartRendicionComponent implements OnInit {
   rendicionList!: Rendicion[];
   municipios: Rendicion[] = [];
   municipiost: Transferencias[]=[];
-  municipio: Rendicion = {
+  rendicion: Rendicion = {
     id: 0,
     cod_mun: "",
     municipio: "",
@@ -86,7 +86,7 @@ export class ChartRendicionComponent implements OnInit {
 
   ngOnInit(): void {
     this.chartService.getRendicion().subscribe(data => {
-      this.municipios = data;
+      this.rendicionList = data;
       console.log(this.municipios, this.selectedMunicipio);
     this.chartService.selectedmunicipio$.subscribe(data1=>{
       this.selectedMunicipio= data1
@@ -130,30 +130,31 @@ export class ChartRendicionComponent implements OnInit {
   };
 
   loadData(event: any) {
-    if (this.municipio.municipio) {
+    if (this.rendicion.municipio) {
       forkJoin([
-        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2019))),
-        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2020))),
-        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2021))),
-        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.anio_2022))),
-        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.acumulado))),
-        this.chartService.fromMunicipio(this.municipio.municipio).pipe(map(data => data.map(val => val.fech_ult_expte))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2007))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2008))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2009))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2010))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2011))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2012))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2013))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2014))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2015))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2016))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2017))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2018))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2019))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2020))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2021))),
-        this.chartService.fromMunicipioT(this.municipio.municipio).pipe(map(data => data.map(res=> res.anio_2022))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2019))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2020))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2021))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2022))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.acumulado))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.fech_ult_expte))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2007))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2008))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2009))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2010))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2011))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2012))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2013))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2014))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2015))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2016))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2017))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2018))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2019))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2020))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2021))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res=> res.anio_2022))),
+
       ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13,
       data14, data15, data16, data17, data18, data19, data20, data21] ) => {
 
@@ -181,7 +182,7 @@ export class ChartRendicionComponent implements OnInit {
 
         let sumarend=rend4;
         let sumatr= transf5+transf6+transf7+transf8+transf9+transf10+transf11+transf12+transf13+transf14+transf15+transf16+transf17+transf18+transf19+transf20
-        this.porcentaje= Math.round((sumarend/sumatr)*100)
+        this.porcentaje= ((sumarend/sumatr))
         this.rendidoAcum= sumarend;
         this.transfAcum= sumatr;
         this.ultimoExte=data5 as any;

@@ -1,14 +1,14 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="container">
-        <h3 class="text-center text-white bg-dark py-2 ">Rendición de Fondos</h3>
+        <h3 class="text-center text-white bg-dark py-2 ">Inscriptos y CEB</h3>
     </div>
     <div class="container">
         <div class="row">
             <div class="container">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">{{rendicion.municipio}}</h1>
-                    <p>Rendición: {{porcentaje| percent: '2.1-2'}}
+                    <h1 class="h2">{{inscriptos.municipio}}</h1>
+                    <p class="bg-light">CEB: {{porcentaje| percent: '2.1-2'}}
                     <p>
                     <form>
                         <div class="form-row">
@@ -21,12 +21,12 @@
 
                                         </div>
                                     </div>
-                                    <select class="form-control" name="municipio" [(ngModel)]="rendicion"
+                                    <select class="form-control" name="municipio" [(ngModel)]="inscriptos"
                                         (change)="loadData($event)">
-                                        <option [ngValue]="rendicion" selected>Elige un municipio</option>
-                                        <option *ngFor="let rendicion of rendicionList |order:'municipio'"
-                                            [ngValue]="rendicion">
-                                            {{rendicion.municipio}}</option>
+                                        <option [ngValue]="inscriptos" selected>Elige un municipio</option>
+                                        <option *ngFor="let inscriptos of inscriptosList |order:'municipio'"
+                                            [ngValue]="inscriptos">
+                                            {{inscriptos.municipio}}</option>
 
                                     </select>
                                 </div>
@@ -42,9 +42,11 @@
                     </canvas>
                 </div>
                 <div class="container mt-4">
-                    <div>Transferencias Acumulado: <span style="font-weight:bold">{{transfAcum|currency:'$                            ':'symbol':'1.0-0'}} </span></div>
-                    <div>Rendición Acumulado: <span style="font-weight:bold">{{rendidoAcum|currency:'$                            ':'symbol':'1.0-0'}} </span></div>
-                    <div>Última presentación: <span style="font-weight:bold">{{ultimoExte}} </span></div>
+                    <div class="container">
+                        <p style="font-weight:bold">Incriptos, Var.Anual: {{var_inscriptos|percent: '2.1-1'}}</p>
+                        <p style="font-weight:bold">CEB, Var.Anual: {{var_ceb|percent: '2.1-1'}}</p>
+                    </div>
+
                 </div>
             </div>
 

@@ -12,7 +12,8 @@ export class RendicionComponent implements OnInit {
   
   name = 'ExcelSheet.xlsx';
   total!:number
-  filterPost=""
+  filterPost="";
+  filterPost2="";
   rendicionList!: Rendicion[];
   rendicion: Rendicion = {
     id: 0,
