@@ -12,6 +12,7 @@ import { InscriptosComponent } from './components/inscriptos/inscriptos.componen
 import { InscriptosCebComponent } from './components/inscriptos-ceb/inscriptos-ceb.component';
 import { ChartInscriptosComponent } from './components/chart-inscriptos/chart-inscriptos.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ChartInscripGeComponent } from './components/chart-inscrip-ge/chart-inscrip-ge.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent },
   { path: 'inscriptos/total', component: InscriptosComponent },
   { path: 'inscriptos/inscriptos_ceb', component: InscriptosCebComponent },
+  { path: 'inscriptos/inscriptos_ge', component: ChartInscripGeComponent },
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
   
 

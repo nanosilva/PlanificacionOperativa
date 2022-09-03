@@ -1,13 +1,13 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="container">
-        <h3 class="text-center text-white bg-dark py-2 ">Prestaciones 2022 </h3>
+        <h3 class="text-center text-white bg-dark py-2 ">Inscriptos por Grupo Etario </h3>
     </div>
 
     <div class="row">
         <div class="container">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">{{prestacion.municipio}}</h1>
+                <h1 class="h2">{{inscriptos_gp.municipio}}</h1>
                 <form>
                     <div class="form-row">
                         <div class=col-md>
@@ -19,12 +19,12 @@
 
                                     </div>
                                 </div>
-                                <select class="form-control" name="prestacion" [(ngModel)]="prestacion"
+                                <select class="form-control" name="prestacion" [(ngModel)]="inscriptos_gp"
                                     (change)="loadData($event)">
-                                    <option [ngValue]="prestacion" selected>Elige un municipio</option>
-                                    <option *ngFor="let prestacion of prestacionList |order:'municipio'"
-                                        [ngValue]="prestacion">
-                                        {{prestacion.municipio}}</option>
+                                    <option [ngValue]="inscriptos_gp" selected>Elige un municipio</option>
+                                    <option *ngFor="let inscriptos_gp of inscriptos_gpList |order:'municipio'"
+                                        [ngValue]="inscriptos_gp">
+                                        {{inscriptos_gp.municipio}}</option>
 
                                 </select>
                             </div>
@@ -53,12 +53,12 @@
                         <p class="small bg-adol">Adolescentes: <span style="font-weight:bold">{{adolesc_pct}} % </span></p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-adultos">Adultos: <span style="font-weight:bold">{{adultos_pct}} % </span></p>
+                        <p class="small bg-adultos">Mujeres: <span style="font-weight:bold">{{mujeres_pct}} % </span></p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-emb">Embarazadas: <span style="font-weight:bold">{{emb_pct}} % </span></p>
+                        <p class="small bg-emb">Hombres: <span style="font-weight:bold">{{hombres_pct}} % </span></p>
                     </div>
-                    <div class="bg-light"> Total 2022: <span style="font-weight:bold">{{prestAcum|currency:' ':'symbol':'1.0-0'}} </span>
+                    <div class="bg-light"> Total : <span style="font-weight:bold">{{total_insc|currency:' ':'symbol':'1.0-0'}} </span>
                     </div>
 
                 </div>

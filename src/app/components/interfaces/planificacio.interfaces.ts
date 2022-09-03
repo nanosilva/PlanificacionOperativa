@@ -128,6 +128,22 @@ export interface Inscriptos {
     oct_22: number;
     nov_22: number;
     dic_22: number;
-
+};
+export interface Inscriptos_gp {
+    id: number;
+    cod_mun: string;
+    municipio: string;
+    ninos_05: number;
+    ninos_69: number;
+    adolescentes: number;
+    mujeres: number;
+    hombres: number;
+    total: number;
+    ninos_05_ceb: number;
+    ninos_69_ceb: number;
+    adolescentes_ceb: number;
+    mujeres_ceb: number;
+    hombres_ceb: number;
+    total_ceb: number;
 
 }

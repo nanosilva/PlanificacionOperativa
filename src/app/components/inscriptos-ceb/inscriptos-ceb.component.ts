@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Inscriptos } from '../interfaces/planificacio.interfaces';
 import * as XLSX from 'xlsx'
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-inscriptos-ceb',
