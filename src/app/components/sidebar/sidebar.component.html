@@ -17,13 +17,13 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="rendicion">Total por Municipio</a></li>
                         <li><a class="dropdown-item" routerLink="rendicion/grafico">Gráfico</a></li>
-                       
+
                     </ul>
                 </div>
             </li>
             <li class="dropdown">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#transferencias-collapse"
-                aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#transferencias-collapse" aria-haspopup="true" aria-expanded="false">
                     <i-bs name="cash-coin"></i-bs>
                     Transferencias
                 </a>
@@ -31,14 +31,14 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="transferencias">Total por Municipio</a></li>
                         <li><a class="dropdown-item" routerLink="transferencias/grafico">Gráfico</a></li>
-                       
+
                     </ul>
                 </div>
 
             </li>
             <li class="dropdown">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#prestaciones-collapse"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#prestaciones-collapse" aria-haspopup="true" aria-expanded="false">
 
                     <i-bs name="file-bar-graph">
                     </i-bs>
@@ -55,7 +55,6 @@
             <li class="dropdown">
                 <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inscriptos-collapse"
                     aria-haspopup="true" aria-expanded="false">
-                
                     <i-bs name="person"></i-bs>
                     Inscriptos
                 </a>
@@ -63,8 +62,20 @@
                     <ul class="btn-toggle-nav fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="inscriptos/total">Inscriptos total</a></li>
                         <li><a class="dropdown-item" routerLink="inscriptos/inscriptos_ceb">Inscriptos Ceb</a></li>
-                        <li><a class="dropdown-item" routerLink="inscriptos/grafico">Gráfico</a></li>
-                        <li><a class="dropdown-item" routerLink="inscriptos/inscriptos_ge">Por Grupo Etario</a></li>
+                        <li class="dropdown">
+                            <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#grafico-collapse" aria-haspopup="true" aria-expanded="false">
+                                Gráficos
+                            </a>
+                            <div class="collapse" id="grafico-collapse">
+                                <ul class="btn-toggle-nav fw-normal pb-1">
+                                    <li><a class="dropdown-item" routerLink="inscriptos/grafico">Inscriptos Y CEB</a></li>
+                                    <li><a class="dropdown-item" routerLink="inscriptos/inscriptos_ge">Inscriptos Grupo Etario</a></li>
+                                    <li><a class="dropdown-item" routerLink="inscriptos/ceb_ge">CEB Grupo Etario</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </li>
@@ -79,7 +90,7 @@
         <h6
             class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
             <span>Saved reports</span>
-            <a class="link-secondary"  aria-label="Add a new report">
+            <a class="link-secondary" aria-label="Add a new report">
                 <i-bs name="plus-circle"></i-bs>
 
             </a>

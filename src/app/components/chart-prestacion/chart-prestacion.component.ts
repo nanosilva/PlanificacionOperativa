@@ -42,6 +42,8 @@ export class ChartPrestacionComponent implements OnInit {
   transfAcum!: number;
   ultimoExte!: string;
   selectedMunicipio$= this.chartService.selectedmunicipio$;
+
+  //grafico lineas
   
   public chartData: ChartDataset[] = [
     {

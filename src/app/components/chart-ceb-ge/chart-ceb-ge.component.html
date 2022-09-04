@@ -1,1 +1,57 @@
-<p>chart-ceb-ge works!</p>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="container">
+        <h3 class="text-center text-white bg-dark py-2 ">CEB <small> por Grupo Etario </small></h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <div>
+
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">{{inscriptos_gp.municipio}}</h1>
+                        <p>
+                        <p>
+                        <form>
+                            <div class="form-row">
+                                <div class=col-md>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i-bs name="filter-square"></i-bs>
+
+
+                                            </div>
+                                        </div>
+                                        <select class="form-control" name="prestacion" [(ngModel)]="inscriptos_gp"
+                                            (change)="loadData($event)">
+                                            <option [ngValue]="inscriptos_gp" selected>Elige un municipio</option>
+                                            <option *ngFor="let inscriptos_gp of inscriptos_gpList |order:'municipio'" [ngValue]="inscriptos_gp">
+                                                {{inscriptos_gp.municipio}}</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="container">
+                        <canvas baseChart width="1000" height="400" 
+                        [type]="'bar'" 
+                        [datasets]="chartData"
+                        [options]="options" 
+                        [labels]="label">
+                        </canvas>
+                    </div>
+                    <div class="container mt-4">
+                        
+                      <p>Inscriptos CEB: <span style="font-weight:bold">{{total_insc_ceb|currency:' ':'symbol':'1.0-0'}} </span></p>
+                       <h5>CEB : {{total_pct |percent: '2.0-0'}} </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
