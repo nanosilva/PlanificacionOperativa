@@ -23,6 +23,8 @@ import { InscriptosCebComponent } from './components/inscriptos-ceb/inscriptos-c
 import { ChartInscriptosComponent } from './components/chart-inscriptos/chart-inscriptos.component';
 import { ChartInscripGeComponent } from './components/chart-inscrip-ge/chart-inscrip-ge.component';
 import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.component';
+import { Filter3Pipe } from './filter3.pipe';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.comp
     ChartInscriptosComponent,
     ChartInscripGeComponent,
     ChartCebGeComponent,
+    Filter3Pipe,
+    DashboardComponent,
     
   
     

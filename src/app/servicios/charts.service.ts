@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, pipe } from 'rxjs';
 import { Inscriptos, Inscriptos_gp, municipio, Prestacion, Rendicion, Transferencias, usodefondos } from '../components/interfaces/planificacio.interfaces';
+import { EventEmitter } from 'stream';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ChartsService {
+  @Output() 
+  
   muni_ini!: String;
 
 

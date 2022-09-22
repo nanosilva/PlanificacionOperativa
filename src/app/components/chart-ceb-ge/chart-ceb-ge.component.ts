@@ -48,11 +48,11 @@ export class ChartCebGeComponent implements OnInit {
 
   public chartData: ChartDataset[] = [
     {
-      data: [], label: 'CEB',
+      data: [], label: '% CEB',
       fill: true,
       tension: 0.2,
       //borderColor: 'black',
-      // backgroundColor: 'rgba(255,0,0,0.3)' 
+       backgroundColor: '#0a58ca' 
     },
 
 
@@ -62,7 +62,7 @@ export class ChartCebGeComponent implements OnInit {
     scales: {
       y: {
         beginAtZero: true,
-
+          
       },
 
     }

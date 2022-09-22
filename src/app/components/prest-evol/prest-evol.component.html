@@ -7,8 +7,8 @@
     <div class="row">
         <div class="col-3">
             <div class="form group">
-                <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
-                    [(ngModel)]="filterPost">
+                <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio"
+                    [(ngModel)]="searchText">
             </div>
         </div>
 
@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let prestacion of prestacionesList | filter:filterPost; index as i ">
+            <tr *ngFor="let prestacion of prestacionesList | filter3:searchText; index as i ">
                 <th scope="row">{{i+1}}</th>
                 <td>{{prestacion.cod_mun}}</td>
                 <td>{{prestacion.municipio}}</td>

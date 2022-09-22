@@ -13,6 +13,7 @@ export class TransferenciasComponent implements OnInit {
   name = 'ExcelSheet.xlsx';
   total!:number
   filterPost=""
+  searchText!: string;
   transferenciasList!: Transferencias[];
   transferencia: Transferencias = {
     id: 0,

@@ -14,9 +14,11 @@ import { ChartInscriptosComponent } from './components/chart-inscriptos/chart-in
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChartInscripGeComponent } from './components/chart-inscrip-ge/chart-inscrip-ge.component';
 import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'rendicion', component: RendicionComponent },
   { path: 'rendicion/grafico', component: ChartRendicionComponent },
   { path: 'transferencias', component: TransferenciasComponent },
@@ -32,7 +34,7 @@ const routes: Routes = [
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
   
 
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({

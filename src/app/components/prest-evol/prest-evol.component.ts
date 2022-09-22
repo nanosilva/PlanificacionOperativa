@@ -11,6 +11,7 @@ export class PrestEvolComponent implements OnInit {
   filterPost="";
   total!:number;
   name = 'Prestaciones.xlsx';
+  searchText!: string;
 
   prestacionesList!: Prestacion[];
   prestaciones: Prestacion={

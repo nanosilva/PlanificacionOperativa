@@ -1,0 +1,203 @@
+<!-- Main content -->
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+    <div class="row">
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            Prestaciones 2022</div>
+                        <div class="stat-digit">
+                            <i-bs name="file-bar-graph" width="50" height="50"> </i-bs>
+                            {{prestaciones|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            Prestaciones $</div>
+                        <div class="stat-digit">
+                            <i-bs name="person" width="50" height="50"></i-bs>
+                            {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            Inscriptos</div>
+                        <div class="stat-digit">
+                            <i-bs name="person" width="50" height="50"></i-bs>
+                            {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            Inscriptos CEB</div>
+                        <div class="stat-digit">
+                            <i-bs name="person" width="50" height="50"></i-bs>
+                            {{insc_ceb|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            % CEB</div>
+                        <div class="stat-digit">
+                            <i-bs name="person-check" width="50" height="50"></i-bs>
+                            {{insc_ceb/inscriptos| percent: '2.0-2'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            Transferencias</div>
+                        <div class="stat-digit">
+                            <i-bs name="file-bar-graph">
+                            </i-bs>
+                            256300250
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            Rendición</div>
+                        <div class="stat-digit">
+                            <i-bs name="file-bar-graph">
+                            </i-bs>
+                            %12.6
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                           % Rendición</div>
+                        <div class="stat-digit">
+                            <i-bs name="person" width="50" height="50"></i-bs>
+                            {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-lg 3">
+        <div class="card">
+            <div class="stat-widget-two">
+                <div class="stat-content">
+                    <div class="stat-text">
+                        Trazadoras</div>
+                    <div class="stat-digit">
+                        <i-bs name="person" width="50" height="50"></i-bs>
+                        {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg 3">
+        <div class="card">
+            <div class="stat-widget-two">
+                <div class="stat-content">
+                    <div class="stat-text">
+                        Efectores Convenio</div>
+                    <div class="stat-digit">
+                        <i-bs name="person" width="50" height="50"></i-bs>
+                        {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>

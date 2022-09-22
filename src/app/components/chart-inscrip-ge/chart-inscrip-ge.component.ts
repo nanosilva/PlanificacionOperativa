@@ -98,6 +98,7 @@ export class ChartInscripGeComponent implements OnInit {
       });
 
     };
-  }
+  };
+  
 
 }
