@@ -25,6 +25,7 @@ import { ChartInscripGeComponent } from './components/chart-inscrip-ge/chart-ins
 import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.component';
 import { Filter3Pipe } from './filter3.pipe';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ChartCebGeComponent,
     Filter3Pipe,
     DashboardComponent,
+    PrestEvolMontoComponent,
     
   
     

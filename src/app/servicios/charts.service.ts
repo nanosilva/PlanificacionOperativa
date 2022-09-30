@@ -2,14 +2,13 @@ import { Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, pipe } from 'rxjs';
 import { Inscriptos, Inscriptos_gp, municipio, Prestacion, Rendicion, Transferencias, usodefondos } from '../components/interfaces/planificacio.interfaces';
-import { EventEmitter } from 'stream';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ChartsService {
-  @Output() 
+ 
   
   muni_ini!: String;
 
@@ -51,10 +50,20 @@ export class ChartsService {
   public getPrestaciones(): Observable<Prestacion[]> {
     return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones`)
   };
+  public getPrestacionesMonto(): Observable<Prestacion[]>{
+    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones_monto`)
+
+  };
+
+  public fromMunicipioPm(municipio: any):Observable<any[]>{
+    return this.getPrestacionesMonto().pipe(map(data=>data.filter(m=>m.municipio===municipio)));
+
+  };
 
   public fromMunicipioP(municipio: any): Observable<any[]> {
     return this.getPrestaciones().pipe(map(data => data.filter(m => m.municipio === municipio)));
-  }
+  };
+  
   public getPrestacionesgp(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/prestaciones_gp_2022q`);
   };

@@ -86,17 +86,17 @@ export class ChartRendicionComponent implements OnInit {
   ngOnInit(): void {
     this.chartService.getRendicion().subscribe(data => {
       this.rendicionList = data;
-      console.log( this.selectedMunicipio);
-    this.chartService.selectedmunicipio$.subscribe(data1=>{
-      this.selectedMunicipio= data1
-    })  
+    //  console.log( this.selectedMunicipio);
+    //this.chartService.selectedmunicipio$.subscribe(data1=>{
+     // this.selectedMunicipio= data1
+ //   })  
       //this.chartService.fromMunicipio(this.municipio.municipio).subscribe(res => {
       //res.filter(m => m.municipio === this.municipio.municipio)
       // console.log(res)
       // }
       // )
       this.getMuni();
-      this.getRendido();
+    //this.getRendido();
       this.chartService.getTransferencias().subscribe(data =>{
         this.transferencia = data;
         console.log(this.transferencia)

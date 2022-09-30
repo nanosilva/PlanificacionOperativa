@@ -41,6 +41,7 @@ export interface Transferencias {
     anio_2020: number;
     anio_2021: number;
     anio_2022: number;
+    total_acum: number;
 
 }
 

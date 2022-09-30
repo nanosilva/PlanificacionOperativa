@@ -6,15 +6,15 @@
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
-                            Prestaciones 2022</div>
+                            <i-bs name="file-bar-graph" width="30" height="30"> </i-bs>
+                            Prestaciones 2022 Cant.
+                        </div>
                         <div class="stat-digit">
-                            <i-bs name="file-bar-graph" width="50" height="50"> </i-bs>
                             {{prestaciones|currency:' ':'symbol':'1.0-0'}}
                         </div>
                     </div>
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
-
                         </div>
                     </div>
                 </div>
@@ -25,9 +25,10 @@
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
-                            Prestaciones $</div>
+                            <i-bs name="file-earmark-bar-graph" width="30" height="30"></i-bs>
+                            Prestaciones $
+                        </div>
                         <div class="stat-digit">
-                            <i-bs name="person" width="50" height="50"></i-bs>
                             {{inscriptos|currency:' ':'symbol':'1.0-0'}}
                         </div>
                     </div>
@@ -46,9 +47,11 @@
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
-                            Inscriptos</div>
+                            <i-bs name="person" width="30" height="30"></i-bs>
+                            Inscriptos
+                        </div>
                         <div class="stat-digit">
-                            <i-bs name="person" width="50" height="50"></i-bs>
+
                             {{inscriptos|currency:' ':'symbol':'1.0-0'}}
                         </div>
                     </div>
@@ -65,9 +68,10 @@
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
-                            Inscriptos CEB</div>
+                            <i-bs name="person-check" width="30" height="30"></i-bs>
+                            Inscriptos CEB
+                        </div>
                         <div class="stat-digit">
-                            <i-bs name="person" width="50" height="50"></i-bs>
                             {{insc_ceb|currency:' ':'symbol':'1.0-0'}}
                         </div>
                     </div>
@@ -84,9 +88,10 @@
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
-                            % CEB</div>
+                            <i-bs name="person-fill" width="30" height="30"></i-bs>
+                            % CEB
+                        </div>
                         <div class="stat-digit">
-                            <i-bs name="person-check" width="50" height="50"></i-bs>
                             {{insc_ceb/inscriptos| percent: '2.0-2'}}
                         </div>
                     </div>
@@ -103,13 +108,14 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content">
+                    <div class="stat-content"><a class="ancla" routerLink="/transferencias" style="text-decoration:none" >
                         <div class="stat-text">
-                            Transferencias</div>
+                            <i-bs name="cash-coin" width="30" height="30"></i-bs>
+                            Transferencias
+                        </div></a>
                         <div class="stat-digit">
-                            <i-bs name="file-bar-graph">
-                            </i-bs>
-                            256300250
+
+                            {{transferencias | currency: '$ ':'symbol':'1.0-0'}}
                         </div>
                     </div>
                     <div class="progress">
@@ -123,13 +129,13 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content">
-                        <div class="stat-text">
-                            Rendición</div>
+                    <div class="stat-content"><a class="ancla" routerLink="/rendicion" style="text-decoration:none" >
+                        <div class="stat-text" >
+                            <i-bs name="cash-stack" width="30" height="30"></i-bs>
+                            Rendición
+                        </div> </a>
                         <div class="stat-digit">
-                            <i-bs name="file-bar-graph">
-                            </i-bs>
-                            %12.6
+                            {{rendido|currency:'':'symbol':'1.0-0'}}
                         </div>
                     </div>
                     <div class="progress">
@@ -143,12 +149,13 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content">
+                    <div class="stat-content" >
                         <div class="stat-text">
-                           % Rendición</div>
+                           <i-bs name="pie-chart" width="30" height="30"></i-bs>
+                            % Rendición</div> 
                         <div class="stat-digit">
-                            <i-bs name="person" width="50" height="50"></i-bs>
-                            {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                            
+                            {{rendido/ transferencias|percent:'2.1-2'}}
                         </div>
                     </div>
                     <div class="progress">
@@ -161,43 +168,45 @@
         </div>
     </div>
     <div class="row">
-    <div class="col-lg 3">
-        <div class="card">
-            <div class="stat-widget-two">
-                <div class="stat-content">
-                    <div class="stat-text">
-                        Trazadoras</div>
-                    <div class="stat-digit">
-                        <i-bs name="person" width="50" height="50"></i-bs>
-                        {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            <i-bs name="file-font" width="30" height="30"></i-bs>
+                            Trazadoras</div>
+                        <div class="stat-digit">
+                       
+                            {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+
+                        </div>
                     </div>
                 </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
+            </div>
+        </div>
+        <div class="col-lg 3">
+            <div class="card">
+                <div class="stat-widget-two">
+                    <div class="stat-content">
+                        <div class="stat-text">
+                            <i-bs name="hospital" width="30" height="30"></i-bs>
+                            Efectores Convenio</div>
+                        <div class="stat-digit">
+                        
+                            {{inscriptos|currency:' ':'symbol':'1.0-0'}}
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-lg 3">
-        <div class="card">
-            <div class="stat-widget-two">
-                <div class="stat-content">
-                    <div class="stat-text">
-                        Efectores Convenio</div>
-                    <div class="stat-digit">
-                        <i-bs name="person" width="50" height="50"></i-bs>
-                        {{inscriptos|currency:' ':'symbol':'1.0-0'}}
-                    </div>
-                </div>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="80">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </main>
