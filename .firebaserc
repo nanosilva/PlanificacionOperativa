@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "api-planif",
+    "apiplani": "api-planificacion"
+  }
+}

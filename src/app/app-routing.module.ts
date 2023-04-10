@@ -15,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChartInscripGeComponent } from './components/chart-inscrip-ge/chart-inscrip-ge.component';
 import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'transferencias', component: TransferenciasComponent },
   { path: 'transferencias/grafico', component: TransferenciasComponent },
   { path: 'usodefondos/grafico', component: UsodefondosComponent },
-  { path: 'prestaciones', component: PrestEvolComponent },
-  { path: 'prestaciones/grafico', component: ChartPrestacionComponent },
+  { path: 'prestaciones/total', component: PrestEvolComponent },
+  { path: 'prestaciones/total_monto', component: PrestEvolMontoComponent },
+  { path: 'prestaciones/grafico/total', component: ChartPrestacionComponent },
   { path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent },
   { path: 'inscriptos/total', component: InscriptosComponent },
   { path: 'inscriptos/inscriptos_ceb', component: InscriptosCebComponent },

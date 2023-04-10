@@ -26,6 +26,8 @@ import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.comp
 import { Filter3Pipe } from './filter3.pipe';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
+//firebase
+
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evo
     NgChartsModule,
     NgxBootstrapIconsModule.pick(allIcons),
     AppRoutingModule,
+    
+    
     
   ],
   providers: [],

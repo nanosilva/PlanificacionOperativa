@@ -71,10 +71,13 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+         
           "configurations": {
             "production": {
               "browserTarget": "planificacionop:build:production"
+             
             },
+            
             "development": {
               "browserTarget": "planificacionop:build:development"
             }

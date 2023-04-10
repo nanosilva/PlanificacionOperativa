@@ -46,9 +46,23 @@
                 </a>
                 <div class="collapse" id="prestaciones-collapse">
                     <ul class="btn-toggle-nav fw-normal pb-1 small">
-                        <li><a class="dropdown-item" routerLink="prestaciones">Total por Municipio</a></li>
-                        <li><a class="dropdown-item" routerLink="prestaciones/grafico">Gráfico</a></li>
-                        <li><a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo Etario</a></li>
+                        <li><a class="dropdown-item" routerLink="prestaciones/total">Total Cantidad</a></li>
+                        <li><a class="dropdown-item" routerLink="prestaciones/total_monto">Total Monto</a></li>
+                        <li class="dropdown">
+                            <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#graficoprestaciones-collapse" aria-haspopup="true" aria-expanded="false">
+                                Gráficos
+                            </a>
+                            <div class="collapse" id="graficoprestaciones-collapse">
+                                <ul class="btn-toggle-nav fw-normal pb-1">
+                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/total">Cantidad por año</a></li>
+                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/monto">Monto por año</a></li>
+                                    <li><a class="dropdown-item" routerLink="prestaciones/tipoprestacion">Por Tipo Prestación</a></li>
+                                    <li><a class="dropdown-item" routerLink="prestaciones/ge">Por Grupo Etario</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </li>

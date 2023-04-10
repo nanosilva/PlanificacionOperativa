@@ -6,6 +6,7 @@ import { Inscriptos, Prestacion, Rendicion } from '../components/interfaces/plan
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
+    'CORS':'*'
 
   }),
 };

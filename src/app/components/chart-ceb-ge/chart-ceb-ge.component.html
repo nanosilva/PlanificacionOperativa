@@ -26,7 +26,8 @@
                                         <select class="form-control" name="prestacion" [(ngModel)]="inscriptos_gp"
                                             (change)="loadData($event)">
                                             <option [ngValue]="inscriptos_gp" selected>Elige un municipio</option>
-                                            <option *ngFor="let inscriptos_gp of inscriptos_gpList |order:'municipio'" [ngValue]="inscriptos_gp">
+                                            <option *ngFor="let inscriptos_gp of inscriptos_gpList |order:'municipio'"
+                                                [ngValue]="inscriptos_gp">
                                                 {{inscriptos_gp.municipio}}</option>
 
                                         </select>
@@ -38,17 +39,15 @@
                     </div>
 
                     <div class="container">
-                        <canvas baseChart width="1000" height="400" 
-                        [type]="'bar'" 
-                        [datasets]="chartData"
-                        [options]="options" 
-                        [labels]="label">
+                        <canvas baseChart width="1000" height="400" [type]="'bar'" [datasets]="chartData"
+                            [options]="options" [labels]="label">
                         </canvas>
                     </div>
                     <div class="container mt-4">
-                        
-                      <p>Inscriptos CEB: <span style="font-weight:bold">{{total_insc_ceb|currency:' ':'symbol':'1.0-0'}} </span></p>
-                       <h5>CEB : {{total_pct |percent: '2.0-0'}} </h5>
+
+                        <p>Inscriptos CEB: <span style="font-weight:bold">{{total_insc_ceb|currency:'
+                                ':'symbol':'1.0-0'}} </span></p>
+                        <h5>CEB : {{total_pct |percent: '2.0-0'}} </h5>
                     </div>
                 </div>
             </div>
