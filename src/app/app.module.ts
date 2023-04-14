@@ -26,6 +26,7 @@ import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.comp
 import { Filter3Pipe } from './filter3.pipe';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
+import { ChartPrestMontoComponent } from './components/chart-prest-monto/chart-prest-monto.component';
 //firebase
 
 
@@ -52,6 +53,7 @@ import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evo
     Filter3Pipe,
     DashboardComponent,
     PrestEvolMontoComponent,
+    ChartPrestMontoComponent,
     
   
     

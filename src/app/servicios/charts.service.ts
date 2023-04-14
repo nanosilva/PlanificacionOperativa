@@ -55,7 +55,7 @@ export class ChartsService {
 
   };
 
-  public fromMunicipioPm(municipio: any):Observable<any[]>{
+  public fromMunicipioM(municipio: any):Observable<any[]>{
     return this.getPrestacionesMonto().pipe(map(data=>data.filter(m=>m.municipio===municipio)));
 
   };

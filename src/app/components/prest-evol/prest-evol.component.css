@@ -4,3 +4,11 @@ div#banner{
 	height:400x;
 	background-color: black;
 }
+tbody
+.cantidad {
+    text-align: right;
+  }
+
+th.anio
+{  text-align: right;
+}

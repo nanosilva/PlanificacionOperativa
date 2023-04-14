@@ -70,10 +70,10 @@ export class DashboardComponent implements OnInit {
     })
   };
 
-  totalRendido(): void{
-    this.chartService.getRendicion().subscribe(data=>{
-      let total_rendido = data.map(data => data.acumulado).reduce((acum, curr)=> acum+curr, 0 );
-      this.rendido = total_rendido/2;
+  totalRendido(): void {
+    this.chartService.getRendicion().subscribe(data => {
+      let total_rendido = data.map(data => data.acumulado).reduce((acum, curr) => acum + curr, 0);
+      this.rendido = total_rendido / 2;
       console.log(this.rendido)
     })
   }

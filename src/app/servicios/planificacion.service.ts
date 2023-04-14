@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Inscriptos, Prestacion, Rendicion } from '../components/interfaces/planificacio.interfaces';
+import { Inscriptos, Prestacion, Prestacion_monto, Rendicion } from '../components/interfaces/planificacio.interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -37,6 +37,11 @@ export class PlanificacionService {
   };
   getInscriptosCeb(): Observable<Inscriptos[]>{
     return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb`);
-  }
+  };
+
+  getPrestacionesMonto(): Observable<Prestacion_monto[]>{
+    return this.http.get<Prestacion_monto[]>(`${this.apiUrl}/prestaciones_monto`);
+  };
+  
 
 }
