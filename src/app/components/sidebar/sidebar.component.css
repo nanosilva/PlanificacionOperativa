@@ -52,7 +52,7 @@ body {
   }
   
   .sidebar .nav-link.active {
-    color: #2470dc;
+    color: #0b0c0e;
   }
   
   .sidebar .nav-link:hover .feather,
@@ -108,7 +108,7 @@ body {
 .btn-toggle:hover,
 .btn-toggle:focus {
   color: rgba(0, 0, 0, .85);
-  background-color: #d2f4ea;
+  background-color: #7ebccc;
 }
 
 .btn-toggle::before {
@@ -132,7 +132,7 @@ body {
 }
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
-  background-color: #d2f4ea;
+  background-color: #93c0ca;
 }
 
 .scrollarea {

@@ -27,6 +27,7 @@ import { Filter3Pipe } from './filter3.pipe';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
 import { ChartPrestMontoComponent } from './components/chart-prest-monto/chart-prest-monto.component';
+import { UsodefondosListComponent } from './components/usodefondos-list/usodefondos-list.component';
 //firebase
 
 
@@ -54,6 +55,7 @@ import { ChartPrestMontoComponent } from './components/chart-prest-monto/chart-p
     DashboardComponent,
     PrestEvolMontoComponent,
     ChartPrestMontoComponent,
+    UsodefondosListComponent,
     
   
     
