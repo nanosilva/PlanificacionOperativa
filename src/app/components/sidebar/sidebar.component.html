@@ -93,11 +93,19 @@
                     </ul>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="usodefondos/grafico">
-                    <i-bs name="layers"></i-bs>
-                    Uso de Fondos
-                </a>
+            <li class="dropdown">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#usodefondos-collapse"
+                aria-haspopup="true" aria-expanded="false">
+                <i-bs name="layers"></i-bs>
+                Uso de Fondos
+            </a>
+            <div class="collapse" id="usodefondos-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a class="dropdown-item" routerLink="usodefondos/total">Total por Municipio</a></li>
+                    <li><a class="dropdown-item" routerLink="usodefondos/grafico">Gráfico</a></li>
+
+                </ul>
+            </div>
             </li>
         </ul>
 

@@ -17,6 +17,7 @@ import { ChartCebGeComponent } from './components/chart-ceb-ge/chart-ceb-ge.comp
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
 import { ChartPrestMontoComponent } from './components/chart-prest-monto/chart-prest-monto.component';
+import { UsodefondosListComponent } from './components/usodefondos-list/usodefondos-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'transferencias', component: TransferenciasComponent },
   { path: 'transferencias/grafico', component: TransferenciasComponent },
   { path: 'usodefondos/grafico', component: UsodefondosComponent },
+  { path: 'usodefondos/total', component: UsodefondosListComponent},
   { path: 'prestaciones/total', component: PrestEvolComponent },
   { path: 'prestaciones/total_monto', component: PrestEvolMontoComponent },
   { path: 'prestaciones/grafico/total_monto', component: ChartPrestMontoComponent},
