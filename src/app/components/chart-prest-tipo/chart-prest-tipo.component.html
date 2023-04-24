@@ -21,12 +21,11 @@
                                 </div>
                                 <select class="form-control" name="Prestaciones" [(ngModel)]="prestaciones"
                                     (change)="loadData($event)">
-                                    <option [ngValue]="prestaciones" selected>Elige un municipio</option>
+                                  <option [ngValue]="prestaciones" selected>Elige un municipio</option>
                                     <option *ngFor="let prestaciones of prestacionesList |order:'municipio'"
                                         [ngValue]="prestaciones">
                                         {{prestaciones.municipio}}</option>
-
-                                </select>
+                                 </select>
                             </div>
                         </div>
                     </div>

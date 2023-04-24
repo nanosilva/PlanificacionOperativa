@@ -187,5 +187,18 @@ export interface Prestacion_tipo{
     anato_2022: number;
     varias_2022: number;
   };
+export interface Trazadoras{
+    id: number;
+    cod_mun: string;
+    municipio: string;
+    trazadora: number;
+    casos_positivos: number;
+    meta_casos: number;
+    meta_pct: number;
+    tasa_cobertura: string;
+    tcm: string;
+    cumple_tcm: string;
+    periodo: string;
+}
  
 

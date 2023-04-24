@@ -1,7 +1,7 @@
 import { Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, pipe } from 'rxjs';
-import { Inscriptos, Inscriptos_gp, municipio, Prestacion, Prestacion_tipo, Rendicion, Transferencias, usodefondos } from '../components/interfaces/planificacio.interfaces';
+import { Inscriptos, Inscriptos_gp, municipio, Prestacion, Prestacion_tipo, Rendicion, Transferencias, Trazadoras, usodefondos } from '../components/interfaces/planificacio.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -106,7 +106,11 @@ export class ChartsService {
   public fromMunicipioTp(municipio: any): Observable<Prestacion_tipo[]> {
     return this.getPrestacionesTipo().pipe(map(data => data.filter(m => m.municipio === municipio)))
   };
+  getTrazadoras(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2022`)
+  };
+  public fromMunicipioTrz(municipio: any): Observable<Trazadoras[]> {
+    return this.getTrazadoras().pipe(map(data => data.filter(m => m.municipio === municipio)))
 
-
-
+};
 }

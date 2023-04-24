@@ -20,6 +20,7 @@ import { ChartPrestMontoComponent } from './components/chart-prest-monto/chart-p
 import { UsodefondosListComponent } from './components/usodefondos-list/usodefondos-list.component';
 import { PrestTipoComponent } from './components/prest-tipo/prest-tipo.component';
 import { ChartPrestTipoComponent } from './components/chart-prest-tipo/chart-prest-tipo.component';
+import { TrazadorasComponent } from './components/trazadoras/trazadoras.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'inscriptos/inscriptos_ge', component: ChartInscripGeComponent },
   { path: 'inscriptos/ceb_ge', component: ChartCebGeComponent },
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
+  { path: 'trazadoras/total',component: TrazadorasComponent},
   { path: 'sidebar', component: SidebarComponent},
   
 

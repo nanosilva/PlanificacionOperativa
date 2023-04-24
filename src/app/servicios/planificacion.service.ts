@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Inscriptos, Prestacion, Prestacion_monto, Prestacion_tipo, Rendicion } from '../components/interfaces/planificacio.interfaces';
+import { Inscriptos, Prestacion, Prestacion_monto, Prestacion_tipo, Rendicion, Trazadoras } from '../components/interfaces/planificacio.interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -45,6 +45,10 @@ export class PlanificacionService {
 
   getPrestacionesTipo(): Observable<Prestacion_tipo[]>{
     return this.http.get<Prestacion_tipo[]>(`${this.apiUrl}/prestaciones_tipo`)
+  };
+
+  getTrazadoras(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2022`)
   }
   
 

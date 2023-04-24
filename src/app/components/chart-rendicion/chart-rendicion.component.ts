@@ -122,8 +122,6 @@ export class ChartRendicionComponent implements OnInit {
         const muni = res.map(res => res.municipio);
         this.muni_n = muni
         console.log(this.muni_n);
-
-
       }
     );
   };

@@ -1,0 +1,82 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="container">
+        <h3 class="text-center text-white bg-dark py-2 fixed ">Trazadoras </h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <div class="form group">
+                    <input type="text" class="form-control" name="filterPost" placeholder=""
+                        [(ngModel)]="trazadoras.municipio">
+                </div>
+
+            </div>
+
+            <div
+                class="col-6 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <span style="font-weight:bold">{{trazadoras.periodo}}</span>
+            </div>
+            <div class="col-2 div container">
+                <!-- <select> -->
+                <!-- <option *ngFor="let municipio of municipios | unique">{{ municipio }}</option> -->
+                <!-- </select> -->
+                
+                <select class="form-control" name="municipio" [(ngModel)]="trazadoras" (change)="loadData($event)">
+                    <option [ngValue]="trazadoras" selected>Elige un municipio</option>
+                    <option *ngFor="let trazadoras of trazadoraList | order:'municipio'" [ngValue]="trazadoras">
+                       {{trazadoras.municipio}}</option>
+
+                </select>
+
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
+                    <i-bs name="download"></i-bs> Excel
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="table responsive-md">
+        <table class="table table-striped table-hover" id="rend-tabla">
+            <thead>
+                <tr>
+
+                    <th scope="col">Trazadora</th>
+                    <th scope="col">Casos Reportados</th>
+                    <th scope="col">Meta 2022 casos</th>
+                    <th scope="col">Meta %</th>
+                    <th scope="col">Tasa Cobertura Municipio</th>
+                    <th scope="col">Tasa Cobertura Mínima</th>
+                    <th scope="col">Alcanza TCM</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="loadData">
+                <tr *ngFor="let trazadoras of trazadoraList | filter3:trazadoras.municipio">
+                    <td>{{trazadoras.trazadora}}</td>
+                    <td>{{trazadoras.casos_positivos}}</td>
+                    <td>{{trazadoras.meta_casos|currency:' ':'symbol':'1.0-0'}}</td>
+                    <td>{{trazadoras.meta_pct|currency:' ':'symbol':'1.0-0'}}</td>
+                    <td>{{trazadoras.tasa_cobertura }}</td>
+                    <td>{{trazadoras.tcm}}</td>
+                    <td>{{trazadoras.cumple_tcm}}</td>
+
+                </tr>
+                <hr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</main>
