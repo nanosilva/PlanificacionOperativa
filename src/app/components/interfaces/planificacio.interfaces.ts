@@ -165,4 +165,40 @@ export interface Prestacion_monto{
     anio_2022: number;
     total_ac: number;
 
+};
+export interface Prestacion_tipo{
+    id: number;
+    cod_mun: string;
+    municipio: string;
+    consultas_ac: number;
+    inmunizaciones_ac: number;
+    ig_lb_pr_ac: number;
+    internacion_ac:number;
+    partos_ac: number;
+    talleres_ac: number;
+    anato_ac: number;
+    varias_ac: number;
+    consultas_2022: number;
+    inmunizaciones_2022: number;
+    ig_lb_pr_2022: number;
+    internacion_2022: number;
+    partos_2022: number;
+    talleres_2022: number;
+    anato_2022: number;
+    varias_2022: number;
+  };
+export interface Trazadoras{
+    id: number;
+    cod_mun: string;
+    municipio: string;
+    trazadora: number;
+    casos_positivos: number;
+    meta_casos: number;
+    meta_pct: number;
+    tasa_cobertura: string;
+    tcm: string;
+    cumple_tcm: string;
+    periodo: string;
 }
+ 
+

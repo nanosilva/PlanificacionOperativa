@@ -6,7 +6,6 @@
         <div class="row">
             <div class="container">
                 <div>
-
                     <div
                         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">{{prestacion.municipio}}</h1>
@@ -27,7 +26,8 @@
                                         <select class="form-control" name="prestacion" [(ngModel)]="prestacion"
                                             (change)="loadData($event)">
                                             <option [ngValue]="prestacion" selected>Elige un municipio</option>
-                                            <option *ngFor="let prestacion of prestacionList |order:'municipio'" [ngValue]="prestacion">
+                                            <option *ngFor="let prestacion of prestacionList |order:'municipio'"
+                                                [ngValue]="prestacion">
                                                 {{prestacion.municipio}}</option>
 
                                         </select>
@@ -39,11 +39,8 @@
                     </div>
 
                     <div class="container">
-                        <canvas baseChart width="1000" height="400" 
-                        [type]="'line'" 
-                        [datasets]="chartData"
-                        [options]="options" 
-                        [labels]="label">
+                        <canvas baseChart width="1000" height="400" [type]="'line'" [datasets]="chartData"
+                            [options]="options" [labels]="label">
                         </canvas>
                     </div>
                     <div class="container mt-4">

@@ -28,6 +28,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PrestEvolMontoComponent } from './components/prest-evol-monto/prest-evol-monto.component';
 import { ChartPrestMontoComponent } from './components/chart-prest-monto/chart-prest-monto.component';
 import { UsodefondosListComponent } from './components/usodefondos-list/usodefondos-list.component';
+import { PrestTipoComponent } from './components/prest-tipo/prest-tipo.component';
+import { ChartPrestTipoComponent } from './components/chart-prest-tipo/chart-prest-tipo.component';
+import { TrazadorasComponent } from './components/trazadoras/trazadoras.component';
+import { UniquePipe } from './unique.pipe';
 //firebase
 
 
@@ -56,6 +60,10 @@ import { UsodefondosListComponent } from './components/usodefondos-list/usodefon
     PrestEvolMontoComponent,
     ChartPrestMontoComponent,
     UsodefondosListComponent,
+    PrestTipoComponent,
+    ChartPrestTipoComponent,
+    TrazadorasComponent,
+    UniquePipe,
     
   
     

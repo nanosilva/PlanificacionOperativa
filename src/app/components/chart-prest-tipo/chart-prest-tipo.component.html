@@ -1,0 +1,84 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="container">
+        <h3 class="text-center text-white bg-dark py-2 ">Prestaciones 2022 <small>Por Tipo </small></h3>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">{{prestaciones.municipio}}</h1>
+                <form>
+                    <div class="form-row">
+                        <div class=col-md>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i-bs name="filter-square"></i-bs>
+
+
+                                    </div>
+                                </div>
+                                <select class="form-control" name="Prestaciones" [(ngModel)]="prestaciones"
+                                    (change)="loadData($event)">
+                                  <option [ngValue]="prestaciones" selected>Elige un municipio</option>
+                                    <option *ngFor="let prestaciones of prestacionesList |order:'municipio'"
+                                        [ngValue]="prestaciones">
+                                        {{prestaciones.municipio}}</option>
+                                 </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="container">
+                <canvas baseChart width="1000" height="400" [type]="'pie'" [datasets]="pieChartDatasets"
+                    [labels]="pieChartLabels" [options]="pieChartOptions" [legend]="pieChartLegend">
+
+
+                </canvas>
+            </div>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-2">
+                        <p class="small bg-nin05 ">Consultas: <span style="font-weight:bold">{{ct_pct}} % </span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-nin69">Inmunizaciones: <span style="font-weight:bold">{{imv_pct}} % </span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-adol">IGR+LBL+PRP: <span style="font-weight:bold">{{img_pct}} % </span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-adultos">Internaciones: <span style="font-weight:bold">{{ite_pct}} % </span>
+                        </p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-emb">Partos: <span style="font-weight:bold">{{parto_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-emb">Talleres: <span style="font-weight:bold">{{taller_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-emb">Anatom.Patolog.: <span style="font-weight:bold">{{apa_pct}} % </span></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="small bg-emb">Otras: <span style="font-weight:bold">{{varias_pct}} % </span></p>
+                    </div>
+                    <div class="bg-light"> Total 2022: <span style="font-weight:bold">{{prestAcum|currency:'
+                            ':'symbol':'1.0-0'}} </span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</main>

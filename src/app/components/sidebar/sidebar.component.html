@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row">
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-    <div class="position-sticky pt-3">
+    <div class="">
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
                     <i-bs name="house-door-fill" style="color:black"></i-bs>
-                    Home
+                    Inicio
                 </a>
             </li>
             <li class="dropwdown">
@@ -59,7 +59,7 @@
                                 <ul class="btn-toggle-nav fw-normal pb-1">
                                     <li><a class="dropdown-item" routerLink="prestaciones/grafico/total">Cantidad por año</a></li>
                                     <li><a class="dropdown-item" routerLink="prestaciones/grafico/total_monto">Monto por año</a></li>
-                                    <li><a class="dropdown-item" routerLink="prestaciones/tipoprestacion">Por Tipo Prestación</a></li>
+                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/tipoprestacion">Por Tipo Prestación</a></li>
                                     <li><a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo Etario</a></li>
                                 </ul>
                             </div>
@@ -105,6 +105,20 @@
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a class="dropdown-item" routerLink="usodefondos/total">Total por Municipio</a></li>
                     <li><a class="dropdown-item" routerLink="usodefondos/grafico">Gráfico</a></li>
+
+                </ul>
+            </div>
+            </li>
+            <li class="dropdown">
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trazadoras-collapse"
+                aria-haspopup="true" aria-expanded="false">
+                <i-bs name="layers"></i-bs>
+               Trazadoras
+            </a>
+            <div class="collapse" id="trazadoras-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a class="dropdown-item" routerLink="trazadoras/total">Total por Municipio</a></li>
+                    <li><a class="dropdown-item" routerLink="trazadoras/grafico">Gráfico</a></li>
 
                 </ul>
             </div>
