@@ -34,7 +34,8 @@ export class TrazadorasComponent implements OnInit {
   };
   
   municipios!: any[];
-  municipio = [...new Set(this.municipios)]
+  municipio = [...new Set(this.municipios)];
+  showTrz = false;
 
 
   constructor(private datosPlanificacion: PlanificacionService,
@@ -43,7 +44,7 @@ export class TrazadorasComponent implements OnInit {
   ngOnInit(): void {
     this.datosPlanificacion.getTrazadoras().subscribe(data => {
       this.trazadoraList = data;
-      console.log(data)
+      console.log(data, this.showTrz)
       this.getMuni();
 
     })
