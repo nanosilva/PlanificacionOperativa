@@ -199,6 +199,19 @@ export interface Trazadoras{
     tcm: string;
     cumple_tcm: string;
     periodo: string;
+};
+
+export interface Trz_evol{
+    id: number;
+    cod_mun: string;
+    municipio: string;
+    trazadora: number;
+    casos_1c2022: number;
+    tca_1c2022: string;
+    casos_2c2022: number;
+    tca_2c2022: string;
+    casos_3c2022: number;
+    tca_3c2022: string;
 }
  
 

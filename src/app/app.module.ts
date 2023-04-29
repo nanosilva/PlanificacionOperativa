@@ -33,6 +33,7 @@ import { ChartPrestTipoComponent } from './components/chart-prest-tipo/chart-pre
 import { TrazadorasComponent } from './components/trazadoras/trazadoras.component';
 import { UniquePipe } from './unique.pipe';
 import { AlphabeticalPipe } from './alphabetical.pipe';
+import { TrzComparacionComponent } from './components/trz-comparacion/trz-comparacion.component';
 //firebase
 
 
@@ -66,6 +67,7 @@ import { AlphabeticalPipe } from './alphabetical.pipe';
     TrazadorasComponent,
     UniquePipe,
     AlphabeticalPipe,
+    TrzComparacionComponent,
     
   
     
