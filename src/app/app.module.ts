@@ -34,6 +34,7 @@ import { TrazadorasComponent } from './components/trazadoras/trazadoras.componen
 import { UniquePipe } from './unique.pipe';
 import { AlphabeticalPipe } from './alphabetical.pipe';
 import { TrzComparacionComponent } from './components/trz-comparacion/trz-comparacion.component';
+import { ChartTrzComponent } from './components/chart-trz/chart-trz.component';
 //firebase
 
 
@@ -68,6 +69,7 @@ import { TrzComparacionComponent } from './components/trz-comparacion/trz-compar
     UniquePipe,
     AlphabeticalPipe,
     TrzComparacionComponent,
+    ChartTrzComponent,
     
   
     

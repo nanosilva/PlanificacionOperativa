@@ -22,6 +22,7 @@ import { PrestTipoComponent } from './components/prest-tipo/prest-tipo.component
 import { ChartPrestTipoComponent } from './components/chart-prest-tipo/chart-prest-tipo.component';
 import { TrazadorasComponent } from './components/trazadoras/trazadoras.component';
 import { TrzComparacionComponent } from './components/trz-comparacion/trz-comparacion.component';
+import { ChartTrzComponent } from './components/chart-trz/chart-trz.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
   { path: 'trazadoras/trz_1c2022',component: TrazadorasComponent},
   { path: 'trazadoras/evolucion', component:TrzComparacionComponent},
+  { path:'trazadoras/grafico/evolucion', component:ChartTrzComponent},
   { path: 'sidebar', component: SidebarComponent},
   
   
