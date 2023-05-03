@@ -117,6 +117,7 @@ export class ChartCebGeComponent implements OnInit {
         this.hombres_pct = Math.round((hombres_ceb / hombres) * 100);
 
         this.chartData[0].data = [this.ninos_05_pct, this.ninos_69_pct,this.adolesc_pct, this.mujeres_pct, this.hombres_pct];
+        
 
         this.chart.update();
         console.log(this.ninos_05_pct, this.ninos_69_pct,this.adolesc_pct, this.mujeres_pct, this.hombres_pct)

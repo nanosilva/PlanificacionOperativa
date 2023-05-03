@@ -1,13 +1,13 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="container">
-        <h3 class="text-center text-white bg-dark py-2 ">Inscriptos y CEB</h3>
+        <h3 class="text-center text-white bg-dark py-2 ">Trazadoras comparacón</h3>
     </div>
     <div class="container">
         <div class="row">
             <div class="container">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">{{inscriptos.municipio}}</h1>
-                    <p class="bg-light">CEB: {{porcentaje| percent: '2.1-2'}}
+                    <h1 class="h2">{{trazadora.municipio}}</h1>
+                    <p class="bg-light">{{porcentaje| percent: '2.1-2'}}
                     <p>
                     <form>
                         <div class="form-row">
@@ -20,11 +20,11 @@
 
                                         </div>
                                     </div>
-                                    <select class="form-control" name="municipio" [(ngModel)]="inscriptos"
+                                    <select class="form-control" name="municipio" [(ngModel)]="trazadora"
                                         (change)="loadData($event)">
-                                        <option [ngValue]="inscriptos" selected>Elige un municipio</option>
-                                        <option *ngFor="let inscriptos of inscriptosList | order:'municipio'"[ngValue]="inscriptos">
-                                            {{inscriptos.municipio}}</option>
+                                        <option [ngValue]="trazadora" selected>Elige un municipio</option>
+                                        <option *ngFor="let trazadora of trazadoraList |unique| order:'municipio'"[ngValue]="trazadora">
+                                            {{trazadora.municipio}}</option>
 
                                     </select>
                                 </div>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="container">
-                    <canvas baseChart width="1000" height="400" [type]="'line'" [datasets]="chartData"
+                    <canvas baseChart width="1000" height="400" [type]="'bar'" [datasets]="chartData"
                         [options]="options" [labels]="label">
                     </canvas>
                 </div>
