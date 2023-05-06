@@ -1,6 +1,6 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="container">
-        <h3 class="text-center text-white bg-dark py-2 ">Trazadoras comparacón</h3>
+        <h3 class="text-center text-white bg-dark py-2 ">Evolución Tasa de Cobertura,</h3>
     </div>
     <div class="container">
         <div class="row">
@@ -20,10 +20,10 @@
 
                                         </div>
                                     </div>
-                                    <select class="form-control" name="municipio" [(ngModel)]="trazadora"
+                                    <select class="form-control" name="municipio" [(ngModel)]="trazadora "
                                         (change)="loadData($event)">
-                                        <option [ngValue]="trazadora" selected>Elige un municipio</option>
-                                        <option *ngFor="let trazadora of trazadoraList |unique| order:'municipio'"[ngValue]="trazadora">
+                                        <option [ngValue]="trazadora " selected>Elige un municipio</option>
+                                        <option *ngFor="let trazadora of trazadoraList |unique2:'municipio' | order:'municipio'"[ngValue]="trazadora">
                                             {{trazadora.municipio}}</option>
 
                                     </select>
@@ -39,13 +39,7 @@
                         [options]="options" [labels]="label">
                     </canvas>
                 </div>
-                <div class="container mt-4">
-                    <div class="container">
-                        <p>Incriptos, Var.Anual: <span style="font-weight:bold">{{var_inscriptos|percent: '2.1-1'}}</span></p>
-                        <p>CEB, Var.Anual: <span style="font-weight:bold"> {{var_ceb|percent: '2.1-1'}}</span></p>
-                    </div>
-
-                </div>
+                
             </div>
 
         </div>

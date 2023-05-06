@@ -30,7 +30,10 @@ export class ChartTrzComponent implements OnInit {
     tca_2c2022: "",
     casos_3c2022: 0,
     tca_3c2022: ""
-  }
+  };
+  municipios!: any[];
+  muni_nombre!: any[]
+  showTrz = false;
 
   public chartData: ChartDataset[] = [
     {
@@ -66,6 +69,13 @@ export class ChartTrzComponent implements OnInit {
   ngOnInit(): void {
     this.chartService.getTrazadorasEvol().subscribe(data => {
       this.trazadoraList = data;
+      this.getMuni();
+     
+      //  let municipio = [...new Set(this.municipios)];
+      //  this.muni_nombre = municipio
+
+      //  console.log(this.muni_nombre);
+      
     })
   };
   loadData(event: any) {
@@ -127,10 +137,28 @@ export class ChartTrzComponent implements OnInit {
 
     }
 
-  }
+  };
+  getMuni(): void {
+    this.chartService.getTrazadorasEvol().subscribe(
+      res => {
+        let muni = res.map(res => res.municipio);
+        this.municipios = muni
+        console.log(this.municipios);
+        
+       let municipio = [...new Set(this.municipios)];
+       this.muni_nombre = municipio
+
+       console.log(this.muni_nombre);
+       
+      }
+    )
+  };
+
 
 
 
 }
+
+
 
 
