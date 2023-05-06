@@ -17,6 +17,8 @@ export class TrazadorasComponent implements OnInit {
 
   total!: any
   filterPost2 = ""
+
+  
   searchText!: string;
   trazadoraList!: Trazadoras[];
   trazadoras = {
@@ -32,20 +34,22 @@ export class TrazadorasComponent implements OnInit {
     tcm: "",
     cumple_tcm: "",
   };
+  showTrz!= false,
   
   municipios!: any[];
-  municipio = [...new Set(this.municipios)];
-  showTrz = false;
-
+  municipio= this.getMuni()
+  // municipio_n=[...new Set(this.municipios.map((p)=>p.municipio))]
+  
 
   constructor(private datosPlanificacion: PlanificacionService,
     private chartService: ChartsService) { }
 
   ngOnInit(): void {
-    this.datosPlanificacion.getTrazadoras().subscribe(data => {
-      this.trazadoraList = data;
-      console.log(data, this.showTrz)
-      this.getMuni();
+    this.datosPlanificacion.getTrazadoras().subscribe(data=>{
+      this.trazadoraList= data;
+      console.log(data)
+     this.getMuni();
+     console.log(this.municipio)
 
     })
   };
@@ -70,29 +74,27 @@ export class TrazadorasComponent implements OnInit {
         this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tasa_cobertura))),
         this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tcm))),
         this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.cumple_tcm))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.municipio))),
-        this.chartService.getTrazadoras()
-      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8]) => {
+        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.municipio)))
 
-        let trz1 = [data0[0], data1[0], data2[0], data3[0], data4[0], data5[0], data6[0], data7];
+      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7]) => {
+
+       let trz1 = [data0[0], data1[0], data2[0], data3[0], data4[0], data5[0], data6[0], data7[0]];
         // let trz1 = data1 as any[];
         let trz2 = data2 as any[];
         let trz3 = data3 as any[];
         // let trz4 = data4 as unknown as string;
         // let trz5 = data5 as unknown as string;
         // let trz6 = data6 as unknown as string;
-           let trz7 = data7 as unknown as string;
-        // this.municipios = municipio_n
-        // console.log(this.municipios);
+        // let trz7= data7 as unknown as string
 
         // let trz = [trz0];
         // let trz_n = [...new Set(trz)];
         // console.log(trz_n);   
-        console.log(trz1, trz2, trz3, trz7);
+        console.log(trz1, trz2, trz3);
+       
 
         // let muni = Array.from(new Set(data7))
-        //  this.municipios= muni;
-        //  console.log(this.municipios)
+        // this.municipios= muni
       });
     };
   };

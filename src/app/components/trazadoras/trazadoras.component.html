@@ -32,7 +32,7 @@
                     <option *ngFor="let municipio of municipios | alphabetical |unique" [ngValue]="municipio">
                         {{municipio}}</option>
 
-                </select>
+                </select> -->
 
             </div>
         </div>
@@ -56,6 +56,7 @@
                     <th scope="col">Alcanza TCM</th>
                 </tr>
             </thead>
+            <tbody >
             <tbody *ngIf="showTrz">
                 <tr *ngFor="let trazadoras of trazadoraList | filter3:municipio">
                     <td>{{trazadoras.trazadora}}</td>
