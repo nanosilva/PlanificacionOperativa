@@ -26,17 +26,17 @@ import { ChartTrzComponent } from './components/chart-trz/chart-trz.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'rendicion', component: RendicionComponent },
   { path: 'rendicion/grafico', component: ChartRendicionComponent },
   { path: 'transferencias', component: TransferenciasComponent },
   { path: 'transferencias/grafico', component: TransferenciasComponent },
   { path: 'usodefondos/grafico', component: UsodefondosComponent },
-  { path: 'usodefondos/total', component: UsodefondosListComponent},
+  { path: 'usodefondos/total', component: UsodefondosListComponent },
   { path: 'prestaciones/total', component: PrestEvolComponent },
   { path: 'prestaciones/total_monto', component: PrestEvolMontoComponent },
-  { path: 'prestaciones/tipoprestacion', component: PrestTipoComponent},
-  { path: 'prestaciones/grafico/total_monto', component: ChartPrestMontoComponent},
+  { path: 'prestaciones/tipoprestacion', component: PrestTipoComponent },
+  { path: 'prestaciones/grafico/total_monto', component: ChartPrestMontoComponent },
   { path: 'prestaciones/grafico/total', component: ChartPrestacionComponent },
   { path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent },
   { path: 'prestaciones/grafico/tipoprestacion', component: ChartPrestTipoComponent },
@@ -45,12 +45,12 @@ const routes: Routes = [
   { path: 'inscriptos/inscriptos_ge', component: ChartInscripGeComponent },
   { path: 'inscriptos/ceb_ge', component: ChartCebGeComponent },
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
-  { path: 'trazadoras/trz_1c2022',component: TrazadorasComponent},
-  { path: 'trazadoras/evolucion', component:TrzComparacionComponent},
-  { path:'trazadoras/grafico/evolucion', component:ChartTrzComponent},
-  { path: 'sidebar', component: SidebarComponent},
-  
-  
+  { path: 'trazadoras/trz_1c2022', component: TrazadorasComponent },
+  { path: 'trazadoras/evolucion', component: TrzComparacionComponent },
+  { path: 'trazadoras/grafico/evolucion', component: ChartTrzComponent },
+  { path: 'sidebar', component: SidebarComponent },
+
+
 
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];

@@ -34,12 +34,11 @@ export class TrazadorasComponent implements OnInit {
     tcm: "",
     cumple_tcm: "",
   };
-  showTrz!= false,
   
   municipios!: any[];
-  municipio= this.getMuni()
+  municipio= [...new Set(this.municipios)]
   // municipio_n=[...new Set(this.municipios.map((p)=>p.municipio))]
-  
+  showTrz= false
 
   constructor(private datosPlanificacion: PlanificacionService,
     private chartService: ChartsService) { }
