@@ -23,9 +23,9 @@
       </div>
 
       <div class="col-12">
-        <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
+        <button class="btn btn-success btn-sm mt-2 float-end" (click)="exportToExcel()">
           <i-bs name="download"></i-bs> Excel</button>
-        <button class="btn btn-danger" (click)="downloadPDF()">
+        <button class="btn btn-danger btn-sm" (click)="downloadPDF()">
           <i-bs name="download"></i-bs>PDF</button>
 
       </div>
@@ -37,25 +37,27 @@
             <th scope="col">#</th>
             <th scope="col">Código Municipio</th>
             <th scope="col">Municipio</th>
-            <th scope="col">2019</th>
             <th scope="col">2020</th>
             <th scope="col">2021</th>
             <th scope="col">2022</th>
+            <th scope="col">2023</th>
             <th scope="col">Total 2008-2022</th>
             <th scope="col">Ultimo Expediente</th>
+            <th scope="col">Ult.Bimestre Rend</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let rendicion of rendicionList | filter2:filterPost2 |filter: filterPost; index as i ">
             <th scope="row">{{i+1}}</th>
             <td>{{rendicion.cod_mun}}</td>
-            <td>{{rendicion.municipio}}</td>
-            <td>{{rendicion.anio_2019|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.municipio}}</td>           
             <td>{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td>{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td>{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.anio_2023|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td>{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td>{{rendicion.fech_ult_expte }}</td>
+            <td>{{rendicion.ult_bm_rendido}}</td>
           </tr>
           <hr>
           <tr>

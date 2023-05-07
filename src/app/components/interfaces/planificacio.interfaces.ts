@@ -18,8 +18,10 @@ export interface Rendicion {
     anio_2020: number;
     anio_2021: number;
     anio_2022: number;
+    anio_2023: number;
     acumulado: number;
-    fech_ult_expte: string
+    fech_ult_expte: string;
+    ult_bm_rendido: string
 };
 export interface Transferencias {
     id: number;
@@ -41,6 +43,7 @@ export interface Transferencias {
     anio_2020: number;
     anio_2021: number;
     anio_2022: number;
+    anio_2023: number;
     total_acum: number;
 
 }

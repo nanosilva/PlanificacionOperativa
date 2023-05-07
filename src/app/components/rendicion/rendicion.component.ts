@@ -40,8 +40,10 @@ export class RendicionComponent implements OnInit {
     anio_2020: 0,
     anio_2021: 0,
     anio_2022: 0,
+    anio_2023:0,
     acumulado:0,
-    fech_ult_expte:""
+    fech_ult_expte:"",
+    ult_bm_rendido:""
   }
   constructor(private datosPlanificacion: PlanificacionService) { 
     // this.downloadPDF();

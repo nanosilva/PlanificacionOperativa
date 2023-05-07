@@ -25,11 +25,11 @@
                                         <option *ngFor="let rendicion of rendicionList |order:'municipio'"
                                             [ngValue]="rendicion">
                                             {{rendicion.municipio}}</option>
-
                                     </select>
-                                    <button class="btn btn-danger" (click)="downloadPDF()">
-                                        <i-bs name="download"></i-bs>PDF</button>
                                 </div>
+                                <button class="btn btn-danger btn-sm mt-2 float-end" (click)="downloadPDF()">
+                                    <i-bs name="download"></i-bs>PDF
+                                </button>
                             </div>
                         </div>
 
@@ -42,9 +42,12 @@
                     </canvas>
                 </div>
                 <div class="container mt-4">
-                    <div>Transferencias Acumulado: <span style="font-weight:bold">{{transfAcum|currency:'$':'symbol':'1.0-0'}} </span></div>
-                    <div>Rendición Acumulado: <span style="font-weight:bold">{{rendidoAcum|currency:'$':'symbol':'1.0-0'}} </span></div>
+                    <div>Transferencias Acumulado: <span
+                            style="font-weight:bold">{{transfAcum|currency:'$':'symbol':'1.0-0'}} </span></div>
+                    <div>Rendición Acumulado: <span
+                            style="font-weight:bold">{{rendidoAcum|currency:'$':'symbol':'1.0-0'}} </span></div>
                     <div>Última presentación: <span style="font-weight:bold">{{ultimoExte}} </span></div>
+                    <div>Último bim. rendido: <span style="font-weight:bold">{{ult_rendido}} </span></div>
                 </div>
             </div>
 
