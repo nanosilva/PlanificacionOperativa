@@ -45,24 +45,24 @@
             <thead>
                 <tr>
                     <th scope="col">Trazadora</th>
-                    <th scope="col">Casos Reportados</th>
-                    <th scope="col">Meta 2022 casos</th>
-                    <th scope="col">Meta %</th>
-                    <th scope="col">Tasa Cobertura Municipio</th>
-                    <th scope="col">Tasa Cobertura Mínima</th>
-                    <th scope="col">Alcanza TCM</th>
+                    <th class="header"scope="col">Casos Reportados</th>
+                    <th class="header" scope="col">Meta 2022 casos</th>
+                    <th class="header" scope="col">Meta %</th>
+                    <th class="header" scope="col">Tasa Cobertura Municipio</th>
+                    <th class="header" scope="col">Tasa Cobertura Mínima</th>
+                    <th class="header" scope="col">Alcanza TCM</th>
                 </tr>
             </thead>
             <tbody>
             <tbody *ngIf="showTrz">
                 <tr *ngFor="let trazadoras of trazadoraList | filter3:municipio">
                     <td>{{trazadoras.trazadora}}</td>
-                    <td>{{trazadoras.casos_positivos}}</td>
-                    <td>{{trazadoras.meta_casos|currency:' ':'symbol':'1.0-0'}}</td>
-                    <td>{{trazadoras.meta_pct|currency:' ':'symbol':'1.0-0'}}</td>
-                    <td>{{trazadoras.tasa_cobertura }}</td>
-                    <td>{{trazadoras.tcm}}</td>
-                    <td>{{trazadoras.cumple_tcm}}</td>
+                    <td class="cantidad">{{trazadoras.casos_positivos}}</td>
+                    <td class="cantidad">{{trazadoras.meta_casos|currency:' ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{trazadoras.meta_pct|currency:' ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{trazadoras.tasa_cobertura }}</td>
+                    <td class="cantidad">{{trazadoras.tcm}}</td>
+                    <td class="cantidad">{{trazadoras.cumple_tcm}}</td>
 
                 </tr>
                 <hr>

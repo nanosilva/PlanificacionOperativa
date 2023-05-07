@@ -1,11 +1,16 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Rendicion } from '../interfaces/planificacio.interfaces';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
 import * as XLSX from 'xlsx'
 
 @Component({
   selector: 'app-rendicion',
-  templateUrl: './rendicion.component.html',
+  templateUrl: './rendicion.component.html', 
   styleUrls: ['./rendicion.component.css']
 })
 export class RendicionComponent implements OnInit {
@@ -14,6 +19,7 @@ export class RendicionComponent implements OnInit {
   total!:number
   filterPost="";
   filterPost2="";
+  texto=""
   rendicionList!: Rendicion[];
   rendicion: Rendicion = {
     id: 0,
@@ -37,7 +43,9 @@ export class RendicionComponent implements OnInit {
     acumulado:0,
     fech_ult_expte:""
   }
-  constructor(private datosPlanificacion: PlanificacionService) { }
+  constructor(private datosPlanificacion: PlanificacionService) { 
+    // this.downloadPDF();
+  }
 
   ngOnInit(): void {
     
@@ -65,6 +73,51 @@ sumaColumna(): void{
   
 
 };
+borrarTexto() {
+  this.filterPost = '';
+};
+
+// crearPdf(){
+  // var data = document.getElementById('aPdf');
+  // html2canvas(data).then(canvas =>{
+    // var imgWidth = 208;
+    // var imgHeight = canvas.height * imgWidth / canvas.width;
+    // let pdf = new jspdf.jsPDF();
+    // var position = 0;
+    // pdf.save('MyPdf.pdf');
+  // });
+// };
+
+// public downloadPDF(): void {
+  // const doc = new jspdf.jsPDF();
+
+  //doc.text('Hello world!', 10, 10);
+  //doc.save('hello-world.pdf');
+// }
+downloadPDF() {
+  // Extraemos el
+  const DATA = document.getElementById('htmlData');
+  const doc = new jspdf.jsPDF('p', 'pt', 'a4');
+  const options = {
+    background: 'white',
+    scale: 3
+  };
+  html2canvas(DATA, options).then((canvas) => {
+
+    const img = canvas.toDataURL('image/PNG');
+       // Add image Canvas to PDF
+       const bufferX = 15;
+       const bufferY = 15;
+       const imgProps = (doc as any).getImageProperties(img);
+       const pdfWidth = doc.internal.pageSize.getWidth() - 2 * bufferX;
+       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+       doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
+       return doc;
+     }).then((docResult) => {
+       docResult.save(`${new Date().toISOString()}_tutorial.pdf`);
+     });
+   }
+
 }
 
 

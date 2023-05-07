@@ -1,13 +1,16 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"  id="htmlData" >
   <div class="container">
     <h3 class="text-center text-white bg-dark py-2 fixed ">Rendición de Fondos </h3>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-3">
-        <div class="form group">
-          <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Buscar Municipio" 
             [(ngModel)]="filterPost">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="text" (click)="borrarTexto()">X</button>
+            </div>
         </div>
       </div>
 
@@ -21,13 +24,14 @@
 
       <div class="col-12">
         <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
-          <i-bs name="download"></i-bs> Excel
-        </button>
+          <i-bs name="download"></i-bs> Excel</button>
+        <button class="btn btn-danger" (click)="downloadPDF()">
+          <i-bs name="download"></i-bs>PDF</button>
 
       </div>
     </div>
-    <div class="table responsive-md">
-      <table class="table table-striped table-hover" id="rend-tabla">
+    <div class="table responsive-md"  >
+      <table class="table table-striped table-hover"  id="rend-tabla" >
         <thead>
           <tr>
             <th scope="col">#</th>
