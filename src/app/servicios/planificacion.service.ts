@@ -17,19 +17,19 @@ const httpOptions = {
 })
 export class PlanificacionService {
  
-  private apiUrl = 'http://localhost:5001';
+  private apiUrl = 'http://localhost:8080';
 
 
   constructor(private http: HttpClient) { }
 
 
   obtenerRendicion(): Observable<Rendicion[]> {
-    return this.http.get<Rendicion[]>(`${this.apiUrl}/rendicion`);
+    return this.http.get<Rendicion[]>(`${this.apiUrl}/rendicion/ver`);
 
   };
 
   obtenerPrestaciones(): Observable<Prestacion[]>{
-    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones`);
+    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones/ver`);
   }
   
   getInscriptos(): Observable<Inscriptos[]>{
@@ -40,7 +40,7 @@ export class PlanificacionService {
   };
 
   getPrestacionesMonto(): Observable<Prestacion_monto[]>{
-    return this.http.get<Prestacion_monto[]>(`${this.apiUrl}/prestaciones_monto`);
+    return this.http.get<Prestacion_monto[]>(`${this.apiUrl}/prestaciones_monto/ver`);
   };
 
   getPrestacionesTipo(): Observable<Prestacion_tipo[]>{

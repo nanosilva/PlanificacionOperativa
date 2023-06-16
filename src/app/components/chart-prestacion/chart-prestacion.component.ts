@@ -56,7 +56,7 @@ export class ChartPrestacionComponent implements OnInit {
 
 
   ];
-  public label: string[] = ['2019', '2020', '2021', '2022'];
+  public label: string[] = ['2020', '2021', '2022', '2023'];
   public options: ChartOptions = {
     scales: {
       y: {
@@ -84,10 +84,10 @@ export class ChartPrestacionComponent implements OnInit {
   loadData(event: any) {
     if (this.prestacion.municipio) {
       forkJoin([
-        this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2019))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2020))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2021))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2022))),
+        this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2023))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.total_ac))),
         
 

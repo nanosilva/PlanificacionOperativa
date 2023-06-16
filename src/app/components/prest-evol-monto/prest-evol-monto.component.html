@@ -29,12 +29,12 @@
                     <th scope="col">#</th>
                     <th scope="col">Código Municipio</th>
                     <th scope="col">Municipio</th>
-                    <th scope="col" class="anio">2018</th>
                     <th scope="col" class="anio">2019</th>
                     <th scope="col" class="anio">2020</th>
                     <th scope="col" class="anio">2021</th>
                     <th scope="col" class="anio">2022</th>
-                    <th scope="col" class="anio">Total 2013-2022</th>
+                    <th scope="col" class="anio">2023</th>
+                    <th scope="col" class="anio">Total 2013-2023</th>
 
                 </tr>
             </thead>
@@ -43,11 +43,11 @@
                     <th scope="row">{{i+1}}</th>
                     <td>{{prestacion.cod_mun}}</td>
                     <td>{{prestacion.municipio}}</td>
-                    <td class="monto">{{prestacion.anio_2018 |currency:'$ ':'symbol':'1.0-0'}}</td>
-                    <td class="monto">{{prestacion.anio_2019|currency:'$':'symbol':'1.0-0'}}</td>
-                    <td class="monto">{{prestacion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="monto">{{prestacion.anio_2019 |currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="monto">{{prestacion.anio_2020|currency:'$':'symbol':'1.0-0'}}</td>
                     <td class="monto">{{prestacion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
                     <td class="monto">{{prestacion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="monto">{{prestacion.anio_2023|currency:'$ ':'symbol':'1.0-0'}}</td>
                     <td class="monto">{{prestacion.total_ac|currency:'$ ':'symbol':'1.0-0'}}</td>
 
                 </tr>

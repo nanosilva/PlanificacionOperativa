@@ -15,7 +15,7 @@ export class ChartsService {
 
   private municipio$ = new BehaviorSubject<any>(this.muni_ini);
 
-  private apiUrl = 'http://localhost:5001';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +29,7 @@ export class ChartsService {
   }
 
   public getRendicion(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/rendicion`);
+    return this.http.get<any[]>(`${this.apiUrl}/rendicion/ver`);
   }
 
   public fromMunicipio(municipio: any): Observable<any[]> {
@@ -39,7 +39,7 @@ export class ChartsService {
 
   };
   public getTransferencias(): Observable<Transferencias[]> {
-    return this.http.get<Transferencias[]>(`${this.apiUrl}/transferencias`);
+    return this.http.get<Transferencias[]>(`${this.apiUrl}/transferencias/ver`);
   };
 
   public fromMunicipioT(municipio: any): Observable<any[]> {
@@ -48,10 +48,10 @@ export class ChartsService {
 
   };
   public getPrestaciones(): Observable<Prestacion[]> {
-    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones`)
+    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones/ver`)
   };
   public getPrestacionesMonto(): Observable<Prestacion[]> {
-    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones_monto`)
+    return this.http.get<Prestacion[]>(`${this.apiUrl}/prestaciones_monto/ver`)
 
   };
 

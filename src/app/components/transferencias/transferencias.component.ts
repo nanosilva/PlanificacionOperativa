@@ -10,7 +10,7 @@ import * as XLSX from 'xlsx'
   styleUrls: ['./transferencias.component.css']
 })
 export class TransferenciasComponent implements OnInit {
-  name = 'ExcelSheet.xlsx';
+  name = 'Transferencias.xlsx';
   total!:number
   filterPost=""
   searchText!: string;

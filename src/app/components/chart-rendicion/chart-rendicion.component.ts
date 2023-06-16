@@ -140,7 +140,7 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2022))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2023))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.acumulado))),
-        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.fech_ult_expte))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.fecha_ult_expte))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.ult_bm_rendido))),
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2007))),
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2008))),
@@ -161,8 +161,10 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2023))),
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.total_acum))),
 
-      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13,
-        data14, data15, data16, data17, data18, data19, data20, data21, data22, data23, data24, data25]) => {
+      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10,
+        data11, data12, data13, data14, data15, data16, data17, data18, data19, data20,
+        data21, data22, data23, data24, data25
+      ]) => {
 
         let rend0 = +data0;
         let rend1 = +data1;
@@ -192,11 +194,11 @@ export class ChartRendicionComponent implements OnInit {
         let tr_acum = +data25
 
         let sumarend = rend5;
-        let sumatr = transf8 + transf9 + transf10 + transf11 + transf12 + transf13 + transf14 + transf15 + transf16 + transf17 +
-                      transf18 + transf19 + transf20 + transf21 + transf22 + transf23 +transf24
-        this.porcentaje = ((sumarend / sumatr))
+        // let sumatr = transf8 + transf9 + transf10 + transf11 + transf12 + transf13 + transf14 + transf15 + transf16 + transf17 +
+        //            transf18 + transf19 + transf20 + transf21 + transf22 + transf23 +transf24
+        this.porcentaje = ((sumarend / tr_acum))
         this.rendidoAcum = sumarend;
-        this.transfAcum = sumatr;
+        this.transfAcum = tr_acum;
         this.ultimoExte = data6 as any;
         this.ult_rendido = data7 as any
 

@@ -44,7 +44,7 @@ export class ChartPrestMontoComponent implements OnInit {
       // backgroundColor: 'rgba(255,0,0,0.3)' 
     }
   ];
-  public label: string[] = ['2019', '2020', '2021', '2022'];
+  public label: string[] = ['2020', '2021', '2022', '2023'];
   public options: ChartOptions = {
     scales: {
       y: {
@@ -67,10 +67,10 @@ export class ChartPrestMontoComponent implements OnInit {
   loadData(event: any) {
     if (this.prestacion_monto.municipio) {
       forkJoin([
-        this.chartService.fromMunicipioM(this.prestacion_monto.municipio).pipe(map(data => data.map(val => val.anio_2019))),
         this.chartService.fromMunicipioM(this.prestacion_monto.municipio).pipe(map(data => data.map(val => val.anio_2020))),
         this.chartService.fromMunicipioM(this.prestacion_monto.municipio).pipe(map(data => data.map(val => val.anio_2021))),
         this.chartService.fromMunicipioM(this.prestacion_monto.municipio).pipe(map(data => data.map(val => val.anio_2022))),
+        this.chartService.fromMunicipioM(this.prestacion_monto.municipio).pipe(map(data => data.map(val => val.anio_2023))),
         this.chartService.fromMunicipioM(this.prestacion_monto.municipio).pipe(map(data => data.map(val => val.total_ac))),
 
       ]).subscribe(([data0, data1, data2, data3, data4]) => {

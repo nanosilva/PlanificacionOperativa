@@ -10,7 +10,7 @@ export class Filter2Pipe implements PipeTransform {
 
     const resultPost2 = [];
     for (const rendicion2 of value) {
-      if (rendicion2.fech_ult_expte.toLowerCase().indexOf(arg) > -1) {
+      if (rendicion2.fecha_ult_expte.toLowerCase().indexOf(arg) > -1) {
         console.log('sip');
         resultPost2.push(rendicion2);
       };
