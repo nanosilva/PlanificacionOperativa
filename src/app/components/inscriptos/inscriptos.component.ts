@@ -15,35 +15,61 @@ export class InscriptosComponent implements OnInit {
   name= 'ExcelSheet.xlsx'; 
   total!: number;
   variacion!: number;
+  padron1!: string[];
+  padron2!: string;
+  padron3!: string;
+  padron4!: string;
+  padron5!: string;
+  padron6!: string;
+  padron7!: string;
+  padron8!: string;
+  padron9!: string;
+  padron10!: string;
+  padron11!: string;
+  padron12!: string;
+  padrones01!: string[];
+  padrones02!: string[];
+  padrones03!: string[];
+  padrones04!: string[];
+  padrones05!: string[];
+  padrones06!: string[];
+  padrones07!: string[];
+  padrones08!: string[];
+  padrones09!: string[];
+  padrones10!: string[];
+  padrones11!: string[];
+  padrones12!: string[];
+  //padron01= [...new Set(this.padrones01)]
+  
   inscriptosList!: Inscriptos[];
   inscriptos: Inscriptos={
     id: 0,
     cod_mun: "",
     municipio: "",
-    ene_21: 0,
-    feb_21: 0,
-    mar_21: 0,
-    abr_21: 0,
-    may_21: 0,
-    jun_21: 0,
-    jul_21: 0,
-    ago_21: 0,
-    sep_21: 0,
-    oct_21: 0,
-    nov_21: 0,
-    dic_21: 0,
-    ene_22: 0,
-    feb_22: 0,
-    mar_22:0,
-    abr_22: 0,
-    may_22: 0,
-    jun_22: 0,
-    jul_22: 0,
-    ago_22: 0,
-    sep_22: 0,
-    oct_22: 0,
-    nov_22: 0,
-    dic_22: 0,
+    mes_1: 0,
+    mes_2: 0,
+    mes_3: 0,
+    mes_4: 0,
+    mes_5: 0,
+    mes_6: 0,
+    mes_7: 0,
+    mes_8: 0,
+    mes_9: 0,
+    mes_10: 0,
+    mes_11: 0,
+    mes_12: 0,
+    padron_1:"",
+    padron_2:"",
+    padron_3:"",
+    padron_4:"",
+    padron_5:"",
+    padron_6:"",
+    padron_7:"",
+    padron_8:"",
+    padron_9:"",
+    padron_10:"",
+    padron_11:"",
+    padron_12:""
   }
 
   constructor(private datosPlanificacion: PlanificacionService) { }
@@ -52,6 +78,8 @@ export class InscriptosComponent implements OnInit {
     this.datosPlanificacion.getInscriptos().subscribe(data=>{
       this.inscriptosList=data;
       console.log(data)
+      this.getPadron();
+      
     })
   }
 
@@ -64,6 +92,38 @@ export class InscriptosComponent implements OnInit {
     XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
   
     XLSX.writeFile(book, this.name);
+  };
+ 
+  getPadron(): void {
+    this.datosPlanificacion.getInscriptos().subscribe(
+      res => {
+        let pad1 = res.map(res => res.padron_1);
+        let pad2 = res.map(res => res.padron_2);
+        let pad3 = res.map(res => res.padron_3);
+        let pad4 = res.map(res => res.padron_4);
+        let pad5 = res.map(res => res.padron_5);
+        let pad6 = res.map(res => res.padron_6);
+        let pad7 = res.map(res => res.padron_7);
+        let pad8 = res.map(res => res.padron_8);
+        let pad9 = res.map(res => res.padron_9);
+        let pad10 = res.map(res => res.padron_10);
+        let pad11 = res.map(res => res.padron_11);
+        let pad12 = res.map(res => res.padron_12);
+        this.padrones01= pad1;
+        this.padrones02= pad2;
+        this.padrones03= pad3;
+        this.padrones04= pad4;
+        this.padrones05= pad5;
+        this.padrones06= pad6;
+        this.padrones07= pad7;
+        this.padrones08= pad8;
+        this.padrones09= pad9;
+        this.padrones10= pad10;
+        this.padrones11= pad11;
+        this.padrones12= pad12;
+        console.log(this.padrones01[0]);
+      }
+    )
   };
   
 

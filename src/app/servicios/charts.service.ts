@@ -15,7 +15,7 @@ export class ChartsService {
 
   private municipio$ = new BehaviorSubject<any>(this.muni_ini);
 
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:5001';
 
   constructor(private http: HttpClient) { }
 

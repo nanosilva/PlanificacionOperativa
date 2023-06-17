@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 
   totalInscriptos(): void {
     this.datosPlanificacion.getInscriptos().subscribe(data => {
-      let total_inscripto = data.map(data => data.feb_22).reduce((acum, curr) => acum + curr, 0);
+      let total_inscripto = data.map(data => data.mes_12).reduce((acum, curr) => acum + curr, 0);
       this.inscriptos = total_inscripto / 2
       console.log(this.inscriptos);
     }
@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
   };
   totalIncriptosCeb(): void {
     this.datosPlanificacion.getInscriptosCeb().subscribe(data => {
-      let total_ceb = data.map(data => data.feb_22).reduce((acum, curr) => acum + curr, 0);
+      let total_ceb = data.map(data => data.mes_12).reduce((acum, curr) => acum + curr, 0);
       this.insc_ceb = total_ceb / 2
       console.log(this.insc_ceb)
     })

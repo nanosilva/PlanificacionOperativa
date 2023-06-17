@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class PlanificacionService {
  
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:5001';
 
 
   constructor(private http: HttpClient) { }
