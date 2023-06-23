@@ -1,5 +1,6 @@
 import { getLocaleDayPeriods } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { data } from 'autoprefixer';
 import { ChartDataset, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { forkJoin, map, Subscription } from 'rxjs';
@@ -89,6 +90,7 @@ export class ChartInscriptosComponent implements OnInit {
       this.inscriptosList = data;
     })
     console.log(this.porcentaje)
+    console.log(this.inscriptosList)
   };
 
   loadData(event: any) {

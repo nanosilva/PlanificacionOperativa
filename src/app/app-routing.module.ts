@@ -23,6 +23,7 @@ import { ChartPrestTipoComponent } from './components/chart-prest-tipo/chart-pre
 import { TrazadorasComponent } from './components/trazadoras/trazadoras.component';
 import { TrzComparacionComponent } from './components/trz-comparacion/trz-comparacion.component';
 import { ChartTrzComponent } from './components/chart-trz/chart-trz.component';
+import { Trazadoras2c2022Component } from './components/trazadoras2c2022/trazadoras2c2022.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'inscriptos/ceb_ge', component: ChartCebGeComponent },
   { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
   { path: 'trazadoras/trz_1c2022', component: TrazadorasComponent },
+  { path: 'trazadoras/trz_2c2022', component: Trazadoras2c2022Component },
   { path: 'trazadoras/evolucion', component: TrzComparacionComponent },
   { path: 'trazadoras/grafico/evolucion', component: ChartTrzComponent },
   { path: 'sidebar', component: SidebarComponent },

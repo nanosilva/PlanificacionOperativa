@@ -62,6 +62,7 @@ export interface Prestacion {
     anio_2020: number;
     anio_2021: number;
     anio_2022: number;
+    anio_2023: number;
     total_ac: number;
 };
 
@@ -173,22 +174,16 @@ export interface Prestacion_tipo{
     id: number;
     cod_mun: string;
     municipio: string;
-    consultas_ac: number;
-    inmunizaciones_ac: number;
-    ig_lb_pr_ac: number;
-    internacion_ac:number;
-    partos_ac: number;
-    talleres_ac: number;
-    anato_ac: number;
-    varias_ac: number;
-    consultas_2022: number;
-    inmunizaciones_2022: number;
-    ig_lb_pr_2022: number;
-    internacion_2022: number;
-    partos_2022: number;
-    talleres_2022: number;
-    anato_2022: number;
-    varias_2022: number;
+    consultas: number;
+    inmunizaciones: number;
+    ig_lb_pr: number;
+    internacion:number;
+    partos: number;
+    talleres: number;
+    anato: number;
+    varias: number;
+    total: number;
+    
   };
 export interface Trazadoras{
     id: number;
@@ -215,6 +210,12 @@ export interface Trz_evol{
     tca_2c2022: string;
     casos_3c2022: number;
     tca_3c2022: string;
+    casos_1c2023: number;
+    tca_1c2023: string;
+    casos_2c2023: number;
+    tca_2c2023: string;
+    casos_3c2023: number;
+    tca_3c2023: string;
 }
  
 

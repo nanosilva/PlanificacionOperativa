@@ -26,7 +26,13 @@ export class TrzComparacionComponent implements OnInit {
     casos_2c2022: 0,
     tca_2c2022: "",
     casos_3c2022: 0,
-    tca_3c2022: ""
+    tca_3c2022: "",
+    casos_1c2023: 0,
+    tca_1c2023: "",
+    casos_2c2023: 0,
+    tca_2c2023: "",
+    casos_3c2023: 0,
+    tca_3c2023: ""
   };
 
   municipios!: any[];

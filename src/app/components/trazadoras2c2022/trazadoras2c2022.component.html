@@ -1,6 +1,6 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="container">
-        <h3 class="text-center text-white bg-dark py-2 fixed ">Trazadoras Evolución</h3>
+        <h3 class="text-center text-white bg-dark py-2 fixed ">Trazadoras </h3>
     </div>
     <div class="container">
         <div class="row">
@@ -13,9 +13,9 @@
 
             <div
                 class="col-6 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <span style="font-weight:bold">Evolución</span>
+                <span style="font-weight:bold">2do Cuat 2022</span>
             </div>
-            
+
             <div class="col-2">
                 <!-- <select> -->
                 <!-- <option *ngFor="let municipio of municipios | unique">{{ municipio }}</option> -->
@@ -26,16 +26,13 @@
                             <i-bs name="filter-square"></i-bs>
                         </div>
                     </div>
-
-                <select class="form-control" name="municipio" [(ngModel)]="municipio" (change)="showTrz = true">
-                    <option [ngValue]="municipio" selected>Elige un municipio</option>
-                    <option *ngFor="let municipio of municipios | alphabetical |unique" [ngValue]="municipio">
-                        {{municipio}}</option>
-
-                </select>
-
+                    <select class="form-control" name="municipio" [(ngModel)]="municipio" (change)="showTrz = true">
+                        <option [ngValue]="municipio" selected>Elige un municipio</option>
+                        <option *ngFor="let municipio of municipios | alphabetical |unique" [ngValue]="municipio">
+                            {{municipio}}</option>
+                    </select>
+                </div>
             </div>
-        </div>
             <div class="col-2">
                 <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
                     <i-bs name="download"></i-bs> Excel
@@ -43,28 +40,29 @@
             </div>
         </div>
     </div>
-    <div class="table responsive-md" >
+    <div class="table responsive-md">
         <table class="table table-striped table-hover" id="rend-tabla">
             <thead>
                 <tr>
-                    <th scope="col" >Trazadora</th>
-                    <th scope="col" class="column">Casos 1C2022</th>
-                    <th scope="col" class="column">Tasa Cobertura 1C2022</th>
-                    <th scope="col" class="column">Casos 2C2022</th>
-                    <th scope="col" class="column">Tasa Cobertura 2C2022</th>
-                    <th scope="col" class="column">Casos 3C2022</th>
-                    <th scope="col" class="column">Tasa Cobertura 3C2022</th>
+                    <th scope="col">Trazadora</th>
+                    <th class="header"scope="col">Casos Reportados</th>
+                    <th class="header" scope="col">Meta 2022 casos</th>
+                    <th class="header" scope="col">Meta %</th>
+                    <th class="header" scope="col">Tasa Cobertura Municipio</th>
+                    <th class="header" scope="col">Tasa Cobertura Mínima</th>
+                    <th class="header" scope="col">Alcanza TCM</th>
                 </tr>
             </thead>
+            <tbody>
             <tbody *ngIf="showTrz">
                 <tr *ngFor="let trazadoras of trazadoraList | filter3:municipio">
-                    <td >{{trazadoras.trazadora}}</td>
-                    <td class="cantidad">{{trazadoras.casos_1c2022 |currency:' ':'symbol':'1.0-0'}}</td>
-                    <td class="cantidad">{{trazadoras.tca_1c2022 }}</td>
-                    <td class="cantidad">{{trazadoras.casos_2c2022 |currency:' ':'symbol':'1.0-0'}}</td>
-                    <td class="cantidad">{{trazadoras.tca_2c2022 }}</td>
-                    <td class="cantidad">{{trazadoras.casos_3c2022 |currency:' ':'symbol':'1.0-0'}}</td>
-                    <td class="cantidad">{{trazadoras.tca_3c2022}}</td>
+                    <td>{{trazadoras.trazadora}}</td>
+                    <td class="cantidad">{{trazadoras.casos_positivos}}</td>
+                    <td class="cantidad">{{trazadoras.meta_casos|currency:' ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{trazadoras.meta_pct|currency:' ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{trazadoras.tasa_cobertura }}</td>
+                    <td class="cantidad">{{trazadoras.tcm}}</td>
+                    <td class="cantidad">{{trazadoras.cumple_tcm}}</td>
 
                 </tr>
                 <hr>

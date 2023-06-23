@@ -15,7 +15,7 @@ export class ChartsService {
 
   private municipio$ = new BehaviorSubject<any>(this.muni_ini);
 
-  private apiUrl = 'http://localhost:5001';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -65,7 +65,7 @@ export class ChartsService {
   };
 
   public getPrestacionesgp(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/prestaciones_gp_2022q`);
+    return this.http.get<any[]>(`${this.apiUrl}/prestaciones_gp/ver`);
   };
 
   public fromMunicipioGp(municipio: any): Observable<any[]> {
@@ -73,27 +73,27 @@ export class ChartsService {
   };
 
   public getUsodefondos(): Observable<usodefondos[]> {
-    return this.http.get<usodefondos[]>(`${this.apiUrl}/uso_de_fondos`)
+    return this.http.get<usodefondos[]>(`${this.apiUrl}/uso_de_fondos/ver`)
   };
   public fromMunicipioUsof(municipio: any): Observable<any[]> {
     return this.getUsodefondos().pipe(map(data => data.filter(m => m.municipio === municipio)))
   };
 
   getInscriptos(): Observable<Inscriptos[]> {
-    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos`);
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos/ver`);
   };
   public fromMunicipioInsc(municipio: any): Observable<any[]> {
     return this.getInscriptos().pipe(map(data => data.filter(m => m.municipio === municipio)))
   };
   getInscriptosCeb(): Observable<Inscriptos[]> {
-    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb`);
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb/ver`);
 
   };
   public fromMunicipioIceb(municipio: any): Observable<any[]> {
     return this.getInscriptosCeb().pipe(map(data => data.filter(m => m.municipio === municipio)))
   };
   getInscriptosGp(): Observable<Inscriptos_gp[]> {
-    return this.http.get<Inscriptos_gp[]>(`${this.apiUrl}/inscriptos_gp`);
+    return this.http.get<Inscriptos_gp[]>(`${this.apiUrl}/inscriptos_gp/ver`);
 
   };
   public fromMunicipioGpi(municipio: any): Observable<Inscriptos_gp[]> {
@@ -101,20 +101,20 @@ export class ChartsService {
   };
 
   getPrestacionesTipo(): Observable<Prestacion_tipo[]> {
-    return this.http.get<Prestacion_tipo[]>(`${this.apiUrl}/prestaciones_tipo`)
+    return this.http.get<Prestacion_tipo[]>(`${this.apiUrl}/prestaciones_tipo/ver`)
   };
   public fromMunicipioTp(municipio: any): Observable<Prestacion_tipo[]> {
     return this.getPrestacionesTipo().pipe(map(data => data.filter(m => m.municipio === municipio)))
   };
   getTrazadoras(): Observable<Trazadoras[]> {
-    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2022`)
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2022/ver`)
   };
   public fromMunicipioTrz(municipio: any): Observable<Trazadoras[]> {
     return this.getTrazadoras().pipe(map(data => data.filter(m => m.municipio === municipio)))
 
   };
   getTrazadoras2C(): Observable<Trazadoras[]> {
-    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_2c2022`)
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_2c2022/ver`)
   };
   public fromMunicipioTrz2C(municipio: any): Observable<Trazadoras[]> {
     return this.getTrazadoras2C().pipe(map(data => data.filter(m => m.municipio === municipio)))
@@ -122,14 +122,14 @@ export class ChartsService {
   };
 
   getTrazadoras3C(): Observable<Trazadoras[]> {
-    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2022`)
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2022/ver`)
   };
   public municipioTrz3C(municipio: any): Observable<Trazadoras[]> {
-    return this.getTrazadoras2C().pipe(map(data => data.filter(m => m.municipio === municipio)))
+    return this.getTrazadoras3C().pipe(map(data => data.filter(m => m.municipio === municipio)))
 
   };
   getTrazadorasEvol(): Observable<Trz_evol[]> {
-    return this.http.get<Trz_evol[]>(`${this.apiUrl}/trazadoras_evolucion`)
+    return this.http.get<Trz_evol[]>(`${this.apiUrl}/trazadoras_evolucion/ver`)
   };
   public municipioTrzEvol(municipio: any): Observable<Trz_evol[]> {
     return this.getTrazadorasEvol().pipe(map(data => data.filter(m => m.municipio === municipio)))

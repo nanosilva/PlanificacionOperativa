@@ -25,22 +25,16 @@ export class ChartPrestTipoComponent implements OnInit {
     id: 0,
     cod_mun: "",
     municipio: "",
-    consultas_ac: 0,
-    inmunizaciones_ac: 0,
-    ig_lb_pr_ac: 0,
-    internacion_ac: 0,
-    partos_ac: 0,
-    talleres_ac: 0,
-    anato_ac: 0,
-    varias_ac: 0,
-    consultas_2022: 0,
-    inmunizaciones_2022: 0,
-    ig_lb_pr_2022: 0,
-    internacion_2022: 0,
-    partos_2022: 0,
-    talleres_2022: 0,
-    anato_2022: 0,
-    varias_2022: 0,
+    consultas: 0,
+    inmunizaciones: 0,
+    ig_lb_pr: 0,
+    internacion: 0,
+    partos: 0,
+    talleres: 0,
+    anato: 0,
+    varias: 0,
+    total: 0
+    
 
   };
 
@@ -80,14 +74,14 @@ export class ChartPrestTipoComponent implements OnInit {
   loadData(event: any) {
     if (this.prestaciones.municipio) {
       forkJoin([
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.consultas_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.inmunizaciones_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.ig_lb_pr_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.internacion_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.partos_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.talleres_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.anato_2022))),
-        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.varias_2022))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.consultas))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.inmunizaciones))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.ig_lb_pr))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.internacion))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.partos))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.talleres))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.anato))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.varias))),
 
 
       ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7]) => {

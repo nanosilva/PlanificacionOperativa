@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class PlanificacionService {
  
-  private apiUrl = 'http://localhost:5001';
+  private apiUrl = 'http://localhost:8080';
 
 
   constructor(private http: HttpClient) { }
@@ -33,10 +33,10 @@ export class PlanificacionService {
   }
   
   getInscriptos(): Observable<Inscriptos[]>{
-    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos`);
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos/ver`);
   };
   getInscriptosCeb(): Observable<Inscriptos[]>{
-    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb`);
+    return this.http.get<Inscriptos[]>(`${this.apiUrl}/inscriptos_ceb/ver`);
   };
 
   getPrestacionesMonto(): Observable<Prestacion_monto[]>{
@@ -48,7 +48,13 @@ export class PlanificacionService {
   };
 
   getTrazadoras(): Observable<Trazadoras[]>{
-    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2022`)
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2022/ver`)
+  };
+  getTrazadoras2c22(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_2c2022/ver`)
+  }
+  getTrazadoras3c22(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2022/ver`)
   }
   
 

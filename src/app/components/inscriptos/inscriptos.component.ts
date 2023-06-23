@@ -15,18 +15,6 @@ export class InscriptosComponent implements OnInit {
   name= 'ExcelSheet.xlsx'; 
   total!: number;
   variacion!: number;
-  padron1!: string[];
-  padron2!: string;
-  padron3!: string;
-  padron4!: string;
-  padron5!: string;
-  padron6!: string;
-  padron7!: string;
-  padron8!: string;
-  padron9!: string;
-  padron10!: string;
-  padron11!: string;
-  padron12!: string;
   padrones01!: string[];
   padrones02!: string[];
   padrones03!: string[];

@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
 
   totalPrestaciones(): void {
     this.datosPlanificacion.obtenerPrestaciones().subscribe(data => {
-      let total_prestaciones = data.map(data => data.anio_2022).reduce((acum, curr) => acum + curr, 0);
+      let total_prestaciones = data.map(data => data.anio_2023).reduce((acum, curr) => acum + curr, 0);
       this.prestaciones = total_prestaciones / 2;
       console.log(this.prestaciones)
     })

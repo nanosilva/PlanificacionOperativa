@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { data } from 'autoprefixer';
+import { ChartsService } from 'src/app/servicios/charts.service';
 import { PlanificacionService } from 'src/app/servicios/planificacion.service';
 import { Trazadoras } from '../interfaces/planificacio.interfaces';
 import * as XLSX from 'xlsx'
-import { forkJoin, map, pipe } from 'rxjs';
-import { ChartsService } from 'src/app/servicios/charts.service';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
-  selector: 'app-trazadoras',
-  templateUrl: './trazadoras.component.html',
-  styleUrls: ['./trazadoras.component.css']
+  selector: 'app-trazadoras2c2022',
+  templateUrl: './trazadoras2c2022.component.html',
+  styleUrls: ['./trazadoras2c2022.component.css']
 })
-export class TrazadorasComponent implements OnInit {
-
+export class Trazadoras2c2022Component implements OnInit {
   name = 'ExcelSheet.xlsx';
 
   total!: any
@@ -45,7 +43,7 @@ export class TrazadorasComponent implements OnInit {
     private chartService: ChartsService) { }
 
   ngOnInit(): void {
-    this.datosPlanificacion.getTrazadoras().subscribe(data=>{
+    this.datosPlanificacion.getTrazadoras2c22().subscribe(data=>{
       this.trazadoraList= data;
       console.log(data)
      this.getMuni();
@@ -67,15 +65,15 @@ export class TrazadorasComponent implements OnInit {
   loadData(event: any) {
     if (this.trazadoras.municipio) {
       forkJoin([
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.trazadora))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.casos_positivos))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_casos))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_pct))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tasa_cobertura))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tcm))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.cumple_tcm))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.municipio))),
-        this.chartService.fromMunicipioTrz(this.trazadoras.municipio).pipe(map(data => data.map(val => val.periodo)))
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.trazadora))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.casos_positivos))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_casos))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_pct))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tasa_cobertura))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tcm))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.cumple_tcm))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.municipio))),
+        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.periodo)))
 
       ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8]) => {
 
@@ -110,4 +108,8 @@ export class TrazadorasComponent implements OnInit {
   };
 
 }
+
+
+
+ 
 

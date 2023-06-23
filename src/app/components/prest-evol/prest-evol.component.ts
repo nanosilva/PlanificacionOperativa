@@ -28,7 +28,8 @@ export class PrestEvolComponent implements OnInit {
     anio_2020: 0,
     anio_2021: 0,
     anio_2022: 0,
-    total_ac: 0,
+    anio_2023: 0,
+    total_ac: 0
 
   }
 
