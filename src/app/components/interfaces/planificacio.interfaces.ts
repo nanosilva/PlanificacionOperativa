@@ -167,6 +167,7 @@ export interface Prestacion_monto{
     anio_2020: number;
     anio_2021: number;
     anio_2022: number;
+    anio_2023: number;
     total_ac: number;
 
 };

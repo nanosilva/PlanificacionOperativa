@@ -24,37 +24,41 @@ import { TrazadorasComponent } from './components/trazadoras/trazadoras.componen
 import { TrzComparacionComponent } from './components/trz-comparacion/trz-comparacion.component';
 import { ChartTrzComponent } from './components/chart-trz/chart-trz.component';
 import { Trazadoras2c2022Component } from './components/trazadoras2c2022/trazadoras2c2022.component';
+import { Trazadoras3c2022Component } from './components/trazadoras3c2022/trazadoras3c2022.component';
+import { LoginComponent } from './components/login/login.component';
+import { GuardGuard } from './servicios/guard.guard';
+import { PlanificacionComponent } from './components/planificacion/planificacion.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'rendicion', component: RendicionComponent },
-  { path: 'rendicion/grafico', component: ChartRendicionComponent },
-  { path: 'transferencias', component: TransferenciasComponent },
-  { path: 'transferencias/grafico', component: TransferenciasComponent },
-  { path: 'usodefondos/grafico', component: UsodefondosComponent },
-  { path: 'usodefondos/total', component: UsodefondosListComponent },
-  { path: 'prestaciones/total', component: PrestEvolComponent },
-  { path: 'prestaciones/total_monto', component: PrestEvolMontoComponent },
-  { path: 'prestaciones/tipoprestacion', component: PrestTipoComponent },
-  { path: 'prestaciones/grafico/total_monto', component: ChartPrestMontoComponent },
-  { path: 'prestaciones/grafico/total', component: ChartPrestacionComponent },
-  { path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent },
-  { path: 'prestaciones/grafico/tipoprestacion', component: ChartPrestTipoComponent },
-  { path: 'inscriptos/total', component: InscriptosComponent },
-  { path: 'inscriptos/inscriptos_ceb', component: InscriptosCebComponent },
-  { path: 'inscriptos/inscriptos_ge', component: ChartInscripGeComponent },
-  { path: 'inscriptos/ceb_ge', component: ChartCebGeComponent },
-  { path: 'inscriptos/grafico', component: ChartInscriptosComponent },
-  { path: 'trazadoras/trz_1c2022', component: TrazadorasComponent },
-  { path: 'trazadoras/trz_2c2022', component: Trazadoras2c2022Component },
-  { path: 'trazadoras/evolucion', component: TrzComparacionComponent },
-  { path: 'trazadoras/grafico/evolucion', component: ChartTrzComponent },
-  { path: 'sidebar', component: SidebarComponent },
-
-
-
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    
+  { path: 'home', component: HomeComponent, canActivate: [GuardGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [GuardGuard] },
+  { path: 'rendicion', component: RendicionComponent, canActivate: [GuardGuard] },
+  { path: 'rendicion/grafico', component: ChartRendicionComponent, canActivate: [GuardGuard] },
+  { path: 'transferencias', component: TransferenciasComponent, canActivate: [GuardGuard]},
+  { path: 'transferencias/grafico', component: TransferenciasComponent, canActivate: [GuardGuard] },
+  { path: 'usodefondos/grafico', component: UsodefondosComponent, canActivate: [GuardGuard] },
+  { path: 'usodefondos/total', component: UsodefondosListComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/total', component: PrestEvolComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/total_monto', component: PrestEvolMontoComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/tipoprestacion', component: PrestTipoComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/grafico/total_monto', component: ChartPrestMontoComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/grafico/total', component: ChartPrestacionComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/grafico/ge', component: ChartPrestGeComponent, canActivate: [GuardGuard] },
+  { path: 'prestaciones/grafico/tipoprestacion', component: ChartPrestTipoComponent, canActivate: [GuardGuard] },
+  { path: 'inscriptos/total', component: InscriptosComponent, canActivate: [GuardGuard] },
+  { path: 'inscriptos/inscriptos_ceb', component: InscriptosCebComponent, canActivate: [GuardGuard] },
+  { path: 'inscriptos/inscriptos_ge', component: ChartInscripGeComponent, canActivate: [GuardGuard] },
+  { path: 'inscriptos/ceb_ge', component: ChartCebGeComponent, canActivate: [GuardGuard] },
+  { path: 'inscriptos/grafico', component: ChartInscriptosComponent, canActivate: [GuardGuard] },
+  { path: 'trazadoras/trz_1c2022', component: TrazadorasComponent, canActivate: [GuardGuard] },
+  { path: 'trazadoras/trz_2c2022', component: Trazadoras2c2022Component, canActivate: [GuardGuard] },
+  { path: 'trazadoras/trz_3c2022', component: Trazadoras3c2022Component, canActivate: [GuardGuard] },
+  { path: 'trazadoras/evolucion', component: TrzComparacionComponent, canActivate: [GuardGuard] },
+  { path: 'trazadoras/grafico/evolucion', component: ChartTrzComponent, canActivate: [GuardGuard] },
+  { path: 'sidebar', component: SidebarComponent, canActivate: [GuardGuard] },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({

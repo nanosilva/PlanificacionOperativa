@@ -6,7 +6,7 @@
                 aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="sidebarMenu">
+            <div class="collapse navbar-collapse" id="sidebar">
                 <div class="navbar-nav ms-auto">
                     <li class="nav-item active">
                         <a class="nav-link " aria-current="page" href="#">Home</a>
@@ -23,8 +23,8 @@
                     <li class="nav-item">
                         <a class="nav-link " routerLink="/dashboard">Dashboard</a>
                     </li>
-                    <button class="btn btn-primary me-2" routerLink="/cerrar-sesion">
-                        <i i-bs name="box-arrow-in-right" style="color:white"></i> Login</button>
+                    <button class="btn btn-primary me-2" *ngIf="logged" (click)="logLout('usuario')" routerLink="login">
+                        <i i-bs name="box-arrow-in-right" style="color:white"></i> Salir</button>
 
                 </div>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthenticationService } from 'src/app/servicios/authentication.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  logged=false;
 
-  ngOnInit(): void {
+  constructor(private authentication:AuthenticationService) { }
+
+  ngOnInit(): any{
+    if(this.authentication.isLoggedIn()){
+      return this.logged=true
+    }
   }
+  logLout(usuario:any) {
+    if('usuario'){sessionStorage.removeItem('usuario')
+    console.log('logout');
+    this.logged =false;
+    
 
 }
+  }}

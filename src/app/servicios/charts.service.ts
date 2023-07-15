@@ -124,7 +124,7 @@ export class ChartsService {
   getTrazadoras3C(): Observable<Trazadoras[]> {
     return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2022/ver`)
   };
-  public municipioTrz3C(municipio: any): Observable<Trazadoras[]> {
+  public fromMunicipioTrz3C(municipio: any): Observable<Trazadoras[]> {
     return this.getTrazadoras3C().pipe(map(data => data.filter(m => m.municipio === municipio)))
 
   };

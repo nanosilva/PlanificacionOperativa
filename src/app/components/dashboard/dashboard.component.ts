@@ -20,6 +20,8 @@ export class DashboardComponent implements OnInit {
   retribucion!: number;
   total!: number;
   ceb!: number;
+  data_mes: String[];
+  prestaciones_monto: number;
 
 
   constructor(private datosPlanificacion: PlanificacionService,
@@ -35,6 +37,8 @@ export class DashboardComponent implements OnInit {
     this.totalPrestaciones();
     this.totalTransferido();
     this.totalRendido();
+    this.mesData();
+    this.totalPrestacionesMonto();
 
   };
 
@@ -60,8 +64,18 @@ export class DashboardComponent implements OnInit {
       let total_prestaciones = data.map(data => data.anio_2023).reduce((acum, curr) => acum + curr, 0);
       this.prestaciones = total_prestaciones / 2;
       console.log(this.prestaciones)
-    })
+    });
+
   }
+  totalPrestacionesMonto(): void {
+    this.datosPlanificacion.getPrestacionesMonto().subscribe(data => {
+      let total_prestaciones = data.map(data => data.anio_2023).reduce((acum, curr) => acum + curr, 0);
+      this.prestaciones_monto = total_prestaciones;
+      console.log(this.prestaciones_monto)
+    });
+
+  }
+
   totalTransferido(): void {
     this.chartService.getTransferencias().subscribe(data => {
       let total_tranf = data.map(data => data.total_acum).reduce((acum, curr) => acum + curr, 0);
@@ -73,11 +87,17 @@ export class DashboardComponent implements OnInit {
   totalRendido(): void {
     this.chartService.getRendicion().subscribe(data => {
       let total_rendido = data.map(data => data.acumulado).reduce((acum, curr) => acum + curr, 0);
-      this.rendido = total_rendido / 2;
+      this.rendido = total_rendido;
       console.log(this.rendido)
     })
+  };
+  mesData(): void {
+    this.datosPlanificacion.getInscriptos().subscribe(data => {
+      let data_mes = data.map(data => data.padron_12)
+      this.data_mes = data_mes
+      console.log(this.data_mes)
+    })
+
   }
-
-
 
 }

@@ -37,6 +37,9 @@ import { TrzComparacionComponent } from './components/trz-comparacion/trz-compar
 import { ChartTrzComponent } from './components/chart-trz/chart-trz.component';
 import { Unique2Pipe } from './unique2.pipe';
 import { Trazadoras2c2022Component } from './components/trazadoras2c2022/trazadoras2c2022.component';
+import { Trazadoras3c2022Component } from './components/trazadoras3c2022/trazadoras3c2022.component';
+import { LoginComponent } from './components/login/login.component';
+import { PlanificacionComponent } from './components/planificacion/planificacion.component';
 //firebase
 
 
@@ -74,6 +77,9 @@ import { Trazadoras2c2022Component } from './components/trazadoras2c2022/trazado
     ChartTrzComponent,
     Unique2Pipe,
     Trazadoras2c2022Component,
+    Trazadoras3c2022Component,
+    LoginComponent,
+    PlanificacionComponent,
     
   
     
