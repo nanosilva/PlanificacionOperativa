@@ -121,11 +121,13 @@ div.content {
 
 
 .btn-toggle {
+display: inline-flex;
 padding: .25rem .5rem;
 font-weight: 600;
 color: rgba(0, 0, 0, .85);
 background-color: transparent;
 }
+
 .btn-toggle:hover,
 .btn-toggle:focus {
 color: rgba(0, 0, 0, .85);

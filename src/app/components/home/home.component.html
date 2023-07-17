@@ -23,7 +23,7 @@
                     <li class="nav-item">
                         <a class="nav-link " routerLink="/dashboard">Dashboard</a>
                     </li>
-                    <button class="btn btn-primary me-2" *ngIf="logged" (click)="logLout('usuario')" routerLink="login">
+                    <button class="btn btn-primary me-2" *ngIf="isLoggedIn()" (click)="logLout('usuario')" routerLink="login">
                         <i i-bs name="box-arrow-in-right" style="color:white"></i> Salir</button>
 
                 </div>

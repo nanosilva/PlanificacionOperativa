@@ -2,18 +2,18 @@
     <div class="sidebarMenu">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <a class="nav-link active" aria-current="page" href="/**">
                     <i-bs name="house-door-fill" style="color:black"></i-bs>
                     Inicio
                 </a>
             </li>
-            <li class="dropwdown mt-2">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#rendicion-collapse"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i-bs name="cash-stack"></i-bs>
+            <li class="mb-1">
+                <a class="btn btn-toggle" data-bs-toggle="collapse" type="button" data-bs-target="#rendicion-collapse"
+                    aria-expanded="false">
+                    <i-bs name="cash-stack" class="me-1"></i-bs>
                     Rendición
                 </a>
-                <div class="collapse" id="rendicion-collapse">
+                <div class="collapse " id="rendicion-collapse">
                     <ul class="btn-toggle-nav fw-normal pb-1 small">
                         <li><a class="dropdown-item" routerLink="rendicion">Total por Municipio</a></li>
                         <li><a class="dropdown-item" routerLink="rendicion/grafico">Gráfico</a></li>
@@ -21,10 +21,10 @@
                     </ul>
                 </div>
             </li>
-            <li class="dropdown">
+            <li class="dropdown mb-1">
                 <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
                     data-bs-target="#transferencias-collapse" aria-haspopup="true" aria-expanded="false">
-                    <i-bs name="cash-coin"></i-bs>
+                    <i-bs name="cash-coin" class="me-1"></i-bs>
                     Transferencias
                 </a>
                 <div class="collapse" id="transferencias-collapse">
@@ -40,7 +40,7 @@
                 <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
                     data-bs-target="#prestaciones-collapse" aria-haspopup="true" aria-expanded="false">
 
-                    <i-bs name="file-bar-graph">
+                    <i-bs name="file-bar-graph" class="me-1">
                     </i-bs>
                     Prestaciones
                 </a>
@@ -74,7 +74,7 @@
             <li class="dropdown">
                 <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inscriptos-collapse"
                     aria-haspopup="true" aria-expanded="false">
-                    <i-bs name="person"></i-bs>
+                    <i-bs name="person" class="me-1"></i-bs>
                     Inscriptos
                 </a>
                 <div class="collapse" id="inscriptos-collapse">
@@ -104,7 +104,7 @@
             <li class="dropdown">
                 <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#usodefondos-collapse"
                     aria-haspopup="true" aria-expanded="false">
-                    <i-bs name="layers"></i-bs>
+                    <i-bs name="layers" class="me-1"></i-bs>
                     Uso de Fondos
                 </a>
                 <div class="collapse" id="usodefondos-collapse">
@@ -118,7 +118,7 @@
             <li class="dropdown">
                 <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trazadoras-collapse"
                     aria-haspopup="true" aria-expanded="false">
-                    <i-bs name="layers"></i-bs>
+                    <i-bs name="layers" class="me-1"></i-bs>
                     Trazadoras
                 </a>
                 <div class="collapse" id="trazadoras-collapse">
@@ -143,7 +143,7 @@
                 </div>
             </li>
         </ul>
-<!--  
+        <!--  
         <h6
             class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
             <span>Saved reports</span>
@@ -179,5 +179,5 @@
             </li>
         </ul> -->
     </div>
-   
+
 </nav>

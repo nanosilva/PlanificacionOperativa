@@ -7,20 +7,28 @@ import { AuthenticationService } from 'src/app/servicios/authentication.service'
 })
 export class HomeComponent implements OnInit {
 
-  logged=false;
+  
 
   constructor(private authentication:AuthenticationService) { }
 
   ngOnInit(): any{
     if(this.authentication.isLoggedIn()){
-      return this.logged=true
+     
     }
   }
   logLout(usuario:any) {
     if('usuario'){sessionStorage.removeItem('usuario')
     console.log('logout');
-    this.logged =false;
+    
     
 
 }
-  }}
+  };
+
+  isLoggedIn() {
+    let usuario = sessionStorage.getItem('usuario')
+    console.log(!(usuario === null))
+    return !(usuario === null)
+  }
+
+}
