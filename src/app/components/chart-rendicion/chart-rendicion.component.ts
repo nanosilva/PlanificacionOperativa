@@ -49,13 +49,14 @@ export class ChartRendicionComponent implements OnInit {
 
   anio_19!: any[];
   rendido!: any[];
-  porcentaje!: number;
+  porcentaje!: any;
   rendidoAcum!: number;
   transfAcum!: number;
   ultimoExte!: string;
   selectedMunicipio!: string;
   order!: string;
-  ult_rendido: string
+  ult_rendido: string;
+  pct_rendido: number;
 
   public chartData: ChartDataset[] = [
     {
@@ -102,12 +103,15 @@ export class ChartRendicionComponent implements OnInit {
       // )
       this.getMuni();
       //this.getRendido();
+      this.porcentaje = this.porcentajeRendido();
       this.chartService.getTransferencias().subscribe(data => {
         this.transferencia = data;
         console.log(this.transferencia)
       })
-
     })
+    console.log(this.porcentaje)
+
+
   };
 
   getRendido(): void {
@@ -120,6 +124,7 @@ export class ChartRendicionComponent implements OnInit {
     )
 
   };
+
 
   getMuni(): void {
     this.chartService.getRendicion().subscribe(
@@ -244,6 +249,23 @@ export class ChartRendicionComponent implements OnInit {
     }).then((docResult) => {
       docResult.save(`${new Date().toISOString()}_tutorial.pdf`);
     });
-  }
+  };
 
-};
+  porcentajeRendido() {
+    forkJoin([
+      this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.acumulado))),
+      this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.total_acum))),
+    ]).subscribe(([data0, data1]) => {
+      let rend_ac = +data0;
+      let tr_acum = +data1;
+      this.porcentaje = ((rend_ac / tr_acum));
+      const pct = ((rend_ac / tr_acum))
+      console.log(pct)
+      if (pct >= 1) {
+        return 1;
+      }
+      else
+        return pct;
+    })}
+}
+
