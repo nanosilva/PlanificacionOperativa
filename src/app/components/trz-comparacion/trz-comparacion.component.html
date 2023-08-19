@@ -59,12 +59,12 @@
             <tbody *ngIf="showTrz">
                 <tr *ngFor="let trazadoras of trazadoraList | filter3:municipio">
                     <td >{{trazadoras.trazadora}}</td>
-                    <td class="cantidad">{{trazadoras.casos_1c2022 |currency:' ':'symbol':'1.0-0'}}</td>
-                    <td class="cantidad">{{trazadoras.tca_1c2022 }}</td>
                     <td class="cantidad">{{trazadoras.casos_2c2022 |currency:' ':'symbol':'1.0-0'}}</td>
                     <td class="cantidad">{{trazadoras.tca_2c2022 }}</td>
                     <td class="cantidad">{{trazadoras.casos_3c2022 |currency:' ':'symbol':'1.0-0'}}</td>
-                    <td class="cantidad">{{trazadoras.tca_3c2022}}</td>
+                    <td class="cantidad">{{trazadoras.tca_3c2022 }}</td>
+                    <td class="cantidad">{{trazadoras.casos_1c2023 |currency:' ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{trazadoras.tca_1c2023}}</td>
 
                 </tr>
                 <hr>

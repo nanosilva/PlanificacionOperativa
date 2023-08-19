@@ -37,11 +37,11 @@
             <th scope="col">#</th>
             <th scope="col">Código Municipio</th>
             <th scope="col">Municipio</th>
-            <th scope="col">2020</th>
-            <th scope="col">2021</th>
-            <th scope="col">2022</th>
-            <th scope="col">2023</th>
-            <th scope="col">Total 2008-2023</th>
+            <th class="anio" scope="col">2020</th>
+            <th class="anio" scope="col">2021</th>
+            <th class="anio" scope="col">2022</th>
+            <th class="anio" scope="col">2023</th>
+            <th class="anio" scope="col">Total 2008-2023</th>
             <th scope="col">Ultimo Expediente</th>
             <th scope="col">Ult.Bimestre Rend</th>
           </tr>
@@ -51,12 +51,12 @@
             <th scope="row">{{i+1}}</th>
             <td>{{rendicion.cod_mun}}</td>
             <td>{{rendicion.municipio}}</td>           
-            <td>{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
-            <td>{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
-            <td>{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
-            <td>{{rendicion.anio_2023|currency:'$ ':'symbol':'1.0-0'}}</td>
-            <td>{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
-            <td>{{rendicion.fecha_ult_expte}}</td>
+            <td class="cantidad">{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td class="cantidad">{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td class="cantidad">{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td class="cantidad">{{rendicion.anio_2023|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td class="cantidad">{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.fech_ult_expte}}</td>
             <td>{{rendicion.ult_bm_rendido}}</td>
           </tr>
           <hr>

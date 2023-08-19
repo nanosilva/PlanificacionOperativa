@@ -56,6 +56,9 @@ export class PlanificacionService {
   getTrazadoras3c22(): Observable<Trazadoras[]>{
     return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2022/ver`)
   }
+  getTrazadoras1c23(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2023/ver`)
+  }
   
 
 }

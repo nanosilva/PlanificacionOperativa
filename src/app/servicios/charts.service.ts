@@ -128,6 +128,14 @@ export class ChartsService {
     return this.getTrazadoras3C().pipe(map(data => data.filter(m => m.municipio === municipio)))
 
   };
+
+  getTrazadoras1c23(): Observable<Trazadoras[]> {
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2023/ver`)
+  };
+  public fromMunicipioTrz1c23(municipio: any): Observable<Trazadoras[]> {
+    return this.getTrazadoras1c23().pipe(map(data => data.filter(m => m.municipio === municipio)))
+
+  };
   getTrazadorasEvol(): Observable<Trz_evol[]> {
     return this.http.get<Trz_evol[]>(`${this.apiUrl}/trazadoras_evolucion/ver`)
   };

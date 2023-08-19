@@ -40,6 +40,7 @@ import { Trazadoras2c2022Component } from './components/trazadoras2c2022/trazado
 import { Trazadoras3c2022Component } from './components/trazadoras3c2022/trazadoras3c2022.component';
 import { LoginComponent } from './components/login/login.component';
 import { PlanificacionComponent } from './components/planificacion/planificacion.component';
+import { Trazadoras1c2023Component } from './components/trazadoras1c2023/trazadoras1c2023.component';
 //firebase
 
 
@@ -80,6 +81,7 @@ import { PlanificacionComponent } from './components/planificacion/planificacion
     Trazadoras3c2022Component,
     LoginComponent,
     PlanificacionComponent,
+    Trazadoras1c2023Component,
     
   
     

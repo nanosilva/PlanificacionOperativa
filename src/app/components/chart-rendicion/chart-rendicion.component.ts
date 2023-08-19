@@ -103,7 +103,8 @@ export class ChartRendicionComponent implements OnInit {
       // )
       this.getMuni();
       //this.getRendido();
-      this.porcentaje = this.porcentajeRendido();
+      this.porcentajeRendido();
+      
       this.chartService.getTransferencias().subscribe(data => {
         this.transferencia = data;
         console.log(this.transferencia)
@@ -259,13 +260,14 @@ export class ChartRendicionComponent implements OnInit {
       let rend_ac = +data0;
       let tr_acum = +data1;
       this.porcentaje = ((rend_ac / tr_acum));
-      const pct = ((rend_ac / tr_acum))
-      console.log(pct)
+      let pct = ((+data0 / +data1))
+      console.log(this.porcentaje)
       if (pct >= 1) {
-        return 1;
+        return this.porcentaje==1;
       }
       else
         return pct;
+        console.log(pct)
     })}
 }
 
