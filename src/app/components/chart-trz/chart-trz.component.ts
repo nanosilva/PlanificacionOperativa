@@ -43,14 +43,14 @@ export class ChartTrzComponent implements OnInit {
 
   public chartData: ChartDataset[] = [
     {
-      data: [], label: '2do Cuat',
+      data: [], label: '3er Cuat 22',
       fill: true,
       tension: 0.2,
       //borderColor: 'black',
       // backgroundColor: 'rgba(255,0,0,0.3)' 
     },
     {
-      data: [], label: '3er Cuat',
+      data: [], label: '1er Cuat 23',
       fill: true,
       tension: 0.2,
       pointBorderColor: 'black'
@@ -94,9 +94,12 @@ export class ChartTrzComponent implements OnInit {
         this.chartService.municipioTrzEvol(this.trazadora.municipio).pipe(map(data => data.map(val => val.casos_1c2022))),
         this.chartService.municipioTrzEvol(this.trazadora.municipio).pipe(map(data => data.map(val => val.casos_2c2022))),
         this.chartService.municipioTrzEvol(this.trazadora.municipio).pipe(map(data => data.map(val => val.casos_3c2022))),
+        this.chartService.municipioTrzEvol(this.trazadora.municipio).pipe(map(data => data.map(val => val.tca_1c2023))),
+        this.chartService.municipioTrzEvol(this.trazadora.municipio).pipe(map(data => data.map(val => val.tca_2c2023))),
+        this.chartService.municipioTrzEvol(this.trazadora.municipio).pipe(map(data => data.map(val => val.tca_3c2023))),
 
 
-      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6]) => {
+      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9]) => {
         // let trz = +data0[0];
         let tca_11 = +data1[0];
         let tca_21 = +data2[0];
@@ -128,13 +131,27 @@ export class ChartTrzComponent implements OnInit {
         let tca_110 = +data1[9];
         let tca_210 = +data2[9];
         let tca_310 = +data3[9];
+        let tca_123_1 = +data7[0];
+        let tca_123_2 = +data7[1];
+        let tca_123_3 = +data7[2];
+        let tca_123_4 = +data7[3];
+        let tca_123_5 = +data7[4];
+        let tca_123_6 = +data7[5];
+        let tca_123_7 = +data7[6];
+        let tca_123_8 = +data7[7];
+        let tca_123_9 = +data7[8];
+        let tca_123_10 = +data7[9];
       
 
-        //serie 2do cuat  x trazadora
-        this.chartData[0].data = [tca_21, tca_22, tca_23, tca_24, tca_28, tca_29];
+        //serie 2do cuat 2022  x trazadora
+       // this.chartData[0].data = [tca_21, tca_22, tca_23, tca_24, tca_28, tca_29];
 
-        //serie 3er cuat x trazadora
-        this.chartData[1].data = [tca_31, tca_32, tca_33, tca_34,tca_38, tca_39];
+        //serie 3er cuat 2022 x trazadora
+        this.chartData[0].data = [tca_31, tca_32, tca_33, tca_34,tca_38, tca_39];
+
+        //serie 1er cuat 2023 x trazadora
+        this.chartData[1].data = [tca_123_1, tca_123_2, tca_123_3, tca_123_4,tca_123_8, tca_123_9];
+
 
         this.chart.update();
         console.log( this.chartData[0].data)
