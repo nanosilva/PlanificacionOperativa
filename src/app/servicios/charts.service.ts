@@ -15,7 +15,7 @@ export class ChartsService {
 
   private municipio$ = new BehaviorSubject<any>(this.muni_ini);
 
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'https://planificacion-backend-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 

@@ -11,7 +11,7 @@ import * as XLSX from 'xlsx'
 export class InscriptosCebComponent implements OnInit {
   filterPost = "";
   name = 'ExcelSheet.xlsx';
-  total! : number;
+  total!: number;
   municipio!: string;
   padron1!: string[];
   padron2!: string;
@@ -54,18 +54,18 @@ export class InscriptosCebComponent implements OnInit {
     mes_10: 0,
     mes_11: 0,
     mes_12: 0,
-    padron_1:"",
-    padron_2:"",
-    padron_3:"",
-    padron_4:"",
-    padron_5:"",
-    padron_6:"",
-    padron_7:"",
-    padron_8:"",
-    padron_9:"",
-    padron_10:"",
-    padron_11:"",
-    padron_12:"",
+    padron_1: "",
+    padron_2: "",
+    padron_3: "",
+    padron_4: "",
+    padron_5: "",
+    padron_6: "",
+    padron_7: "",
+    padron_8: "",
+    padron_9: "",
+    padron_10: "",
+    padron_11: "",
+    padron_12: "",
 
   }
 
@@ -106,24 +106,27 @@ export class InscriptosCebComponent implements OnInit {
         let pad10 = res.map(res => res.padron_10);
         let pad11 = res.map(res => res.padron_11);
         let pad12 = res.map(res => res.padron_12);
-        this.padrones01= pad1;
-        this.padrones02= pad2;
-        this.padrones03= pad3;
-        this.padrones04= pad4;
-        this.padrones05= pad5;
-        this.padrones06= pad6;
-        this.padrones07= pad7;
-        this.padrones08= pad8;
-        this.padrones09= pad9;
-        this.padrones10= pad10;
-        this.padrones11= pad11;
-        this.padrones12= pad12;
+        this.padrones01 = pad1;
+        this.padrones02 = pad2;
+        this.padrones03 = pad3;
+        this.padrones04 = pad4;
+        this.padrones05 = pad5;
+        this.padrones06 = pad6;
+        this.padrones07 = pad7;
+        this.padrones08 = pad8;
+        this.padrones09 = pad9;
+        this.padrones10 = pad10;
+        this.padrones11 = pad11;
+        this.padrones12 = pad12;
         console.log(this.padrones01[0]);
       }
     )
   };
- 
-   }
+  borrarTexto() {
+    this.filterPost = '';
+  };
+
+}
 
 
 

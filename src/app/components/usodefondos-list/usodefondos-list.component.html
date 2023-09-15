@@ -1,72 +1,76 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="container">
-      <h3 class="text-center text-white bg-dark py-2 fixed ">Uso de Fondos </h3>
+        <h3 class="text-center text-white bg-dark py-2 fixed ">Uso de Fondos </h3>
     </div>
 
-<div class="container ">
-    <div class="row">
-        <div class="col-3">
-            <div class="form group">
-                <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio"
-                    [(ngModel)]="searchText">
+    <div class="container ">
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio"
+                        [(ngModel)]="searchText">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="text" (click)="borrarTexto()">X</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-7 container bg-white text-white text-center pt-1">Años</div>
+
+            <div class="col-2">
+                <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
+                    <i-bs name="download"></i-bs> Excel
+                </button>
             </div>
         </div>
-
-        <div class="col-7 container bg-white text-white text-center pt-1">Años</div>
-
-        <div class="col-2">
-             <button class="btn btn-success mt-2 float-end" (click)="exportToExcel()">
-                <i-bs name="download"></i-bs> Excel
-          </button>
-        </div>
     </div>
-</div>
 
 
-<div class="table responsive-md">
-    <table class="table table-striped table-hover" id="prest-tabla">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Código Municipio</th>
-                <th scope="col">Municipio</th>
-                <th class="item" scope="col">Incentivos</th>
-                <th class="item" scope="col">Insumos</th>
-                <th class="item" scope="col">Inversiones</th>
-                <th class="item" scope="col">Locaciones</th>
-                <th class="item" scope="col">Mantenimiento</th>
-                <th class="item" scope="col">Otros</th>
-                <th class="item" scope="col">Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let usodefondos of usodefondosList | filter3:searchText; index as i ">
-                <th scope="row">{{i+1}}</th>
-                <td>{{usodefondos.cod_mun}}</td>
-                <td>{{usodefondos.municipio}}</td>
-                <td class="cantidad">{{usodefondos.item_11 + usodefondos.item_12 + usodefondos.item_13 |currency:'$ ':'symbol':'1.0-0'}}</td>
-                <td class="cantidad">{{usodefondos.item_31 + usodefondos.item_32 |currency:'$ ':'symbol':'1.0-0'}}</td>
-                <td class="cantidad">{{usodefondos.item_41 + usodefondos.item_42 + usodefondos.item_43|currency:'$ ':'symbol':'1.0-0'}}</td>
-                <td class="cantidad">{{usodefondos.item_21 + usodefondos.item_22 + usodefondos.item_23|currency:'$ ':'symbol':'1.0-0'}}</td>
-                <td class="cantidad">{{usodefondos.item_51 + usodefondos.item_52 + usodefondos.item_53 |currency:'$ ':'symbol':'1.0-0'}}</td>
-                <td class="cantidad">{{usodefondos.item_6 + usodefondos.item_7 + usodefondos.item_8 |currency:'$ ':'symbol':'1.0-0'}}</td>
-                <td class="cantidad">{{usodefondos.total |currency:'$ ':'symbol':'1.0-0'}}</td>
-               
-            </tr>
-            <hr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <div class="container">Total:{{total|currency:' ':'symbol':'1.0-0'}}</div>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="table responsive-md">
+        <table class="table table-striped table-hover" id="prest-tabla">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Código Municipio</th>
+                    <th scope="col">Municipio</th>
+                    <th class="item" scope="col">Incentivos</th>
+                    <th class="item" scope="col">Insumos</th>
+                    <th class="item" scope="col">Inversiones</th>
+                    <th class="item" scope="col">Locaciones</th>
+                    <th class="item" scope="col">Mantenimiento</th>
+                    <th class="item" scope="col">Otros</th>
+                    <th class="item" scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usodefondos of usodefondosList | filter3:searchText; index as i ">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{usodefondos.cod_mun}}</td>
+                    <td>{{usodefondos.municipio}}</td>
+                    <td class="cantidad">{{usodefondos.item_11 + usodefondos.item_12 + usodefondos.item_13 |currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{usodefondos.item_31 + usodefondos.item_32 |currency:'$ ':'symbol':'1.0-0'}}
+                    </td>
+                    <td class="cantidad">{{usodefondos.item_41 + usodefondos.item_42 + usodefondos.item_43|currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{usodefondos.item_21 + usodefondos.item_22 + usodefondos.item_23|currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{usodefondos.item_51 + usodefondos.item_52 + usodefondos.item_53 |currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{usodefondos.item_6 + usodefondos.item_7 + usodefondos.item_8 |currency:'$ ':'symbol':'1.0-0'}}</td>
+                    <td class="cantidad">{{usodefondos.total |currency:'$ ':'symbol':'1.0-0'}}</td>
+
+                </tr>
+                <hr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>

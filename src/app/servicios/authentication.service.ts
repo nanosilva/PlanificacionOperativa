@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'https://planificacion-backend-production.up.railway.app';
 
   constructor(private http: HttpClient) { }
 

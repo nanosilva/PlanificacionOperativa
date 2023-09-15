@@ -113,6 +113,10 @@ export class InscriptosComponent implements OnInit {
       }
     )
   };
+  borrarTexto() {
+    this.filterPost = '';
+  };
+
   
 
 }

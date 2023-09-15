@@ -53,5 +53,8 @@ export class PrestEvolComponent implements OnInit {
   
     XLSX.writeFile(book, this.name, );
   };
+  borrarTexto() {
+    this.searchText = '';
+  };
 
 }

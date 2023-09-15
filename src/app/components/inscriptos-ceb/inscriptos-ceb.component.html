@@ -5,9 +5,12 @@
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <div class="form group">
+                <div class="input-group mb-3">
                     <input type="text" class="form-control" name="filterPost" placeholder="Buscar Municipio..."
                         [(ngModel)]="filterPost">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="text" (click)="borrarTexto()">X</button>
+                    </div>
                 </div>
             </div>
             <div class="col-7 container bg-light text-black text-center pt-1">mes</div>
@@ -24,45 +27,42 @@
                     <tr>
                         <th scope="col">Código Municipio</th>
                         <th scope="col">Municipio</th>
-                        <th scope="col">{{this.padrones01|unique}}</th>
-                        <th scope="col">{{this.padrones02|unique}}</th>
-                        <th scope="col">{{this.padrones03|unique}}</th>
-                        <th scope="col">{{this.padrones04|unique}}</th>
-                        <th scope="col">{{this.padrones05|unique}}</th>
-                        <th scope="col">{{this.padrones06|unique}}</th>
-                        <th scope="col">{{this.padrones07|unique}}</th>
-                        <th scope="col">{{this.padrones08|unique}}</th>
-                        <th scope="col">{{this.padrones09|unique}}</th>
-                        <th scope="col">{{this.padrones10|unique}}</th>
-                        <th scope="col">{{this.padrones11|unique}}</th>
-                        <th scope="col">{{this.padrones12|unique}}</th> 
-                       
+                        <th class="mes">{{this.padrones01|unique}}</th>
+                        <th class="mes">{{this.padrones02|unique}}</th>
+                        <th class="mes">{{this.padrones03|unique}}</th>
+                        <th class="mes">{{this.padrones04|unique}}</th>
+                        <th class="mes">{{this.padrones05|unique}}</th>
+                        <th class="mes">{{this.padrones06|unique}}</th>
+                        <th class="mes">{{this.padrones07|unique}}</th>
+                        <th class="mes">{{this.padrones08|unique}}</th>
+                        <th class="mes">{{this.padrones09|unique}}</th>
+                        <th class="mes">{{this.padrones10|unique}}</th>
+                        <th class="mes">{{this.padrones11|unique}}</th>
+                        <th class="mes">{{this.padrones12|unique}}</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let inscriptosceb of inscriptoscebList | filter:filterPost; index as i ">
+                    <tr *ngFor="let inscriptosceb of inscriptoscebList | filter3:filterPost; index as i ">
                         <td>{{inscriptosceb.cod_mun}}</td>
                         <td>{{inscriptosceb.municipio}}</td>
-                        <td>{{inscriptosceb.mes_1|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_2|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_3|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_4|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_5|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_6|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_7|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_8|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_9|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_10|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_11|currency:' ':'symbol':'1.0-0'}}</td>
-                        <td>{{inscriptosceb.mes_12|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_1|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_2|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_3|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_4|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_5|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_6|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_7|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_8|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_9|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_10|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_11|currency:' ':'symbol':'1.0-0'}}</td>
+                        <td class="cantidad">{{inscriptosceb.mes_12|currency:' ':'symbol':'1.0-0'}}</td>
                     </tr>
                     <hr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="container">
-        <button class="btn btn-primary" routerLink="../grafico">Ver Gráfico</button>
 
-    </div>
 </main>
