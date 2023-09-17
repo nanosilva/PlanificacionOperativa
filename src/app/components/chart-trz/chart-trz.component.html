@@ -1,11 +1,12 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="htmlData">
     <div class="container">
         <h3 class="text-center text-white bg-dark py-2 ">Evolución Tasa de Cobertura</h3>
     </div>
     <div class="container">
         <div class="row">
             <div class="container">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">{{trazadora.municipio}}</h1>
                     <p class="bg-light">{{porcentaje| percent: '2.1-2'}}
                     <p>
@@ -16,35 +17,31 @@
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <i-bs name="filter-square"></i-bs>
-
-
                                         </div>
                                     </div>
                                     <select class="form-control" name="municipio" [(ngModel)]="trazadora "
                                         (change)="loadData($event)">
                                         <option [ngValue]="trazadora " selected>Elige un municipio</option>
-                                        <option *ngFor="let trazadora of trazadoraList |unique2:'municipio' | order:'municipio'"[ngValue]="trazadora">
+                                        <option
+                                            *ngFor="let trazadora of trazadoraList |unique2:'municipio' | order:'municipio'"
+                                            [ngValue]="trazadora">
                                             {{trazadora.municipio}}</option>
-
                                     </select>
                                 </div>
+                                <button class="btn btn-danger btn-sm mt-2 float-end" (click)="downloadPDF()">
+                                    <i-bs name="download"></i-bs>PDF
+                                </button>
                             </div>
                         </div>
 
                     </form>
                 </div>
-
                 <div class="container">
                     <canvas baseChart width="1000" height="400" [type]="'bar'" [datasets]="chartData"
                         [options]="options" [labels]="label">
                     </canvas>
                 </div>
-                
             </div>
-
         </div>
     </div>
-
-
-
 </main>

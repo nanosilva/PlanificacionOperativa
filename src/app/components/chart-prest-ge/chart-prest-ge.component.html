@@ -1,4 +1,4 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="htmlData">
     <div class="container">
         <h3 class="text-center text-white bg-dark py-2 ">Prestaciones 2023 <small>Por Grupo Etario</small></h3>
     </div>
@@ -28,6 +28,9 @@
 
                                 </select>
                             </div>
+                            <button class="btn btn-danger btn-sm mt-2 float-end" (click)="downloadPDF()">
+                                <i-bs name="download"></i-bs>PDF
+                            </button>
                         </div>
                     </div>
 
@@ -44,21 +47,26 @@
             <div class="container mt-4">
                 <div class="row">
                     <div class="col-2">
-                        <p class="small bg-nin05 ">0-5 años: <span style="font-weight:bold">{{ninos_05_pct}} % </span></p>
+                        <p class="small bg-nin05 ">0-5 años: <span style="font-weight:bold">{{ninos_05_pct}} % </span>
+                        </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-nin69">6-9 años: <span style="font-weight:bold">{{ninos_69_pct}} % </span></p>
+                        <p class="small bg-nin69">6-9 años: <span style="font-weight:bold">{{ninos_69_pct}} % </span>
+                        </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-adol">Adolescentes: <span style="font-weight:bold">{{adolesc_pct}} % </span></p>
+                        <p class="small bg-adol">Adolescentes: <span style="font-weight:bold">{{adolesc_pct}} % </span>
+                        </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-adultos">Adultos: <span style="font-weight:bold">{{adultos_pct}} % </span></p>
+                        <p class="small bg-adultos">Adultos: <span style="font-weight:bold">{{adultos_pct}} % </span>
+                        </p>
                     </div>
                     <div class="col-2">
                         <p class="small bg-emb">Embarazadas: <span style="font-weight:bold">{{emb_pct}} % </span></p>
                     </div>
-                    <div class="bg-light"> Total 2023: <span style="font-weight:bold">{{prestAcum|currency:' ':'symbol':'1.0-0'}} </span>
+                    <div class="bg-light"> Total 2023: <span style="font-weight:bold">{{prestAcum|currency:'
+                            ':'symbol':'1.0-0'}} </span>
                     </div>
 
                 </div>

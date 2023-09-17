@@ -1,16 +1,20 @@
 <!-- Main content -->
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
     <div class="row">
-        <div class="class col-lg 6"><h5>Actualizado a: {{data_mes |unique}}</h5></div>
+        <div class="class col-lg 6">
+            <h5>Actualizado a: {{data_mes |unique}}</h5>
+        </div>
     </div>
     <div class="row">
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
                     <div class="stat-content">
-                        <div class="stat-text">
-                            <i-bs name="file-bar-graph" width="30" height="30"> </i-bs>
-                            Prestaciones 2023 Cant.
+                        <div class="stat-text" title="Total Prestaciones año 2023"><a class="ancla"
+                                routerLink="/prestaciones/total" style="text-decoration:none">
+                                <i-bs name="file-bar-graph" width="30" height="30"> </i-bs>
+                                Prestaciones 2023 Cant.
+                            </a>
                         </div>
                         <div class="stat-digit">
                             {{prestaciones|currency:' ':'symbol':'1.0-0'}}
@@ -27,12 +31,14 @@
             <div class="card">
                 <div class="stat-widget-two">
                     <div class="stat-content">
-                        <div class="stat-text">
-                            <i-bs name="file-earmark-bar-graph" width="30" height="30"></i-bs>
-                            Prestaciones $
+                        <div class="stat-text" title="Total Monto año 2023"><a class="ancla"
+                                routerLink="/prestaciones/total_monto" style="text-decoration:none">
+                                <i-bs name="file-earmark-bar-graph" width="30" height="30"></i-bs>
+                                Prestaciones $
+                            </a>
                         </div>
                         <div class="stat-digit">
-                            {{prestaciones_monto|currency:' ':'symbol':'1.0-0'}}
+                            {{prestaciones_monto| currency: '$ ':'symbol':'1.0-0'}}
                         </div>
                     </div>
                     <div class="progress">
@@ -48,10 +54,12 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content">
-                        <div class="stat-text">
-                            <i-bs name="person" width="30" height="30"></i-bs>
-                            Inscriptos
+                    <div class="stat-content" title="Total Inscriptos al Sumar">
+                        <div class="stat-text"><a class="ancla" routerLink="/inscriptos/total"
+                                style="text-decoration:none">
+                                <i-bs name="person" width="30" height="30"></i-bs>
+                                Inscriptos
+                            </a>
                         </div>
                         <div class="stat-digit">
 
@@ -69,10 +77,12 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content">
-                        <div class="stat-text">
-                            <i-bs name="person-check" width="30" height="30"></i-bs>
-                            Inscriptos CEB
+                    <div class="stat-content" title="Con Cobertura Efectiva Básica">
+                        <div class="stat-text"><a class="ancla" routerLink="/inscriptos/inscriptos_ceb"
+                                style="text-decoration:none">
+                                <i-bs name="person-check" width="30" height="30"></i-bs>
+                                Inscriptos CEB
+                            </a>
                         </div>
                         <div class="stat-digit">
                             {{insc_ceb|currency:' ':'symbol':'1.0-0'}}
@@ -89,7 +99,7 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content">
+                    <div class="stat-content" title="Porcentaje CEB">
                         <div class="stat-text">
                             <i-bs name="person-fill" width="30" height="30"></i-bs>
                             % CEB
@@ -111,11 +121,13 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content"><a class="ancla" routerLink="/transferencias" style="text-decoration:none" >
-                        <div class="stat-text">
-                            <i-bs name="cash-coin" width="30" height="30"></i-bs>
-                            Transferencias
-                        </div></a>
+                    <div class="stat-content" title="Transferido Acumulado"><a class="ancla"
+                            routerLink="/transferencias" style="text-decoration:none">
+                            <div class="stat-text">
+                                <i-bs name="cash-coin" width="30" height="30"></i-bs>
+                                Transferencias
+                            </div>
+                        </a>
                         <div class="stat-digit">
 
                             {{transferencias | currency: '$ ':'symbol':'1.0-0'}}
@@ -132,11 +144,13 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content"><a class="ancla" routerLink="/rendicion" style="text-decoration:none" >
-                        <div class="stat-text" >
-                            <i-bs name="cash-stack" width="30" height="30"></i-bs>
-                            Rendición
-                        </div> </a>
+                    <div class="stat-content" title="Rendido Acumulado"><a class="ancla" routerLink="/rendicion"
+                            style="text-decoration:none">
+                            <div class="stat-text">
+                                <i-bs name="cash-stack" width="30" height="30"></i-bs>
+                                Rendición
+                            </div>
+                        </a>
                         <div class="stat-digit">
                             {{rendido|currency:'':'symbol':'1.0-0'}}
                         </div>
@@ -152,12 +166,13 @@
         <div class="col-lg 3">
             <div class="card">
                 <div class="stat-widget-two">
-                    <div class="stat-content" >
+                    <div class="stat-content" title="Porcentaje Rendición de Fondos">
                         <div class="stat-text">
-                           <i-bs name="pie-chart" width="30" height="30"></i-bs>
-                            % Rendición</div> 
+                            <i-bs name="pie-chart" width="30" height="30"></i-bs>
+                            % Rendición
+                        </div>
                         <div class="stat-digit">
-                            
+
                             {{rendido/ transferencias|percent:'2.1-2'}}
                         </div>
                     </div>
@@ -172,7 +187,7 @@
     </div>
     <div class="row">
         <div class="col-lg 3">
-            <div class="card">
+            <!--  <div class="card">
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
@@ -189,10 +204,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-lg 3">
-            <div class="card">
+            <!--  <div class="card">
                 <div class="stat-widget-two">
                     <div class="stat-content">
                         <div class="stat-text">
@@ -209,7 +224,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </main>
+<app-planificacion></app-planificacion>

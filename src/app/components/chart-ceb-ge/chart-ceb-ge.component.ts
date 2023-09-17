@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartDataset, ChartOptions } from 'chart.js';
+import html2canvas from 'html2canvas';
+import  * as jspdf from 'jspdf';
 import { BaseChartDirective } from 'ng2-charts';
 import { forkJoin, map, Subscription } from 'rxjs';
 import { ChartsService } from 'src/app/servicios/charts.service';
@@ -52,7 +54,7 @@ export class ChartCebGeComponent implements OnInit {
       fill: true,
       tension: 0.2,
       //borderColor: 'black',
-       backgroundColor: '#0a58ca' 
+      backgroundColor: '#629cef' 
     },
 
 
@@ -125,7 +127,30 @@ export class ChartCebGeComponent implements OnInit {
       });
 
     };
-  }
+  };
+  downloadPDF() {
+    // Extraemos el
+    const DATA = document.getElementById('htmlData');
+    const doc = new jspdf.jsPDF('p', 'pt', 'a4');
+    const options = {
+      background: 'white',
+      scale: 3
+    };
+    html2canvas(DATA, options).then((canvas) => {
+
+      const img = canvas.toDataURL('image/PNG');
+      // Add image Canvas to PDF
+      const bufferX = 15;
+      const bufferY = 15;
+      const imgProps = (doc as any).getImageProperties(img);
+      const pdfWidth = doc.internal.pageSize.getWidth() - 2 * bufferX;
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
+      return doc;
+    }).then((docResult) => {
+      docResult.save(`CEB_por_GE.pdf`);
+    });
+  };
 
 
 }

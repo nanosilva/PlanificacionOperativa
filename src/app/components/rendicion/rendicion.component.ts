@@ -15,7 +15,7 @@ import * as XLSX from 'xlsx'
 })
 export class RendicionComponent implements OnInit {
   
-  name = 'ExcelSheet.xlsx';
+  name = 'Rendición_de_Fondos.xlsx';
   total!:number
   filterPost="";
   filterPost2="";

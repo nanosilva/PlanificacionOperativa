@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     }
   }
   logLout(usuario:any) {
+    alert("Desea cerrar sesión?")
     if('usuario'){sessionStorage.removeItem('usuario')
     console.log('logout');
     

@@ -10,7 +10,7 @@ import * as XLSX from 'xlsx'
   styleUrls: ['./trz-comparacion.component.css']
 })
 export class TrzComparacionComponent implements OnInit {
-  name = 'ExcelSheet.xlsx';
+  name = 'Trz_evol_tca_1C2023.xlsx';
 
   total!: any
   filterPost2 = ""

@@ -13,7 +13,7 @@ import { ChartsService } from 'src/app/servicios/charts.service';
 })
 export class TrazadorasComponent implements OnInit {
 
-  name = 'ExcelSheet.xlsx';
+  name = 'Trz_1C2022.xlsx';
 
   total!: any
   filterPost2 = ""

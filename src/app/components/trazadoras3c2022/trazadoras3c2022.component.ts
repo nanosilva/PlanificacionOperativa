@@ -12,7 +12,7 @@ import { forkJoin, map } from 'rxjs';
 })
 export class Trazadoras3c2022Component implements OnInit {
 
-  name = 'ExcelSheet.xlsx';
+  name = 'Trz_3C2022.xlsx';
 
   total!: any
   filterPost2 = ""

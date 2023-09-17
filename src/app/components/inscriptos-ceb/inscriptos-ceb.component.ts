@@ -10,7 +10,7 @@ import * as XLSX from 'xlsx'
 })
 export class InscriptosCebComponent implements OnInit {
   filterPost = "";
-  name = 'ExcelSheet.xlsx';
+  name = 'Inscriptos_CEB_evol_.xlsx';
   total!: number;
   municipio!: string;
   padron1!: string[];

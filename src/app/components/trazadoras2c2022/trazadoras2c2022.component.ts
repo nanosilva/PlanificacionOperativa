@@ -11,7 +11,7 @@ import { forkJoin, map } from 'rxjs';
   styleUrls: ['./trazadoras2c2022.component.css']
 })
 export class Trazadoras2c2022Component implements OnInit {
-  name = 'ExcelSheet.xlsx';
+  name = 'Trz_2C2022.xlsx';
 
   total!: any
   filterPost2 = ""

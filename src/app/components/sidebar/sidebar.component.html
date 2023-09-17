@@ -1,8 +1,8 @@
 <nav id="sidebarMenu" class="col-md-3 mt-4 col-lg-2 d-md-block bg-light sidebar collapse">
     <div class="sidebarMenu">
         <ul class="nav flex-column ">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/**">
+            <li class="nav-item ms-3 mb-1">
+                <a class="nav-link active" aria-current="page" href="/*">
                     <i-bs name="house-door-fill" style="color:black"></i-bs>
                     Inicio
                 </a>
@@ -22,7 +22,7 @@
                 </div>
             </li>
             <li class="dropdown mb-1">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" title="Transferido a Municipios"
                     data-bs-target="#transferencias-collapse" aria-haspopup="true" aria-expanded="false">
                     <i-bs name="cash-coin" class="me-1"></i-bs>
                     Transferencias
@@ -37,7 +37,7 @@
 
             </li>
             <li class="dropdown mb-1">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" title="Prestaciones por Municipio"
                     data-bs-target="#prestaciones-collapse" aria-haspopup="true" aria-expanded="false">
 
                     <i-bs name="file-bar-graph" class="me-1">
@@ -46,10 +46,10 @@
                 </a>
                 <div class="collapse" id="prestaciones-collapse">
                     <ul class="btn-toggle-nav fw-normal pb-1 small">
-                        <li><a class="dropdown-item" routerLink="prestaciones/total">Total Cantidad</a></li>
-                        <li><a class="dropdown-item" routerLink="prestaciones/total_monto">Total Monto</a></li>
+                        <li><a class="dropdown-item" routerLink="prestaciones/total" title="Total por año">Total Cantidad</a></li>
+                        <li><a class="dropdown-item" routerLink="prestaciones/total_monto" title="Monto por año">Total Monto</a></li>
                         <li class="dropdown">
-                            <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
+                            <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" title="Gráficos de Prestaciones"
                                 data-bs-target="#graficoprestaciones-collapse" aria-haspopup="true"
                                 aria-expanded="false">
                                 Gráficos
@@ -60,9 +60,9 @@
                                             año</a></li>
                                     <li><a class="dropdown-item" routerLink="prestaciones/grafico/total_monto">Monto por
                                             año</a></li>
-                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/tipoprestacion">Por
+                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/tipoprestacion" title="año 2023">Por
                                             Tipo Prestación</a></li>
-                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/ge">Por Grupo
+                                    <li><a class="dropdown-item" routerLink="prestaciones/grafico/ge" title="año 2023">Por Grupo
                                             Etario</a></li>
                                 </ul>
                             </div>
@@ -72,7 +72,7 @@
                 </div>
             </li>
             <li class="dropdown mb-1">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inscriptos-collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#inscriptos-collapse" title="Inscriptos por Municipio"
                     aria-haspopup="true" aria-expanded="false">
                     <i-bs name="person" class="me-1"></i-bs>
                     Inscriptos
@@ -102,7 +102,7 @@
                 </div>
             </li>
             <li class="dropdown mb-1">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#usodefondos-collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#usodefondos-collapse" title="Aplicación de Fondos"
                     aria-haspopup="true" aria-expanded="false">
                     <i-bs name="clipboard2-data" class="me-1"></i-bs>
                     Uso de Fondos
@@ -116,7 +116,7 @@
                 </div>
             </li>
             <li class="dropdown mb-1">
-                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trazadoras-collapse"
+                <a class="btn btn-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#trazadoras-collapse" title="Casos por Cuatrimestre"
                     aria-haspopup="true" aria-expanded="false">
                     <i-bs name="file-font" class="me-1"></i-bs>
                     Trazadoras
@@ -127,7 +127,7 @@
                         <li><a class="dropdown-item" routerLink="trazadoras/trz_2c2022">2er cuat 2022</a></li>
                         <li><a class="dropdown-item" routerLink="trazadoras/trz_3c2022">3er cuat 2022</a></li>
                         <li><a class="dropdown-item" routerLink="trazadoras/trz_1c2023">1er cuat 2023</a></li>
-                        <li><a class="dropdown-item" routerLink="trazadoras/evolucion">Evolucion</a></li>
+                        <li><a class="dropdown-item" routerLink="trazadoras/evolucion" title="Tasa de Cobertura">Evolucion</a></li>
                         <li class="dropdown">
                             <a class="btn btn-toggle" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#grafico-collapse" aria-haspopup="true" aria-expanded="false">
@@ -181,3 +181,4 @@
     </div>
 
 </nav>
+

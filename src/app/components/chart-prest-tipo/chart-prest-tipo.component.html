@@ -1,4 +1,4 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="htmlData">
     <div class="container">
         <h3 class="text-center text-white bg-dark py-2 ">Prestaciones 2023 <small>Por Tipo </small></h3>
     </div>
@@ -27,6 +27,9 @@
                                         {{prestaciones.municipio}}</option>
                                  </select>
                             </div>
+                            <button class="btn btn-danger btn-sm mt-2 float-end" (click)="downloadPDF()">
+                                <i-bs name="download"></i-bs>PDF
+                            </button>
                         </div>
                     </div>
 
@@ -43,32 +46,32 @@
             <div class="container mt-4">
                 <div class="row">
                     <div class="col-2">
-                        <p class="small bg-nin05 ">Consultas: <span style="font-weight:bold">{{ct_pct}} % </span>
+                        <p class="small bg-consultas ">Consultas: <span style="font-weight:bold">{{ct_pct}} % </span>
                         </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-nin69">Inmunizaciones: <span style="font-weight:bold">{{imv_pct}} % </span>
+                        <p class="small bg-inmunizacion">Inmunizaciones: <span style="font-weight:bold">{{imv_pct}} % </span>
                         </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-adol">IGR+LBL+PRP: <span style="font-weight:bold">{{img_pct}} % </span>
+                        <p class="small bg-lb_pr_im">IGR+LBL+PRP: <span style="font-weight:bold">{{img_pct}} % </span>
                         </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-adultos">Internaciones: <span style="font-weight:bold">{{ite_pct}} % </span>
+                        <p class="small bg-internacion">Internaciones: <span style="font-weight:bold">{{ite_pct}} % </span>
                         </p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-emb">Partos: <span style="font-weight:bold">{{parto_pct}} % </span></p>
+                        <p class="small bg-partos">Partos: <span style="font-weight:bold">{{parto_pct}} % </span></p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-emb">Talleres: <span style="font-weight:bold">{{taller_pct}} % </span></p>
+                        <p class="small bg-talleres">Talleres: <span style="font-weight:bold">{{taller_pct}} % </span></p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-emb">Anatom.Patolog.: <span style="font-weight:bold">{{apa_pct}} % </span></p>
+                        <p class="small bg-anato">Anatom.Patolog.: <span style="font-weight:bold">{{apa_pct}} % </span></p>
                     </div>
                     <div class="col-2">
-                        <p class="small bg-emb">Otras: <span style="font-weight:bold">{{varias_pct}} % </span></p>
+                        <p class="small bg-otras">Otras: <span style="font-weight:bold">{{varias_pct}} % </span></p>
                     </div>
                     <div class="bg-light"> Total 2023: <span style="font-weight:bold">{{prestAcum|currency:'
                             ':'symbol':'1.0-0'}} </span>
