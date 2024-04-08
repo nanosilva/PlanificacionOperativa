@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RendicionComponent } from './components/rendicion/rendicion.component';
 import { FilterPipe } from './filter.pipe';
@@ -41,6 +41,8 @@ import { Trazadoras3c2022Component } from './components/trazadoras3c2022/trazado
 import { LoginComponent } from './components/login/login.component';
 import { PlanificacionComponent } from './components/planificacion/planificacion.component';
 import { Trazadoras1c2023Component } from './components/trazadoras1c2023/trazadoras1c2023.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerInterceptor } from './components/spinner/spinner.interceptor';
 //firebase
 
 
@@ -82,6 +84,7 @@ import { Trazadoras1c2023Component } from './components/trazadoras1c2023/trazado
     LoginComponent,
     PlanificacionComponent,
     Trazadoras1c2023Component,
+    SpinnerComponent,
     
   
     
@@ -97,7 +100,9 @@ import { Trazadoras1c2023Component } from './components/trazadoras1c2023/trazado
     
     
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,8 @@
     <div class="container">
         <div class="row">
             <div class="container">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">{{inscriptos.municipio}}</h1>
                     <p class="bg-light">CEB: {{porcentaje| percent: '2.1-2'}}
                     <p>
@@ -23,7 +24,8 @@
                                     <select class="form-control" name="municipio" [(ngModel)]="inscriptos"
                                         (change)="loadData($event)">
                                         <option [ngValue]="inscriptos" selected>Elige un municipio</option>
-                                        <option *ngFor="let inscriptos of inscriptosList | order:'municipio'"[ngValue]="inscriptos">
+                                        <option *ngFor="let inscriptos of inscriptosList | order:'municipio'"
+                                            [ngValue]="inscriptos">
                                             {{inscriptos.municipio}}</option>
 
                                     </select>
@@ -44,7 +46,8 @@
                 </div>
                 <div class="container mt-4">
                     <div class="container">
-                        <p>Incriptos, Var.Anual: <span style="font-weight:bold">{{var_inscriptos|percent: '2.1-1'}}</span></p>
+                        <p>Incriptos, Var.Anual: <span style="font-weight:bold">{{var_inscriptos|percent:
+                                '2.1-1'}}</span></p>
                         <p>CEB, Var.Anual: <span style="font-weight:bold"> {{var_ceb|percent: '2.1-1'}}</span></p>
                     </div>
 
