@@ -6,12 +6,13 @@ import * as XLSX from 'xlsx'
 import { forkJoin, map } from 'rxjs';
 
 @Component({
-  selector: 'app-trazadoras2c2022',
-  templateUrl: './trazadoras2c2022.component.html',
-  styleUrls: ['./trazadoras2c2022.component.css']
+  selector: 'app-trazadoras2c2023',
+  templateUrl: './trazadoras2c2023.component.html',
+  styleUrls: ['./trazadoras2c2023.component.css']
 })
-export class Trazadoras2c2022Component implements OnInit {
-  name = 'Trz_2C2022.xlsx';
+export class Trazadoras2c2023Component implements OnInit {
+
+  name = 'Trz_2C2023.xlsx';
 
   total!: any
   filterPost2 = ""
@@ -50,8 +51,7 @@ export class Trazadoras2c2022Component implements OnInit {
      console.log(this.municipio)
 
     })
-  };
-
+  }
   exportToExcel(): void {
     let element = document.getElementById('rend-tabla');
     const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
@@ -62,18 +62,28 @@ export class Trazadoras2c2022Component implements OnInit {
     XLSX.writeFile(book, this.name);
   };
 
+  getMuni(): void {
+    this.chartService.getTrazadoras2c23().subscribe(
+      res => {
+        let muni = res.map(res => res.municipio);
+        this.municipios = muni
+        console.log(this.municipios);
+      }
+    )
+  };
+
   loadData(event: any) {
     if (this.trazadoras.municipio) {
       forkJoin([
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.trazadora))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.casos_positivos))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_casos))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_pct))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tasa_cobertura))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tcm))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.cumple_tcm))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.municipio))),
-        this.chartService.fromMunicipioTrz2C(this.trazadoras.municipio).pipe(map(data => data.map(val => val.periodo)))
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.trazadora))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.casos_positivos))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_casos))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.meta_pct))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tasa_cobertura))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.tcm))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.cumple_tcm))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.municipio))),
+        this.chartService.fromMunicipioTrz2c23(this.trazadoras.municipio).pipe(map(data => data.map(val => val.periodo)))
 
       ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8]) => {
 
@@ -89,7 +99,7 @@ export class Trazadoras2c2022Component implements OnInit {
         // let trz = [trz0];
         // let trz_n = [...new Set(trz)];
         // console.log(trz_n);   
-        console.log(trz1, trz2, trz3);
+        console.log(trz1, trz2, trz3, this.cuatrimestre);
        
 
         // let muni = Array.from(new Set(data7))
@@ -97,19 +107,8 @@ export class Trazadoras2c2022Component implements OnInit {
       });
     };
   };
-  getMuni(): void {
-    this.chartService.getTrazadorasEvol().subscribe(
-      res => {
-        let muni = res.map(res => res.municipio);
-        this.municipios = muni
-        console.log(this.municipios);
-      }
-    )
-  };
+
 
 }
 
-
-
- 
 

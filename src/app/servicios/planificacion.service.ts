@@ -17,7 +17,8 @@ const httpOptions = {
 })
 export class PlanificacionService {
  
-  private apiUrl = 'https://planificacion-backend-production.up.railway.app';
+  private apiUrl ='http://localhost:8080';
+   /*'https://planificacion-backend-production.up.railway.app'*/
 
 
   constructor(private http: HttpClient) { }
@@ -58,7 +59,14 @@ export class PlanificacionService {
   }
   getTrazadoras1c23(): Observable<Trazadoras[]>{
     return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_1c2023/ver`)
-  }
+  };
+  getTrazadoras2c23(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_2c2023/ver`)
+  };
+  getTrazadoras3c23(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2023/ver`)
+  };
+  
   
 
 }

@@ -44,6 +44,7 @@ export class ChartCebGeComponent implements OnInit {
   hombres_pct!: number;
   total_pct!: number;
   total_insc_ceb!: number;
+  cargando: boolean= false;
 
 
   //grafico lineas
@@ -78,6 +79,9 @@ export class ChartCebGeComponent implements OnInit {
       console.log(data);
     })
   };
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
 
   loadData(event: any) {
     if (this.inscriptos_gp.municipio) {
@@ -122,7 +126,8 @@ export class ChartCebGeComponent implements OnInit {
         
 
         this.chart.update();
-        console.log(this.ninos_05_pct, this.ninos_69_pct,this.adolesc_pct, this.mujeres_pct, this.hombres_pct)
+        console.log(this.ninos_05_pct, this.ninos_69_pct,this.adolesc_pct, this.mujeres_pct, this.hombres_pct);
+        this.cargando=false;
 
       });
 

@@ -40,6 +40,7 @@ export class ChartPrestGeComponent implements OnInit {
   adolesc_pct!: number;
   adultos_pct!: number;
   emb_pct!: number;
+  cargando: boolean = false;
 
 
   //Pie
@@ -88,6 +89,10 @@ export class ChartPrestGeComponent implements OnInit {
 
   };
 
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
+
   loadData(event: any) {
     if (this.prestacion.municipio) {
       forkJoin([
@@ -96,27 +101,29 @@ export class ChartPrestGeComponent implements OnInit {
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.adolescentes))),
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.adultos))),
         this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.emb))),
+        this.chartService.fromMunicipioGp(this.prestacion.municipio).pipe(map(data => data.map(val => val.total_ac)))
 
 
-      ]).subscribe(([data0, data1, data2, data3, data4]) => {
+      ]).subscribe(([data0, data1, data2, data3, data4, data5]) => {
 
         let prest0 = +data0;
         let prest1 = +data1;
         let prest2 = +data2;
         let prest3 = +data3;
         let prest4 = +data4;
-        let total_2022 = prest0 + prest1 + prest2 + prest3 + prest4;
+        let total_2024 = +data5;
 
-        this.prestAcum = total_2022;
-        this.ninos_05_pct = Math.round((prest0/total_2022)*100);
-        this.ninos_69_pct = Math.round((prest1/total_2022)*100);
-        this.adolesc_pct = Math.round((prest2/total_2022)*100);
-        this.adultos_pct = Math.round((prest3/total_2022)*100);
-        this.emb_pct = Math.round((prest4/total_2022)*100);
+        this.prestAcum = total_2024;
+        this.ninos_05_pct = Math.round((prest0/total_2024)*100);
+        this.ninos_69_pct = Math.round((prest1/total_2024)*100);
+        this.adolesc_pct = Math.round((prest2/total_2024)*100);
+        this.adultos_pct = Math.round((prest3/total_2024)*100);
+        this.emb_pct = Math.round((prest4/total_2024)*100);
 
         this.pieChartDatasets[0].data = [data0, data1, data2, data3, data4];
 
         this.chart.update();
+        this.cargando= false;
         console.log(prest0, prest1, prest2, prest3, prest4)
 
       });

@@ -43,6 +43,10 @@ import { PlanificacionComponent } from './components/planificacion/planificacion
 import { Trazadoras1c2023Component } from './components/trazadoras1c2023/trazadoras1c2023.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerInterceptor } from './components/spinner/spinner.interceptor';
+import { OrderModule } from 'ngx-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Trazadoras2c2023Component } from './components/trazadoras2c2023/trazadoras2c2023.component';
+import { Trazadoras3c2023Component } from './components/trazadoras3c2023/trazadoras3c2023.component';
 //firebase
 
 
@@ -85,6 +89,9 @@ import { SpinnerInterceptor } from './components/spinner/spinner.interceptor';
     PlanificacionComponent,
     Trazadoras1c2023Component,
     SpinnerComponent,
+    Trazadoras2c2023Component,
+    Trazadoras3c2023Component,
+    
     
   
     
@@ -96,8 +103,8 @@ import { SpinnerInterceptor } from './components/spinner/spinner.interceptor';
     NgChartsModule,
     NgxBootstrapIconsModule.pick(allIcons),
     AppRoutingModule,
-    
-    
+    OrderModule,
+    NgxPaginationModule
     
   ],
   providers: [

@@ -1,3 +1,9 @@
+th span{
+  visibility: hidden;
+}
+th.order-active span {
+  visibility: visible;
+}
 tbody
 .cantidad {
     text-align: right;

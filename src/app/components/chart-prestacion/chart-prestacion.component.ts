@@ -19,6 +19,7 @@ export class ChartPrestacionComponent implements OnInit {
 
   selectedmunicipio$= this.chartService.selectedmunicipio$;
   title = 'ng2-charts-demo';
+  cargando: boolean= false;
   muni_n!: any[];
   prestacionList: Prestacion[]=[]
   prestacion: Prestacion = {
@@ -36,6 +37,7 @@ export class ChartPrestacionComponent implements OnInit {
     anio_2021: 0,
     anio_2022: 0,
     anio_2023:0,
+    anio_2024:0,
     total_ac: 0
 
   }
@@ -59,7 +61,7 @@ export class ChartPrestacionComponent implements OnInit {
 
 
   ];
-  public label: string[] = ['2020', '2021', '2022', '2023'];
+  public label: string[] = ['2021', '2022', '2023', '2024'];
   public options: ChartOptions = {
     scales: {
       y: {
@@ -83,6 +85,10 @@ export class ChartPrestacionComponent implements OnInit {
    
 
   };
+
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
   
   loadData(event: any) {
     if (this.prestacion.municipio) {
@@ -91,21 +97,24 @@ export class ChartPrestacionComponent implements OnInit {
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2021))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2022))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2023))),
+        this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.anio_2024))),
         this.chartService.fromMunicipioP(this.prestacion.municipio).pipe(map(data => data.map(val => val.total_ac))),
         
 
-      ]).subscribe(([data0, data1, data2, data3, data4]) => {
+      ]).subscribe(([data0, data1, data2, data3, data4, data5]) => {
 
         let prest0 = +data0;
         let prest1 = +data1;
         let prest2 = +data2;
         let prest3 = +data3;
         let prest4 = +data4;
+        let prest5 = +data5;
 
-        this.prestAcum= prest4
-        this.chartData[0].data = [prest0, prest1, prest2, prest3];
+        this.prestAcum= prest5
+        this.chartData[0].data = [prest1, prest2, prest3, prest4];
 
         this.chart.update();
+        this.cargando= false;
 
       });
 

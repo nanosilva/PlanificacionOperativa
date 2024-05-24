@@ -43,17 +43,18 @@ export class ChartTrzComponent implements OnInit {
   municipios!: any[];
   muni_nombre!: any[]
   showTrz = false;
+  cargando : boolean = false;
 
   public chartData: ChartDataset[] = [
     {
-      data: [], label: '3er Cuat 22',
+      data: [], label: '2do Cuat 23',
       fill: true,
       tension: 0.2,
       //borderColor: 'black',
       // backgroundColor: 'rgba(255,0,0,0.3)' 
     },
     {
-      data: [], label: '1er Cuat 23',
+      data: [], label: '3er Cuat 23',
       fill: true,
       tension: 0.2,
       pointBorderColor: 'black'
@@ -87,6 +88,13 @@ export class ChartTrzComponent implements OnInit {
       
     })
   };
+
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
+
+
+
   loadData(event: any) {
     if (this.trazadora.municipio) {
       forkJoin([
@@ -138,26 +146,58 @@ export class ChartTrzComponent implements OnInit {
         let tca_123_2 = +data7[1];
         let tca_123_3 = +data7[2];
         let tca_123_4 = +data7[3];
-        let tca_123_5 = +data7[4];
-        let tca_123_6 = +data7[5];
-        let tca_123_7 = +data7[6];
-        let tca_123_8 = +data7[7];
-        let tca_123_9 = +data7[8];
-        let tca_123_10 = +data7[9];
+        // let tca_123_5 = +data7[0];
+        // let tca_123_6 = +data7[4];
+        // let tca_123_7 = +data7[5];
+        let tca_123_8 = +data7[6];
+        let tca_123_9 = +data7[7];
+        // let tca_123_10 = +data7[8];
+
+        //tca 2do cuat 2023 por trz
+        let tca_223_1 = +data8[0];
+        let tca_223_2 = +data8[1];
+        let tca_223_3 = +data8[2];
+        let tca_223_4 = +data8[3];
+        // let tca_223_5 = +data7[0];
+        // let tca_223_6 = +data7[4];
+        // let tca_223_7 = +data7[5];
+        let tca_223_8 = +data8[6];
+        let tca_223_9 = +data8[7];
+
+        //
+        //tca 3do cuat 2023 por trz
+        let tca_323_1 = +data9[0];
+        let tca_323_2 = +data9[1];
+        let tca_323_3 = +data9[2];
+        let tca_323_4 = +data9[3];
+        // let tca_323_5 = +data7[0];
+        // let tca_323_6 = +data7[4];
+        // let tca_323_7 = +data7[5];
+        let tca_323_8 = +data9[6];
+        let tca_323_9 = +data9[7];
+        
+
+
       
 
         //serie 2do cuat 2022  x trazadora
        // this.chartData[0].data = [tca_21, tca_22, tca_23, tca_24, tca_28, tca_29];
 
         //serie 3er cuat 2022 x trazadora
-        this.chartData[0].data = [tca_31, tca_32, tca_33, tca_34,tca_38, tca_39];
+        // this.chartData[0].data = [tca_31, tca_32, tca_33, tca_34,tca_38, tca_39];
 
         //serie 1er cuat 2023 x trazadora
-        this.chartData[1].data = [tca_123_1, tca_123_2, tca_123_3, tca_123_4,tca_123_8, tca_123_9];
+        // this.chartData[1].data = [tca_123_1, tca_123_2, tca_123_3, tca_123_4,tca_123_8, tca_123_9];
+        
+        //serie 2do cuat 2023 x trazadora
+        this.chartData[0].data = [tca_223_1, tca_223_2, tca_223_3, tca_223_4,tca_223_8, tca_223_9];
+        //serie 3er cuat 2023 x trazadora
+        this.chartData[1].data = [tca_323_1, tca_323_2, tca_323_3, tca_323_4,tca_323_8, tca_323_9];
 
 
         this.chart.update();
-        console.log( this.chartData[0].data)
+        this.cargando= false;
+        console.log( this.chartData[1].data)
 
       });
 

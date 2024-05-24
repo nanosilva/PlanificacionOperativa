@@ -11,6 +11,7 @@ import * as XLSX from 'xlsx'
 export class InscriptosCebComponent implements OnInit {
   filterPost = "";
   name = 'Inscriptos_CEB_evol_.xlsx';
+  p: number = 1;
   total!: number;
   municipio!: string;
   padron1!: string[];

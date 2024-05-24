@@ -1,6 +1,6 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="htmlData">
     <div class="container">
-        <h3 class="text-center text-white bg-dark py-2 ">Prestaciones 2023 <small>Por Grupo Etario</small></h3>
+        <h3 class="text-center text-white bg-dark py-2 ">Prestaciones 2024 <small>Por Grupo Etario</small></h3>
     </div>
 
     <div class="row">
@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <select class="form-control" name="prestacion" [(ngModel)]="prestacion"
-                                    (change)="loadData($event)">
+                                    (change)="loadData($event)" (change)="isLoading()">
                                     <option [ngValue]="prestacion" selected>Elige un municipio</option>
                                     <option *ngFor="let prestacion of prestacionList |order:'municipio'"
                                         [ngValue]="prestacion">
@@ -38,10 +38,11 @@
             </div>
 
             <div class="container">
+                <p *ngIf="cargando"> Cargando...</p>                
                 <canvas baseChart width="1000" height="400" [type]="'pie'" [datasets]="pieChartDatasets"
                     [labels]="pieChartLabels" [options]="pieChartOptions" [legend]="pieChartLegend">
 
-                    >
+                    
                 </canvas>
             </div>
             <div class="container mt-4">
@@ -65,7 +66,7 @@
                     <div class="col-2">
                         <p class="small bg-emb">Embarazadas: <span style="font-weight:bold">{{emb_pct}} % </span></p>
                     </div>
-                    <div class="bg-light"> Total 2023: <span style="font-weight:bold">{{prestAcum|currency:'
+                    <div class="bg-light"> Total 2024: <span style="font-weight:bold">{{prestAcum|currency:'
                             ':'symbol':'1.0-0'}} </span>
                     </div>
 

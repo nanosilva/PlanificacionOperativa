@@ -20,7 +20,7 @@
                                         </div>
                                     </div>
                                     <select class="form-control" name="municipio" [(ngModel)]="trazadora "
-                                        (change)="loadData($event)">
+                                        (change)="loadData($event)" (change)="isLoading()">
                                         <option [ngValue]="trazadora " selected>Elige un municipio</option>
                                         <option
                                             *ngFor="let trazadora of trazadoraList |unique2:'municipio' | order:'municipio'"
@@ -37,6 +37,7 @@
                     </form>
                 </div>
                 <div class="container">
+                    <p *ngIf="cargando"> Cargando... </p>
                     <canvas baseChart width="1000" height="400" [type]="'bar'" [datasets]="chartData"
                         [options]="options" [labels]="label">
                     </canvas>

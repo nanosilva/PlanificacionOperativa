@@ -22,7 +22,7 @@
                                         </div>
                                     </div>
                                     <select class="form-control" name="municipio" [(ngModel)]="inscriptos"
-                                        (change)="loadData($event)">
+                                        (change)="loadData($event)" (change)="isLoading()">
                                         <option [ngValue]="inscriptos" selected>Elige un municipio</option>
                                         <option *ngFor="let inscriptos of inscriptosList | order:'municipio'"
                                             [ngValue]="inscriptos">
@@ -40,6 +40,7 @@
                 </div>
 
                 <div class="container">
+                    <p *ngIf="cargando"> Cargando...</p>
                     <canvas baseChart width="1000" height="400" [type]="'line'" [datasets]="chartData"
                         [options]="options" [labels]="label">
                     </canvas>

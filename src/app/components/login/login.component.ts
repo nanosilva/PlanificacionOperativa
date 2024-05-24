@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     if (formularioValido) {
       this.loginservice.authenticateUser(this.usuario).subscribe(data =>
         this.iniciarSesion(data));
-      console.log(this.usuario);
+     
 
     }
 

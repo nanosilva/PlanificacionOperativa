@@ -18,9 +18,8 @@ export class ChartPrestTipoComponent implements OnInit {
   @ViewChild(BaseChartDirective) chart!: BaseChartDirective;
   private sub!: Subscription;
 
-
-
   title = 'ng2-charts-demo';
+  cargando: boolean = false;
 
   prestacionesList!: Prestacion_tipo[];
   prestaciones: Prestacion_tipo = {
@@ -72,6 +71,9 @@ export class ChartPrestTipoComponent implements OnInit {
     }
     )
   };
+  isLoading(): boolean{
+    return this.cargando=true;
+  };
 
   loadData(event: any) {
     if (this.prestaciones.municipio) {
@@ -84,9 +86,10 @@ export class ChartPrestTipoComponent implements OnInit {
         this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.talleres))),
         this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.anato))),
         this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.varias))),
+        this.chartService.fromMunicipioTp(this.prestaciones.municipio).pipe(map(data => data.map(val => val.total)))
 
 
-      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7]) => {
+      ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8]) => {
 
         let prest0 = +data0;
         let prest1 = +data1;
@@ -96,24 +99,26 @@ export class ChartPrestTipoComponent implements OnInit {
         let prest5 = +data5;
         let prest6 = +data6;
         let prest7 = +data7;
+        let total_2024= +data8;
 
 
 
-        let total_2022 = prest0 + prest1 + prest2 + prest3 + prest4 + prest5 + prest6 + prest7
+        // let total_2024 = prest0 + prest1 + prest2 + prest3 + prest4 + prest5 + prest6 + prest7
 
-        this.prestAcum = total_2022;
-        this.ct_pct = Math.round((prest0 / total_2022) * 100);
-        this.imv_pct = Math.round((prest1 / total_2022) * 100);
-        this.img_pct = Math.round((prest2 / total_2022) * 100);
-        this.ite_pct = Math.round((prest3 / total_2022) * 100);
-        this.parto_pct = Math.round((prest4 / total_2022) * 100);
-        this.taller_pct = Math.round((prest5 / total_2022) * 100);
-        this.apa_pct = Math.round((prest6/ total_2022)*100);
-        this.varias_pct = Math.round((prest7/ total_2022)*100);
+        this.prestAcum = total_2024;
+        this.ct_pct = Math.round((prest0 / total_2024) * 100);
+        this.imv_pct = Math.round((prest1 / total_2024) * 100);
+        this.img_pct = Math.round((prest2 / total_2024) * 100);
+        this.ite_pct = Math.round((prest3 / total_2024) * 100);
+        this.parto_pct = Math.round((prest4 / total_2024) * 100);
+        this.taller_pct = Math.round((prest5 / total_2024) * 100);
+        this.apa_pct = Math.round((prest6/ total_2024)*100);
+        this.varias_pct = Math.round((prest7/ total_2024)*100);
 
         this.pieChartDatasets[0].data = [data0, data1, data2, data3, data4, data5, data6, data7];
 
         this.chart.update();
+        this.cargando=false;
         console.log(prest0, prest1, prest2, prest3, prest4, prest5, prest6, prest7)
 
       });

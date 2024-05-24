@@ -15,7 +15,7 @@ export class ChartsService {
 
   private municipio$ = new BehaviorSubject<any>(this.muni_ini);
 
-  private apiUrl = 'https://planificacion-backend-production.up.railway.app';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -136,6 +136,24 @@ export class ChartsService {
     return this.getTrazadoras1c23().pipe(map(data => data.filter(m => m.municipio === municipio)))
 
   };
+
+  getTrazadoras2c23(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_2c2023/ver`)
+  };
+
+  public fromMunicipioTrz2c23(municipio: any): Observable<Trazadoras[]> {
+    return this.getTrazadoras2c23().pipe(map(data => data.filter(m => m.municipio === municipio)))
+  };
+
+  getTrazadoras3c23(): Observable<Trazadoras[]>{
+    return this.http.get<Trazadoras[]>(`${this.apiUrl}/trazadoras_3c2023/ver`)
+  };
+
+  public fromMunicipioTrz3c23(municipio: any): Observable<Trazadoras[]> {
+    return this.getTrazadoras3c23().pipe(map(data => data.filter(m => m.municipio === municipio)))
+  };
+
+
   getTrazadorasEvol(): Observable<Trz_evol[]> {
     return this.http.get<Trz_evol[]>(`${this.apiUrl}/trazadoras_evolucion/ver`)
   };

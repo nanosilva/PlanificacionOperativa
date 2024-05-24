@@ -22,6 +22,7 @@ export class ChartInscriptosComponent implements OnInit {
   porcentaje!: number;
   var_inscriptos!: number;
   var_ceb!: number;
+  cargando: boolean= false;
 
   inscriptosList: Inscriptos[] = []
   inscriptos: Inscriptos = {
@@ -94,6 +95,9 @@ export class ChartInscriptosComponent implements OnInit {
     console.log(this.porcentaje)
     console.log(this.inscriptosList)
   };
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
 
   loadData(event: any) {
     if (this.inscriptos.municipio) {
@@ -184,8 +188,9 @@ export class ChartInscriptosComponent implements OnInit {
         this.chartData[1].data = [inscriptoceb_0, inscriptoceb_1, inscriptoceb_2, inscriptoceb_3, inscriptoceb_4, inscriptoceb_5, inscriptoceb_6, inscriptoceb_7, inscriptoceb_8, inscriptoceb_9, inscriptoceb_10, inscriptoceb_11
         ]
         this.label = [padron_1, padron_2, padron_3, padron_4, padron_5, padron_6,padron_7,
-        padron_8, padron_9, padron_10, padron_11, padron_12]
+        padron_8, padron_9, padron_10, padron_11, padron_12];
         this.chart.update();
+        this.cargando=false;
        
 
       });

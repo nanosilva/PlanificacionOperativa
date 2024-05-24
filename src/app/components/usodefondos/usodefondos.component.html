@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <select class="form-control" name="prestacion" [(ngModel)]="usodefondos"
-                                    (change)="loadData($event)">
+                                    (change)="loadData($event)" (change)="isLoading()">
                                     <option [ngValue]="usodefondos" selected>Elige un municipio</option>
                                     <option *ngFor="let usodefondos of usodefondosList |order:'municipio'"
                                         [ngValue]="usodefondos">
@@ -38,6 +38,7 @@
             </div>
 
             <div class="container">
+                <p *ngIf="cargando"> Cargando...</p>
                 <canvas baseChart width="1000" height="400" 
                 [type]="'pie'" 
                 [datasets]="pieChartDatasets"

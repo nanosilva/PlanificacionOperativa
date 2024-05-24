@@ -19,6 +19,7 @@ export interface Rendicion {
     anio_2021: number;
     anio_2022: number;
     anio_2023: number;
+    anio_2024: number;
     acumulado: number;
     fech_ult_expte: string;
     ult_bm_rendido: string
@@ -44,6 +45,7 @@ export interface Transferencias {
     anio_2021: number;
     anio_2022: number;
     anio_2023: number;
+    anio_2024: number;
     total_acum: number;
 
 }
@@ -63,6 +65,7 @@ export interface Prestacion {
     anio_2021: number;
     anio_2022: number;
     anio_2023: number;
+    anio_2024: number;
     total_ac: number;
 };
 
@@ -168,6 +171,7 @@ export interface Prestacion_monto{
     anio_2021: number;
     anio_2022: number;
     anio_2023: number;
+    anio_2024: number;
     total_ac: number;
 
 };

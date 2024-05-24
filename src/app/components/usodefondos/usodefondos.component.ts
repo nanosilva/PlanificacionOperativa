@@ -3,7 +3,7 @@ import { ChartOptions } from 'chart.js';
 import { forkJoin, map } from 'rxjs';
 import { ChartsService } from 'src/app/servicios/charts.service';
 import { usodefondos } from '../interfaces/planificacio.interfaces';
-import { BaseChartDirective } from 'ng2-charts';
+import { BaseChartDirective, ThemeService } from 'ng2-charts';
 import html2canvas from 'html2canvas';
 import * as jspdf from 'jspdf';
 
@@ -47,6 +47,7 @@ export class UsodefondosComponent implements OnInit {
   inversion_pct!: number;
   mantenim_pct!: number;
   incentivos_pct!: number;
+  cargando: boolean = false;
   // Pie
   public pieChartOptions: ChartOptions<'pie'> = {
     responsive: false,
@@ -70,6 +71,10 @@ export class UsodefondosComponent implements OnInit {
 
     })
   };
+
+  isLoading(): boolean{
+    return this.cargando = true;
+  }
 
   loadData(event: any) {
     if (this.usodefondos.municipio) {
@@ -128,7 +133,10 @@ export class UsodefondosComponent implements OnInit {
         this.otros_pct = Math.round((otros / totaluf)*100);
 
         this.pieChartDatasets[0].data = [otros, incentivos, locacion, insumos, inversiones, mantenimiento];
+       
         this.chart.update();
+         this.cargando=false
+        
       })
     }
   };

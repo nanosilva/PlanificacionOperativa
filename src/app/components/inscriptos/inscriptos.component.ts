@@ -13,6 +13,7 @@ import { Inscriptos } from '../interfaces/planificacio.interfaces';
 export class InscriptosComponent implements OnInit {
   filterPost="";
   name= 'Inscriptos_evolucion_.xlsx'; 
+  p: number = 1;
   total!: number;
   variacion!: number;
   padrones01!: string[];

@@ -66,7 +66,7 @@ export class TrzComparacionComponent implements OnInit {
   };
 
   getMuni(): void {
-    this.chartService.getTrazadoras().subscribe(
+    this.chartService.getTrazadorasEvol().subscribe(
       res => {
         let muni = res.map(res => res.municipio);
         this.municipios = muni

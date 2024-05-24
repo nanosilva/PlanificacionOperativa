@@ -1,6 +1,8 @@
 {
   "projects": {
-    "default": "api-planif",
-    "apiplani": "api-planificacion"
-  }
+    "default": "planificacion-84f42",
+    "apiplani": "api-planificacion",
+    "deploy": "planificacion-sumar"
+  },
+  "targets": {}
 }

@@ -20,7 +20,7 @@
                                     </div>
                                 </div>
                                 <select class="form-control" name="prestacion" [(ngModel)]="inscriptos_gp"
-                                    (change)="loadData($event)">
+                                    (change)="loadData($event)" (change)="isLoading()">
                                     <option [ngValue]="inscriptos_gp" selected>Elige un municipio</option>
                                     <option *ngFor="let inscriptos_gp of inscriptos_gpList |order:'municipio'"
                                         [ngValue]="inscriptos_gp">
@@ -38,6 +38,7 @@
             </div>
 
             <div class="container">
+                <p *ngIf="cargando"> Cargando...</p>
                 <canvas baseChart width="1000" height="400" [type]="'pie'" [datasets]="pieChartDatasets"
                     [labels]="pieChartLabels" [options]="pieChartOptions" [legend]="pieChartLegend">
 

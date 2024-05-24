@@ -1,4 +1,4 @@
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"  id="htmlData" >
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="htmlData">
   <div class="container">
     <h3 class="text-center text-white bg-dark py-2 fixed ">Rendición de Fondos </h3>
   </div>
@@ -6,15 +6,16 @@
     <div class="row">
       <div class="col-3">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Buscar Municipio" 
-            [(ngModel)]="filterPost">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="text" (click)="borrarTexto()">X</button>
-            </div>
+          <input type="text" class="form-control" placeholder="Buscar Municipio" [(ngModel)]="filterPost">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary ms-1" type="text" (click)="borrarTexto()">X</button>
+          </div>
         </div>
       </div>
 
-      <div class="col-7 container bg-light text-black text-center pt-1">Años</div>
+      <div class="col-7 container bg-light text-black text-center pt-1">
+        <h4>Años</h4>
+      </div>
       <div class="col-2">
         <div class="form group">
           <input type="text" class="form-control" name="filterPost2" placeholder="Buscar fecha expte..."
@@ -22,39 +23,86 @@
         </div>
       </div>
 
+
       <div class="col-12">
-        <button class="btn btn-success btn-sm mt-2 float-end" (click)="exportToExcel()">
-          <i-bs name="download"></i-bs> Excel</button>
+        <button class="btn btn-success btn-sm mb-2 float-end" (click)="exportToExcel()">
+          <i-bs name="download"></i-bs> Excel
+        </button>
         <button class="btn btn-danger btn-sm" (click)="downloadPDF()">
-          <i-bs name="download"></i-bs>PDF</button>
+          <i-bs name="download"></i-bs>PDF
+        </button>
 
       </div>
     </div>
-    <div class="table responsive-md"  >
-      <table class="table table-striped table-hover"  id="rend-tabla" >
+    <div class="table responsive-md ">
+      <table class="table table-bordered table-hover" id="rend-tabla">
         <thead>
-          <tr>
+          <tr class="table-active">
             <th scope="col">#</th>
             <th scope="col">Código Municipio</th>
-            <th scope="col">Municipio</th>
-            <th class="anio" scope="col">2020</th>
-            <th class="anio" scope="col">2021</th>
-            <th class="anio" scope="col">2022</th>
-            <th class="anio" scope="col">2023</th>
-            <th class="anio" scope="col">Total 2008-2023</th>
+            <th scope="col" (click)="setOrder('municipio')" [class.order-active]="order==='municipio'">
+              <span [hidden]="reverse">
+                <i-bs name="chevron-up"></i-bs>
+              </span>
+              <span [hidden]="!reverse">
+                <i-bs name="chevron-down"></i-bs>
+              </span>
+              Municipio
+            </th>
+            <!-- <th class="anio" scope="col" (click)="setOrder('anio_2021')"[class.order-active]="order==='anio_2021'">
+              <span [hidden]="reverse"><i-bs name="chevron-up"></i-bs></span>
+              <span [hidden]="!reverse"><i-bs name="chevron-down"></i-bs></span>
+              2021</th> -->
+            <th class="anio" scope="col" (click)="setOrder('anio_2022')" [class.order-active]="order==='anio_2022'">
+              <span [hidden]="reverse">
+                <i-bs name="chevron-up"></i-bs>
+              </span>
+              <span [hidden]="!reverse">
+                <i-bs name="chevron-down"></i-bs>
+              </span>
+              2022
+            </th>
+            <th class="anio" scope="col" (click)="setOrder('anio_2023')" [class.order-active]="order==='anio_2023'">
+              <span [hidden]="reverse">
+                <i-bs name="chevron-up"></i-bs>
+              </span>
+              <span [hidden]="!reverse">
+                <i-bs name="chevron-down"></i-bs>
+              </span>
+              2023
+            </th>
+            <th class="anio" scope="col" (click)="setOrder('anio_2024')" [class.order-active]="order==='anio_2024'">
+              <span [hidden]="reverse">
+                <i-bs name="chevron-up"></i-bs>
+              </span>
+              <span [hidden]="!reverse">
+                <i-bs name="chevron-down"></i-bs>
+              </span>
+              2024
+            </th>
+            <th class="anio" scope="col" (click)="setOrder('acumulado')" [class.order-active]="order==='acumulado'">
+              <span [hidden]="reverse">
+                <i-bs name="chevron-up"></i-bs>
+              </span>
+              <span [hidden]="!reverse">
+                <i-bs name="chevron-down"></i-bs>
+              </span>
+              Total Acumulado
+            </th>
             <th scope="col">Ultimo Expediente</th>
             <th scope="col">Ult.Bimestre Rend</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let rendicion of rendicionList | filter2:filterPost2 |filter3: filterPost; index as i ">
+          <tr
+            *ngFor="let rendicion of rendicionList  | filter2:filterPost2 |filter3: filterPost |orderBy: order : reverse| paginate: { itemsPerPage: 10, currentPage: p }; index as i ">
             <th scope="row">{{i+1}}</th>
             <td>{{rendicion.cod_mun}}</td>
-            <td>{{rendicion.municipio}}</td>           
-            <td class="cantidad">{{rendicion.anio_2020|currency:'$ ':'symbol':'1.0-0'}}</td>
-            <td class="cantidad">{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td>{{rendicion.municipio}}</td>
+            <!-- <td class="cantidad">{{rendicion.anio_2021|currency:'$ ':'symbol':'1.0-0'}}</td> -->
             <td class="cantidad">{{rendicion.anio_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td class="cantidad">{{rendicion.anio_2023|currency:'$ ':'symbol':'1.0-0'}}</td>
+            <td class="cantidad">{{rendicion.anio_2024|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td class="cantidad">{{rendicion.acumulado|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td>{{rendicion.fech_ult_expte}}</td>
             <td>{{rendicion.ult_bm_rendido}}</td>
@@ -62,19 +110,22 @@
           <hr>
           <tr>
             <td></td>
+            <td>Total año</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td>{{total_2022|currency:'$ ':'symbol':'1.0-0'}}</td>
             <td></td>
             <td></td>
             <td>
-           
+
             <td></td>
             <td></td>
           </tr>
         </tbody>
       </table>
-    </div>
+      
+      <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente">
+      </pagination-controls>
+    </div >
   </div>
- 
+
 </main>

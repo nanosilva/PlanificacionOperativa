@@ -1,3 +1,9 @@
+th span{
+	visibility: hidden;
+  }
+  th.order-active span {
+	visibility: visible;
+  }
 div#banner{
 
 	width: 100%;

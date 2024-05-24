@@ -44,7 +44,7 @@ export class Trazadoras3c2022Component implements OnInit {
     private chartService: ChartsService) { }
 
   ngOnInit(): void {
-    this.datosPlanificacion.getTrazadoras3c22().subscribe(data=>{
+    this.datosPlanificacion.getTrazadoras3c23().subscribe(data=>{
       this.trazadoraList= data;
       console.log(data)
      this.getMuni();
@@ -99,7 +99,7 @@ export class Trazadoras3c2022Component implements OnInit {
     };
   };
   getMuni(): void {
-    this.chartService.getTrazadoras().subscribe(
+    this.chartService.getTrazadoras1c23().subscribe(
       res => {
         let muni = res.map(res => res.municipio);
         this.municipios = muni

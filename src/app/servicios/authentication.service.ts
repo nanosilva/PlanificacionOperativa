@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private apiUrl = 'https://planificacion-backend-production.up.railway.app';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +29,7 @@ export class AuthenticationService {
 
   isLoggedIn() {
     let usuario = sessionStorage.getItem('usuario')
-    console.log(!(usuario === null))
+    // console.log(!(usuario === null))
     return !(usuario === null)
   }
 

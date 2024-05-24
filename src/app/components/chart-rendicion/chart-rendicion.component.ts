@@ -42,6 +42,7 @@ export class ChartRendicionComponent implements OnInit {
     anio_2021: 0,
     anio_2022: 0,
     anio_2023: 0,
+    anio_2024: 0,
     acumulado: 0,
     fech_ult_expte: "",
     ult_bm_rendido: ""
@@ -54,9 +55,9 @@ export class ChartRendicionComponent implements OnInit {
   transfAcum!: number;
   ultimoExte!: string;
   selectedMunicipio!: string;
-  order!: string;
   ult_rendido: string;
   pct_rendido: any;
+  cargando: boolean=false;
 
   public chartData: ChartDataset[] = [
     {
@@ -75,7 +76,7 @@ export class ChartRendicionComponent implements OnInit {
     },
 
   ];
-  public label: string[] = ['2019', '2020', '2021', '2022', '2023'];
+  public label: string[] = ['2021', '2022', '2023','2024'];
   public options: ChartOptions = {
     scales: {
       y: {
@@ -92,15 +93,6 @@ export class ChartRendicionComponent implements OnInit {
   ngOnInit(): void {
     this.chartService.getRendicion().subscribe(data => {
       this.rendicionList = data;
-      //  console.log( this.selectedMunicipio);
-      //this.chartService.selectedmunicipio$.subscribe(data1=>{
-      // this.selectedMunicipio= data1
-      //   })  
-      //this.chartService.fromMunicipio(this.municipio.municipio).subscribe(res => {
-      //res.filter(m => m.municipio === this.municipio.municipio)
-      // console.log(res)
-      // }
-      // )
       this.getMuni();
       //this.getRendido();
      
@@ -112,7 +104,8 @@ export class ChartRendicionComponent implements OnInit {
       })
     })
     console.log(this.porcentaje)
-    this.pctRendido(this.rendidoAcum, this.transfAcum);
+    
+   
 
 
   };
@@ -138,6 +131,9 @@ export class ChartRendicionComponent implements OnInit {
       }
     );
   };
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
 
   loadData(event: any) {
     if (this.rendicion.municipio) {
@@ -147,6 +143,7 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2021))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2022))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2023))),
+        this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.anio_2024))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.acumulado))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.fech_ult_expte))),
         this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.ult_bm_rendido))),
@@ -167,11 +164,12 @@ export class ChartRendicionComponent implements OnInit {
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2021))),
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2022))),
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2023))),
+        this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.anio_2024))),
         this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.total_acum))),
 
       ]).subscribe(([data0, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10,
         data11, data12, data13, data14, data15, data16, data17, data18, data19, data20,
-        data21, data22, data23, data24, data25
+        data21, data22, data23, data24, data25, data26, data27
       ]) => {
 
         let rend0 = +data0;
@@ -199,21 +197,38 @@ export class ChartRendicionComponent implements OnInit {
         let transf22 = +data22;
         let transf23 = +data23;
         let transf24 = +data24;
-        let tr_acum = +data25
+        let transf25 = +data25;
+        let transf26 = +data26;
 
-        let sumarend = rend5;
+        let tr_acum = +data27;
+
+        let sumarend = rend6;
         // let sumatr = transf8 + transf9 + transf10 + transf11 + transf12 + transf13 + transf14 + transf15 + transf16 + transf17 +
         //            transf18 + transf19 + transf20 + transf21 + transf22 + transf23 +transf24
-        this.porcentaje = ((sumarend / tr_acum))
+
+        let pct= ((sumarend / tr_acum))
+        if (pct>1){
+          pct=1
+        };
+        
+        this.porcentaje=pct;
+        
+       
         this.rendidoAcum = sumarend;
         this.transfAcum = tr_acum;
         this.ultimoExte = data6 as any;
         this.ult_rendido = data7 as any
         
 
-        this.chartData[0].data = [rend0, rend1, rend2, rend3, rend4];
-        this.chartData[1].data = [transf20, transf21, transf22, transf23, transf24]
+        this.chartData[0].data = [rend2, rend3, rend4, rend5];
+        this.chartData[1].data = [transf23, transf24, transf25, transf26];
+        
+       
         this.chart.update();
+        this.cargando=false;
+        
+       
+        
 
       });
 
@@ -255,30 +270,6 @@ export class ChartRendicionComponent implements OnInit {
     });
   };
 
- /*   porcentajeRendido() {
-    forkJoin([
-      this.chartService.fromMunicipio(this.rendicion.municipio).pipe(map(data => data.map(val => val.acumulado))),
-      this.chartService.fromMunicipioT(this.rendicion.municipio).pipe(map(data => data.map(res => res.total_acum))),
-    ]).subscribe(([data0, data1]) => {
-      let rend_ac = +data0;
-      let tr_acum = +data1;
-      this.porcentaje = ((rend_ac / tr_acum));
-      let pct = ((+data0 / +data1))
-      console.log(this.porcentaje)
-      if (pct > 1) {
-        return this.porcentaje==1;
-      }
-      else
-        return pct;
-        console.log(this.pct_rendido)
-    })}*/
-    pctRendido(rendidoAcum: number, tr_acum: number):number{
-     
-      if (this.porcentaje > 1){
-        return 1;
-      }
-      else {
-      return this.porcentaje}
-     }
+ 
 }
 

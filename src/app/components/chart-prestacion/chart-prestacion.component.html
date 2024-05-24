@@ -24,7 +24,7 @@
                                             </div>
                                         </div>
                                         <select class="form-control" name="prestacion" [(ngModel)]="prestacion"
-                                            (change)="loadData($event)">
+                                            (change)="loadData($event)" (change)="isLoading()">
                                             <option [ngValue]="prestacion" selected>Elige un municipio</option>
                                             <option *ngFor="let prestacion of prestacionList |order:'municipio'"
                                                 [ngValue]="prestacion">
@@ -42,12 +42,13 @@
                     </div>
 
                     <div class="container">
+                        <p *ngIf="cargando"> Cargando...</p>
                         <canvas baseChart width="1000" height="400" [type]="'line'" [datasets]="chartData"
                             [options]="options" [labels]="label">
                         </canvas>
                     </div>
                     <div class="container mt-4">
-                        <div>Acumulado 2013-2023: <span style="font-weight:bold">{{prestAcum|currency:'
+                        <div>Acumulado 2013-2024: <span style="font-weight:bold">{{prestAcum|currency:'
                                 ':'symbol':'1.0-0'}} </span></div>
                         
                     </div>

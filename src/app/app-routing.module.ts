@@ -29,6 +29,8 @@ import { LoginComponent } from './components/login/login.component';
 import { GuardGuard } from './servicios/guard.guard';
 import { PlanificacionComponent } from './components/planificacion/planificacion.component';
 import { Trazadoras1c2023Component } from './components/trazadoras1c2023/trazadoras1c2023.component';
+import { Trazadoras2c2023Component } from './components/trazadoras2c2023/trazadoras2c2023.component';
+import { Trazadoras3c2023Component } from './components/trazadoras3c2023/trazadoras3c2023.component';
 
 const routes: Routes = [
     
@@ -56,6 +58,8 @@ const routes: Routes = [
   { path: 'trazadoras/trz_2c2022', component: Trazadoras2c2022Component, canActivate: [GuardGuard] },
   { path: 'trazadoras/trz_3c2022', component: Trazadoras3c2022Component, canActivate: [GuardGuard] },
   { path: 'trazadoras/trz_1c2023', component: Trazadoras1c2023Component, canActivate: [GuardGuard]},
+  { path: 'trazadoras/trz_2c2023', component: Trazadoras2c2023Component, canActivate: [GuardGuard]},
+  { path: 'trazadoras/trz_3c2023', component: Trazadoras3c2023Component, canActivate: [GuardGuard]},
   { path: 'trazadoras/evolucion', component: TrzComparacionComponent, canActivate: [GuardGuard] },
   { path: 'trazadoras/grafico/evolucion', component: ChartTrzComponent, canActivate: [GuardGuard] },
   { path: 'sidebar', component: SidebarComponent, canActivate: [GuardGuard] },

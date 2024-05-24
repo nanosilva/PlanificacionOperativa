@@ -11,6 +11,7 @@ import * as XLSX from 'xlsx'
 export class UsodefondosListComponent implements OnInit {
   searchText!: string;
   name = 'Usodefondos.xlsx';
+  p: number = 1;
   usodefondosList: usodefondos[] = [];
   usodefondos: usodefondos = {
     id: 0,

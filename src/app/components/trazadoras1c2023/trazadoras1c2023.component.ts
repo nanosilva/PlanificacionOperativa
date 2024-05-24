@@ -62,7 +62,7 @@ export class Trazadoras1c2023Component implements OnInit {
   };
 
   getMuni(): void {
-    this.chartService.getTrazadoras().subscribe(
+    this.chartService.getTrazadoras1c23().subscribe(
       res => {
         let muni = res.map(res => res.municipio);
         this.municipios = muni

@@ -43,6 +43,7 @@ export class ChartInscripGeComponent implements OnInit {
   mujeres_pct!: number;
   hombres_pct!: number;
   total_insc!: number;
+  cargando: boolean= false;
 
    // Pie
    public pieChartOptions: ChartOptions<'pie'> = {
@@ -66,6 +67,9 @@ export class ChartInscripGeComponent implements OnInit {
       console.log(data);
     })
   };
+  isLoading(): boolean{
+    return this.cargando=true;
+  }
 
   loadData(event: any) {
     if (this.inscriptos_gp.municipio) {
@@ -96,6 +100,7 @@ export class ChartInscripGeComponent implements OnInit {
 
         this.chart.update();
         console.log(ninos_05, ninos_69,adolesc, mujeres, hombres)
+        this.cargando=false;
 
       });
 
